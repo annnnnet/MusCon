@@ -10,7 +10,7 @@ const Registration = () => {
     return(
 <div>
       <Header/>
-      <div>Wellcome to Muscon!</div>
+      <title>Wellcome to Muscon!</title>
       <head>
         <title>Signin Template · Bootstrap v5.1</title>
         <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/"/>
@@ -25,13 +25,35 @@ const Registration = () => {
             <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
             <div class="form-floating">
+              <input type="username" class="form-control" id="floatingInput" placeholder="Your username in MusCon"/>
+              <label for="floatingInput">Username</label>
+            </div>
+            
+            <div class="form-floating">
               <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"/>
               <label for="floatingInput">Email address</label>
             </div>
+
             <div class="form-floating">
-              <input type="password" class="form-control" id="floatingPassword" placeholder="Password"/>
-              <label for="floatingPassword">Password</label>
+              <input type="name" class="form-control" id="floatingInput" placeholder="Your name"/>
+              <label for="floatingInput">Name</label>
             </div>
+
+            <div class="form-floating">
+              <input type="surname" class="form-control" id="floatingInput" placeholder="Your surname"/>
+              <label for="floatingInput">Surname</label>
+            </div>
+
+            <div class="form-floating">
+              <input type="city" class="form-control" id="floatingPassword" placeholder="City where you live"/>
+              <label for="floatingPassword">City</label>
+            </div>
+
+            <div class="form-floating">
+              <input type="password" class="form-control" id="floatingInput" placeholder="Your paasword"/>
+              <label for="floatingInput">Password</label>
+            </div>
+
 
             <div class="checkbox mb-3">
               <label>
