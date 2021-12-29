@@ -11,3 +11,7 @@
     fill: currentColor;
   }
   
+  .container
+  {
+    padding-top: 60px;
+  }
