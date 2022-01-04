@@ -1,9 +1,7 @@
 import './App.css';
 import React from 'react';
-// import { BrowserRouter } from "react-router-dom"; 
 import Registration from './pages/Registration/registration';
 // import Map from './Map';
-
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,8 +11,11 @@ import {
   useParams
 } from "react-router-dom";
 
+
+
 export default function App() {
   return (
+    <header class="App-headrer">
     <Router>
         <Switch>
           <Route path="/registration">
@@ -25,6 +26,7 @@ export default function App() {
           </Route>
         </Switch>
       </Router>
+      </header>
   );
 }
 
