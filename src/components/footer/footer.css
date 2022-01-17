@@ -1,11 +1,21 @@
-.bi {
-  vertical-align: -0.125em;
-  fill: currentColor;
-}
-
 footer {
-  background-color: rgb(255, 255, 255);
-  font-size: 15px;
+  display: flex;
+  background-color: rgba(117, 136, 187, 0.5);
+  color: #6a116b;
+  margin-top: auto;
+  margin-bottom: 0px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-right: 8px;
+  padding-left: 8px;
+  flex-shrink: 0;
   font-weight: 300;
   line-height: 1.5;
+}
+p {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-right: 8px;
+  padding-left: 8px;
+  display: flex;
 }
