@@ -1,0 +1,83 @@
+@import "react-alice-carousel/lib/alice-carousel.css";
+.post{
+    border: 1px solid mediumpurple;
+    font-family: Comfortaa;
+    border-radius: 20px;
+    padding-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.post_user_logo{
+    width:5%;
+    border-radius: 50%;
+    border: 1px solid mediumpurple;
+    margin: 1%;
+}
+
+.flexy{
+    display: flex;
+}
+
+.post_username{
+    font-size: 20px;
+    margin: auto 10px;
+}
+
+.post-genre{
+    display: block;
+    background: #8968CD;
+    box-shadow: 5px 2px 5px 2px #413061;
+    text-align: center;
+    padding: 10px;
+    margin-right: 0px;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: fit-content;
+    width: 15%;
+    z-index: 3;
+}
+
+.post_title{
+    margin: 1%;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.post_text{
+    margin: 1%;
+    font-size: 17.5px;
+}
+
+
+.post_carousel{
+    width:95%;
+    background-color: rgba(123, 104, 238, 0.5);
+    padding: 3%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.inner_carousel{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1%;
+}
+
+.post_carousel_img{
+    height: 500px;
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-bottom: 0px;
+}
+
+.post_left_right{
+    position: relative;
+    font-size: 50px;
+    height: 100%;
+    background-color: rgba(0,0,0, 0.2);
+    color: #8968CD;
+    border: none;
+}

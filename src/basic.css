@@ -1,0 +1,38 @@
+.back{
+    background-image: url(./pics/back.jpg) ;
+    background-color: transparent;    
+	background-attachment: fixed; 
+}
+
+.main{    
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 5%;
+    padding-top: 7.5%;
+}
+
+.body{
+    flex-grow: 1;
+    margin: 100px auto;
+    display: flex;
+    font-family: 'Comfortaa';
+}
+
+.block{
+    background-color: rgba(147, 112, 216, 0.5);
+    padding:3%;
+    border-radius: 50px;  
+    font-family: 'Comfortaa';  
+}
+
+hr{
+    border: none;
+    color: mediumpurple;
+    background-color: mediumpurple;
+    height: 3px;
+    margin-top: 0px;
+}
