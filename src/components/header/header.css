@@ -1,55 +1,80 @@
-a[role="button"] {
-  font-size: large;
-  font-weight: 400;
-  line-height: 1.5;
-  background-color: rgb(255, 196, 0);
-  width: 100%;
-  height: 45%;
-  border-width: 1px;
-  border-radius: 50px;
-  border-style: outset;
-  margin-bottom: 3px;
-  margin-right: 5px;
-  margin-top: 5px;
-  border-color: transparent;
-}
-
-a[role="button"]:hover {
-  background-color: rgba(255, 196, 0, 0);
-  border-color: #6a116b;
-  color: #6a116b;
-}
-
-.img {
-  display: flex;
-  max-width: 20%;
-  height: auto;
-}
-
 .header {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  background-color: rgba(117, 136, 187, 0.5);
+  background-color: #ffffff00;
   margin: 0px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-right: 8px;
-  padding-left: 8px;
+  padding: 10px;
+  flex-shrink: 0;
   font-weight: 300;
   line-height: 1.5;
+  position: fixed;
+  font-family: "Comfortaa", cursive;
+  /* font-family: "La Belle Aurore", cursive; */
+}
+
+img {
+  display: flex;
+  margin: auto;
+  padding: auto;
 }
 
 .header_left_nav {
   display: flex;
-  font-size: large;
-  margin-right: auto;
   margin-left: 0px;
+  margin-right: auto;
   margin-top: 20px;
-  padding-left: 0px;
   list-style-type: none;
+  /* padding-left: 0px;
+  margin-left: 0px; */
 }
 
 .header_left_nav li a {
   margin-left: 20px;
+  font-size: 14px;
   color: #6a116b;
+}
+
+.header_left_nav li a:hover {
+  margin-left: 20px;
+  background-color: transparent;
+  color: #ffd043;
+  border-width: 0mm;
+}
+
+.group {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: right;
+  margin: auto;
+  padding: 0px;
+}
+
+a[role="button"] {
+  width: 10%;
+  font-size: 14px;
+  padding: 15px;
+  margin: 5px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-right: 5px;
+  margin-left: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 196, 0, 0);
+  color: #6a116b;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #ffd043;
+}
+
+a[role="button"]:hover {
+  background-color: rgba(255, 255, 255, 0);
+  color: #ffd043;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #6a116b;
 }

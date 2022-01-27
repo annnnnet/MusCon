@@ -3,88 +3,97 @@ import './registration.css';
 import Footer from '../../components/footer/footer';
 import Header from '../../components/header/header';
 import Polar_Chart from '../../components/polar_chart/polar_chart';
+
   
-{/* <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"></link>; */}
 
 const Registration = () => {
     return(
-<div class="back">
-  <Header/>
-    <h1 class="standcol text-center"><em><strong>Welcome to MusCon!</strong></em></h1>
-  <div class="main">
-    <body class="body">
-    <div class="media logo col-md-6 ">
-       <img src="/images/logo.jpg" class="img-fluid col-md-offset-9 rounded-circle  link-dark" />
-    </div >
-    <div class="basic form-container ml-1 col-md-6 ">
-      <form className="signup-form" class="rounded col-md-10 border border-warning"> 
-                  
-        <h3 class="h3 mb-3 fw-normal standcol"><strong>Create</strong> an account</h3>
-         <main class="form-signup text-left">   
-            <div class="form-row ">
-                    
-              {/* <div class="media logo d-flex flex-wrap align-items-center justify-content-center col-md-2">
-                <img src="/images/logo.jpg" class="img-fluid rounded-circle mb-3  link-dark" />
-              </div >
-                 */}
-              <div class="form-group rounded-top col-md-12">
-                <label for="floatingInput" class="control-label standcol">Username</label>
-                <input type="username" class="form-control" id="floatingInput" placeholder="Input username"/>
-              </div>
-              
-              <div class="form-group col-md-12">
-                <label for="floatingInput" class="control-label standcol">Email address</label>
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"/>
-              </div>
-                    
-              <div class="form-group col-md-12">
-                <label for="floatingInput" class="control-label standcol">Location</label>
-                <input type="city" class="form-control" id="floatingInput" placeholder="Input city and country"/>
-              </div>
-                    
-              <div class="form-group col-md-12">
-                <label for="floatingPassword" class="control-label standcol">Your password</label>
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Input password"/>
-              </div>
-              
-              <div class="text-left form-check col-md-6">
-                <label class="form-check-label standcol">
-                  <input class="form-check-input  " type="checkbox" />I agree to the license terms.
-                </label>
-              </div>
-              
-              </div>
-                  
-              <div class="w-100 form-group">
-                    <button class="btn btn-lg" type="submit">Sign Up</button>
-              </div>
-                  
-              <a class="already" href="#">You already have an account? Login here.</a>
-          </main>
-        </form>
-      </div>
-    </body>
+      <div class="col-md-12 standart ">
+        <div class="top sticky-top ">
+          <Header />  
+          </div>
+        <div class="top back">
+        <img src="/images/Violet_top_left_wave_1.png"/>
         </div>
-        <Polar_Chart/>
-  <Footer/>
+          <div class="col-md-12 violet_back text-center">
+          <h1 class="present">MusCon</h1>
+          </div>
+        <body class="col-md-12 violet_back body pt-5  w-100">
+          <div class="media logo mr-1 col-md-5 ">
+            <img src="/images/logo.jpg" class="img-fluid rounded-circle  link-dark" />
+          </div >
+          <div class="form-container ml-1 col-md-7 ">
+            <form className="signup-form" class="rounded col-md-10 border border-warning"> 
+              <h3 class="m-3 text-center standcol"><strong>Create</strong> an account</h3>
+              <main class="col-md-10 form-signup text-left">   
+                <div class="form-row ">
+                     
+                  {/* <div class="row py-4">
+        <div class="col-lg-6 mx-auto"></div>
+                  <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
+                <input id="upload" type="file" onchange="readURL(this);" class="form-control border-0"/>
+                <label id="upload-label" for="upload" class="font-weight-light text-muted">Choose file</label>
+                <div class="input-group-append">
+                    <label for="upload" class="btn btn-light m-0 rounded-pill px-4"> <i class="fa fa-cloud-upload mr-2 text-muted"></i><small class="text-uppercase font-weight-bold text-muted">Choose file</small></label>
+                </div>
+            </div> */}
+{/* 
+            <p class="font-italic text-white text-center">The image uploaded will be rendered inside the box below.</p>
+            <div class="image-area mt-4"><img id="imageResult" src="#" alt="" class="img-fluid rounded shadow-sm mx-auto d-block"/></div>
+
+                </div> */}
+                  
+                    <div class="form-group rounded-top col-md-12">
+                      <label for="floatingInput" class="control-label standcol">Username</label>
+                      <input type="username" class="form-control" id="floatingInput" placeholder="Input username"/>
+                    </div>
+                    
+                    <div class="form-group col-md-12">
+                      <label for="floatingInput" class="control-label standcol">Email address</label>
+                      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                    </div>
+                          
+                    <div class="form-group col-md-12">
+                      <label for="floatingInput" class="control-label standcol">Location</label>
+                      <input type="city" class="form-control" id="floatingInput" placeholder="Input city and country"/>
+                    </div>
+                          
+                    <div class="form-group col-md-12">
+                      <label for="floatingPassword" class="control-label standcol">Password</label>
+                      <input type="password" class="form-control" id="floatingPassword" placeholder="Input password"/>
+                    </div>
+                    
+                    <div class="text-left form-check col-md-6">
+                      <label class="form-check-label">
+                        <input  type="checkbox" class="form-check-input" />I agree to the license terms.
+                      </label>
+                    </div>
+                    
+                  </div>
+                        
+                  <div class="col-md-6 form-group">
+                        <button class="btn" type="submit">Sign Up</button>
+                  </div>
+                        
+                  <p class="already">You already have an account? <a href="/login"> Login here.</a></p>
+                </main>
+            </form>
+          </div>
+        </body>
+        {/* </div> */}
+
+      <div class="bottom back">
+          <img src="/images/Wave_Violet_bottom_right_shape_1.png" />
+        </div>
+        
+          <div class="bottom">
+          <Footer /> 
+        </div>
+        
 </div>
   );
 };
 
 export default Registration;
 
-{/* <div class="register-photo">
-    <div class="form-container">
-        <div class="image-holder"></div>
-        <form>
 
-            <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>
-            <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
-            <div class="form-group"><input class="form-control" type="password" name="password-repeat" placeholder="Password (repeat)"></div>
-            <div class="form-group">
-                <div class="form-check"><label class="form-check-label"><input class="form-check-input" type="checkbox">I agree to the license terms.</label></div>
-            </div>
-            <div class="form-group"><button class="btn btn-primary btn-block">Sign Up</button></div><a class="already" href="#">You already have an account? Login here.</a>
-        </form>
-    </div>
-</div> */}

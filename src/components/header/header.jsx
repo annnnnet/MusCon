@@ -3,21 +3,19 @@ import "./header.css";
 
 const Header = () => {
     return(      
-      <header class="header">
-        <div class="media col-1 text-right">
-           <img src="/images/logo.jpg" class="img-fluid rounded-circle " width="50" height="50"/>
+      <header class="header standart">
+        <div class="media col-md-1 text-right">
+           <img src="/images/logo.jpg" class="img-fluid rounded-circle " width="60" height="60"/>
         </div>
-        <ul class="header_left_nav">
+        <ul class="header_left_nav col-md-7">
           <li><a href="/singerchoose">Singerchoose</a></li>
-          <li><a href="/my_page">Features</a></li>
-          <li><a href="/genrechoose">Pricing</a></li>
-          <li><a href="/">FAQs</a></li>
-          <li><a href="/">About</a></li>
+          <li><a href="/my_page">My page</a></li>
+          <li><a href="/genrechoose">Genrechoose</a></li>
         </ul>
 
-        <div class="d-flex col-md-4 text-end " >
-          <a href="/home" role="button" class="btn">Login</a>
-         <a href="/registration" role="button" class="btn active">Sign-Up</a>
+        <div class="group standart col-md-4" >
+          <a href="/login" role="button" class="text-capitalize btn col-md-4  justify-content-right">Login</a>
+          <a href="/registration" role="button" class="text-capitalize btn active col-md-4  justify-content-left">Sign-Up</a>
         </div>
 
     </header>
