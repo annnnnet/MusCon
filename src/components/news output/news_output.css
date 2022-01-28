@@ -1,16 +1,47 @@
-@import "react-alice-carousel/lib/alice-carousel.css";
+.content{
+    min-height: 100%;
+    background-color: transparent;    
+}
+
+.block{
+    padding:0%;
+    margin: 0% 5%;
+    font-family: 'Comfortaa'; 
+}
+
+hr{
+    border: none;
+    color: #b61984;
+    background-color: #b61984;
+    height: 3px;
+    margin-top: 0px;
+}
+
+.center{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.flexy{
+    display: flex;
+}
+
 .post{
-    border: 1px solid mediumpurple;
+    border: 1px solid #b61984;
+    width: 90%;
+    margin-top: -5%;
+    margin-left: auto;
+    margin-right: auto;
     font-family: Comfortaa;
     border-radius: 20px;
     padding-bottom: 10px;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: white;
 }
 
 .post_user_logo{
-    width:5%;
+    width:60px;
     border-radius: 50%;
-    border: 1px solid mediumpurple;
+    border: 1px solid #b61984;
     margin: 1%;
 }
 
@@ -19,15 +50,18 @@
 }
 
 .post_username{
-    font-size: 20px;
+    font-size: 24px;
     margin: auto 10px;
 }
 
 .post-genre{
     display: block;
-    background: #8968CD;
-    box-shadow: 5px 2px 5px 2px #413061;
+    background: #b61984;
+    box-shadow: 5px 2px 5px 2px #b61984;
     text-align: center;
+    font-size: 30px;
+    font-family: "La Belle Aurore";
+    color:white;
     padding: 10px;
     margin-right: 0px;
     margin-left: auto;
@@ -50,10 +84,8 @@
 }
 
 
-.post_carousel{
+.out_carousel{
     width:95%;
-    background-color: rgba(123, 104, 238, 0.5);
-    padding: 3%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -62,22 +94,29 @@
     margin-left: auto;
     margin-right: auto;
     padding: 1%;
+    width: 100%;
 }
 
 .post_carousel_img{
-    height: 500px;
-    width: max-content;
+    height: 600px;
+    max-height: max-content;
     margin-left: auto;
     margin-right: auto;
-
-    margin-bottom: 0px;
 }
 
-.post_left_right{
-    position: relative;
-    font-size: 50px;
-    height: 100%;
-    background-color: rgba(0,0,0, 0.2);
-    color: #8968CD;
-    border: none;
+.carousel-indicators button{
+    background-color: #b61984!important;
+}
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 20px;
+  color: #b61984;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 20px;
+  color: #b61984;
 }

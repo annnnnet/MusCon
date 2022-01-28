@@ -1,12 +1,37 @@
+.yellow_top_wave{
+    background-color: #ffd043;
+    background-image: url("../../pics/white_top_wave_02.png");
+    background-position: top;
+    background-repeat: no-repeat;
+    padding-top: 100px;
+}
+
+.yellow_bottom_wave{
+    background-color: #ffd043;
+    margin-bottom: -5%;
+}
+
 .post_create_form{
-    background-color: rgba(255, 255, 255, 0.5);
-    width:700px;
+    background-color: white;
+    width:50%;
     max-width: 90%;
     margin-left: auto;
     margin-right: auto;
-    border: 1px solid mediumpurple;
+    border: 2px solid #b61984;
     font-family: Comfortaa;
     border-radius: 20px;
+}
+
+.post_user_logo{
+    width:7%;
+    border-radius: 50%;
+    border: 1px solid #b61984;
+    margin: 1%;
+}
+
+.post_username{
+    font-size: 20px;
+    margin: auto 10px;
 }
 
 .post_it{
@@ -18,10 +43,17 @@
     margin-left: auto;
     margin-top: auto;
     margin-bottom: auto;
-    border-radius: 7px;
-    border: 3px solid mediumpurple;
+    border-radius: 50px;
+    border: 3px solid #b61984;
     font-family: 'Comfortaa';
-    font-size: large;
+    font-size: x-large;
+    font-weight: bold;
+    color:#b61984;
+}
+
+.post_it:hover{
+    background-color: #b61984;
+    color: white;
 }
 
 .post_create{
@@ -31,8 +63,9 @@
 }
 
 .post_create label{
-    font-size: 20px;
+    font-size: 22px;
     margin: 1%;
+    color:#b61984
 }
 
 .post_create input{
@@ -41,6 +74,7 @@
     width: 98%;
     padding: 1%;
     height: 40px;
+    border-radius: 50px;
 }
 
 .post_create_text{
@@ -48,6 +82,7 @@
     width: 98%;
     padding: 1%;    
     margin: 1%;
+    border-radius: 20px;
 }
 
 select{
@@ -57,11 +92,12 @@ select{
     width: fit-content;
     padding: 1%;    
     margin: 1%;
+    border-radius: 20px;
 } 
 
 .dzu-inputLabel{
     font-family: 'Comfortaa' !important;
-    color: mediumpurple !important
+    color: #b61984 !important
 }
 
 .dzu-inputLabelWithFiles{
@@ -74,7 +110,7 @@ select{
     margin-top: auto;
     margin-bottom: auto;
     border-radius: 7px;
-    border: 3px solid mediumpurple;
+    border: 3px solid #b61984;
     font-size: large;
     font-family: 'Comfortaa' ;
     font-weight: 500;
@@ -91,7 +127,7 @@ select{
     margin-top: auto;
     margin-bottom: auto;
     border-radius: 7px;
-    border: 3px solid mediumpurple;
+    border: 3px solid #b61984;
     font-size: large;
     font-family: 'Comfortaa' ;
     font-weight: 500;

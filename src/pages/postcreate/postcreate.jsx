@@ -3,10 +3,8 @@ import 'react-dropzone-uploader/dist/styles.css'
 import './postcreate.css';
 import '../../basic.css';
 import Dropzone from 'react-dropzone-uploader'
-import { getDroppedOrSelectedFiles } from 'html5-file-selector';
 import Footer from '../../components/footer/footer';
 import Header from '../../components/header/header';
-import News_output from '../../components/news output/news_output';
 
 var args={
     user_avatar: require("../../pics/singer.jpg"),
@@ -34,16 +32,17 @@ const PostCreate = () => {
   }
 
   return (
-    <div class="back">
-    <Header/>
-        <div className="main">      
+    <div>
+    <div class="top sticky-top ">
+          <Header />  
+          </div>
+    <div className="yellow_top_wave">
         <form className="post_create_form">
         <div className="flexy">
         <img className="post_user_logo" src={args.user_avatar} />
         <p className="post_username">{args.username}</p> 
         <button className="post_it">Post it!</button>
         </div>
-        <hr/>
          <div className="post_create">
             <label for="title">Post title:</label>
             <br/>
@@ -71,10 +70,8 @@ const PostCreate = () => {
     </div>   
      
   </form> 
-  <br/>
-
-  <News_output/>  
-    </div>
+  </div>
+  <div className="yellow_bottom_wave"><img src={require("../../pics/white_bottom_wave_01.png")}/></div>
 
     <Footer/>
   </div>

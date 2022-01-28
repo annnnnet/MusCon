@@ -1,38 +1,34 @@
 .back{
-    background-image: url(./pics/back.jpg) ;
+    background-image: url(./pics/yellow_top_wave_01.png) ;
+    background-size: 70% auto ;
     background-color: transparent;    
-	background-attachment: fixed; 
+    background-repeat: no-repeat;
 }
 
-.main{    
-    width: 85%;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    padding: 5%;
-    padding-top: 7.5%;
-}
-
-.body{
-    flex-grow: 1;
-    margin: 100px auto;
-    display: flex;
-    font-family: 'Comfortaa';
+.content{
+    min-height: 100%;
+    background-color: transparent;    
 }
 
 .block{
-    background-color: rgba(147, 112, 216, 0.5);
-    padding:3%;
-    border-radius: 50px;  
-    font-family: 'Comfortaa';  
+    padding:0%;
+    margin: 0% 5%;
+    font-family: 'Comfortaa'; 
 }
 
 hr{
     border: none;
-    color: mediumpurple;
-    background-color: mediumpurple;
+    color: #b61984;
+    background-color: #b61984;
     height: 3px;
     margin-top: 0px;
+}
+
+.center{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.flexy{
+    display: flex;
 }

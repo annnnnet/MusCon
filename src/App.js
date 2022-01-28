@@ -1,7 +1,8 @@
 import React from 'react';
 import Main from './pages/main/main';
+import Pd from './pages/post_demonstrate/pd';
 import Singerchoose from './pages/singerchoose/singerchoose';
-import PostCreate from './pages/postcreate/postcreate'
+import PostCreate from './pages/postcreate/postcreate';
 
 import {
   BrowserRouter as Router,
@@ -24,6 +25,10 @@ export default function App() {
           <Route path="/PostCreate">
             <PostCreate />
           </Route>
+          <Route path="/pd">
+            <Pd />
+          </Route>
+          
         </Switch>
       </div>
     </Router>
