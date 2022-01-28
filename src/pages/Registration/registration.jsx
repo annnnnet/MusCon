@@ -2,68 +2,102 @@ import React from 'react';
 import './registration.css';
 import Footer from '../../components/footer/footer';
 import Header from '../../components/header/header';
+import Polar_Chart from '../../components/polar_chart/polar_chart';
+import { MdOutlineAddAPhoto } from '../../../node_modules/react-icons/md';
   
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"></link>;
-
 
 const Registration = () => {
     return(
-<div>
-      <Header/>
-      <head>
-        <title>Signin Template · Bootstrap v5.1</title>
-        <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/"/>
-        <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet"/>
-        <link href="signin.css" rel="stylesheet"/>
-      </head>
-      
-      <body class="text-center basic">
-          <h1><em><strong>Wellcome to MusCon!</strong></em></h1>
-          <div class="media text-center d-flex flex-wrap align-items-center justify-content-center justify-content-md-between col-md-2">
-            <img src="/images/logo.jpg" class="img-fluid rounded-circle mb-3  link-dark" />
+      <div class="col-md-12 standart ">
+        <div class="top sticky-top ">
+          <Header />  
           </div>
-            <form  class="rounded border border-top-0 border-warning" role="form"> 
-           <h3 class="h3 mb-3 fw-normal">Please fill out the form</h3>
-            <main class="form-signin col-md-12">   
-              <div class="form-row col-md-12">
-                <div class="form-group rounded-top col-md-6">
-                  <label for="floatingInput"><em>Username</em></label>
-                  <input type="username" class="form-control" id="floatingInput" placeholder="Input username"/>
+        <div class="top back">
+        <img src="/images/Violet_top_left_wave_1.png"/>
+        </div>
+          <div class="col-md-12 violet_back text-center">
+          <h1 class="present">MusCon</h1>
+          </div>
+        <body class="col-md-12 pt-10 violet_back body h-100 w-100">
+          <div class="media logo mr-1 col-md-5 ">
+            <img src="/images/logo2.png" class="img-fluid  link-dark" />
+          </div >
+          <div class="form-container ml-1 col-md-7 ">
+            <form class=" signup-form col-md-11"> 
+              <h3 class="text-center title"><strong>Create</strong> an account</h3>
+              <main class="col-md-10 form-signup text-left">   
+                <div class="form-row  ">
+                     
+                  <div class="form-group col-md-12">
+                    <img src="/images/ava.jpg" class="col-md-6 img-fluid rounded-circle  link-dark w-50" />
+                    <button type="submit" class="btn add_photo row col-md-5 text-capitalize btn w-100 "><MdOutlineAddAPhoto/> Add best photo </button>
                 </div>
-                
-                <div class="form-group col-md-6">
-                  <label for="floatingInput" class="control-label"><em>Email address</em></label>
-                  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"/>
-                      </div>
-                      
-                <div class="form-group col-md-6">
-                  <label for="floatingInput" class="control-label"><em>Your name</em></label>
-                  <input type="name" class="form-control" id="floatingInput" placeholder="Input name"/>
-                </div>
+                    <div class="form-group col-md-12">
+                      <label for="floatingInput" class="control-label ">Username</label>
+                      <input type="username" class="form-control" id="floatingInput" placeholder="Input username"/>
+                    </div>
+                    
+                    <div class="form-group col-md-12">
+                      <label for="floatingInput" class="control-label ">Email address</label>
+                      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"/>
+                    </div>
+                          
+                    <div class="form-group col-md-12">
+                      <label for="floatingInput" class="control-label ">Location</label>
+                      <input type="city" class="form-control" id="floatingInput" placeholder="Input city and country"/>
+                    </div>
+                          
+                    <div class="form-group col-md-12">
+                      <label for="floatingPassword" class="control-label ">Password</label>
+                      <input type="password" class="form-control" id="floatingPassword" placeholder="Input password"/>
+                    </div>
+                    
+                    <div class="text-left form-check col-md-6">
+                      <label class="form-check-label">
+                        <input  type="checkbox" class="form-check-input" />I agree to the license terms.
+                      </label>
+                    </div>
+                    
+                  </div>
+                        
+                  <div class="col-md-6 form-group">
+                        <button class="btn" type="submit">Sign Up</button>
+                  </div>
+                        
+                  <p class="already">You already have an account? <a href="/login"> Login here.</a></p>
+                </main>
+            </form>
+          </div>
+        </body>
+        {/* </div> */}
 
-                <div class="form-group col-md-6">
-                  <label for="floatingInput" class="control-label"><em>Your surname</em></label>
-                  <input type="surname" class="form-control" id="floatingInput" placeholder="Input surname"/>
-                </div>
-                
-                <div class="form-group col-md-6">
-                  <label for="floatingInput" class="control-label"><em>City where you live</em></label>
-                  <input type="city" class="form-control" id="floatingInput" placeholder="Input city"/>
-                </div>
-                      
-                <div class="form-group col-md-6">
-                  <label for="floatingPassword" class="control-label"><em>Your password</em></label>
-                  <input type="password" class="form-control" id="floatingPassword" placeholder="Input password"/>
-                </div>
-              </div>
-
-              <button class="w-100 btn btn-lg btn-warning" type="submit">Sign Up</button>
-            </main>
-        </form>
-      </body>
-      <Footer/>
-    </div>
+      <div class="bottom back">
+        <img src="/images/Wave_Violet_bottom_right_shape_1.png" />
+        </div>
+        
+          <div class="bottom">
+          <Footer /> 
+        </div>
+        
+</div>
   );
 };
 
 export default Registration;
+
+
+
+                  {/* <div class="row py-4">
+        <div class="col-lg-6 mx-auto"></div>
+                  <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
+                <input id="upload" type="file" onchange="readURL(this);" class="form-control border-0"/>
+                <label id="upload-label" for="upload" class="font-weight-light text-muted">Choose file</label>
+                <div class="input-group-append">
+                    <label for="upload" class="btn btn-light m-0 rounded-pill px-4"> <i class="fa fa-cloud-upload mr-2 text-muted"></i><small class="text-uppercase font-weight-bold text-muted">Choose file</small></label>
+                </div>
+            </div> */}
+{/* 
+            <p class="font-italic text-white text-center">The image uploaded will be rendered inside the box below.</p>
+            <div class="image-area mt-4"><img id="imageResult" src="#" alt="" class="img-fluid rounded shadow-sm mx-auto d-block"/></div>
+
+                </div> */}

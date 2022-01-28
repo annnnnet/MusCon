@@ -69,110 +69,177 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js'></script>
+<script>
+    $(document).ready(function() {
+        var ctx = $("#chart-line");
+        var myLineChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ["Spring", "Summer", "Fall", "Winter"],
+                datasets: [{
+                    data: [1200, 1700, 800, 200],
+                    backgroundColor: ["rgba(255, 0, 0, 0.5)", "rgba(100, 255, 0, 0.5)", "rgba(200, 50, 255, 0.5)", "rgba(0, 100, 255, 0.5)"]
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Weather'
+                }
+            }
+        });
+    });
+</script>
+<div class="page-content page-container" id="page-content">
+    <div class="padding">
+        <div class="row">
+            <div class="container-fluid d-flex justify-content-center">
+                <div class="col-sm-8 col-md-6">
+                    <div class="card">
+                        <div class="card-header">Pie chart</div>
+                        <div class="card-body" style="height: 420px">
+                            <div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+                                <div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                    <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div>
+                                </div>
+                                <div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                    <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+                                </div>
+                            </div> <canvas id="chart-line" width="299" height="200" class="chartjs-render-monitor" style="display: block; width: 299px; height: 200px;"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<Container>
-          <Row>
-            <Column>
-              <Heading>About Us</Heading>
-              <FooterLink href="#">Aim</FooterLink>
-              <FooterLink href="#">Vision</FooterLink>
-              <FooterLink href="#">Testimonials</FooterLink>
-            </Column>
-            <Column>
-              <Heading>Services</Heading>
-              <FooterLink href="#">Writing</FooterLink>
-              <FooterLink href="#">Internships</FooterLink>
-              <FooterLink href="#">Coding</FooterLink>
-              <FooterLink href="#">Teaching</FooterLink>
-            </Column>
-            <Column>
-              <Heading>Contact Us</Heading>
-              <FooterLink href="#">Uttar Pradesh</FooterLink>
-              <FooterLink href="#">Ahemdabad</FooterLink>
-              <FooterLink href="#">Indore</FooterLink>
-              <FooterLink href="#">Mumbai</FooterLink>
-            </Column>
-            <Column>
-              <Heading>Social Media</Heading>
-              <FooterLink href="#">
-                <i className="fab fa-facebook-f">
-                  <span style={{ marginLeft: "10px" }}>
-                    Facebook
-                  </span>
-                </i>
-              </FooterLink>
-              <FooterLink href="#">
-                <i className="fab fa-instagram">
-                  <span style={{ marginLeft: "10px" }}>
-                    Instagram
-                  </span>
-                </i>
-              </FooterLink>
-              <FooterLink href="#">
-                <i className="fab fa-twitter">
-                  <span style={{ marginLeft: "10px" }}>
-                    Twitter
-                  </span>
-                </i>
-              </FooterLink>
-              <FooterLink href="#">
-                <i className="fab fa-youtube">
-                  <span style={{ marginLeft: "10px" }}>
-                    Youtube
-                  </span>
-                </i>
-              </FooterLink>
-            </Column>
-          </Row>
-        </Container>
+    <body>
+      <!-- Start your project here-->
+      <div class="container">
+        <div class="d-flex justify-content-center row">
+          <div class="col-md-12">
+            <div id="polar-area-chart"></div>
+          </div>
+        </div>
+      </div>
+      <!-- End your project here-->
+
+      <!-- MDB -->
+      <script type="text/javascript" src="js/mdb.min.js"></script>
+      <!-- Custom scripts -->
+
+        <script type="text/javascript"></script>
+        <script type="text/javascript">
+          const dataBar = {
+            type: "polarArea",
+            data: {
+              labels: ["Monday", "fsb", "khbkv", "bxcxfvx", "zvc", "zv", "davzx"],
+              datasets: [{
+                label: "Traffic",
+                data: [123, 4322, 235, 545, 35, 23, 235],
+                backgroundcolor: "['rgba(63,81,181,0.5)','rgba(63,81,181,0.5)','rgba(63,81,181,0.5)','rgba(63,81,181,0.5)','rgba(63,81,181,0.5)','rgba(63,81,181,0.5)','rgba(63,81,181,0.5)']",
+              }]
+            }
+          }</script>
 
 
-        styles 
 
-    export const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-width: 1000px;
-    margin: 0 auto;
-    /* background: red; */
-`
-   
-export const Column = styled.div`
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  margin-left: 60px;
-`;
-   
-export const Row = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 
-                         minmax(185px, 1fr));
-  grid-gap: 20px;
-   
-  @media (max-width: 1000px) {
-    grid-template-columns: repeat(auto-fill, 
-                           minmax(200px, 1fr));
-  }
-`;
-   
-export const FooterLink = styled.a`
-  color: #fff;
-  margin-bottom: 20px;
-  font-size: 18px;
-  text-decoration: none;
-   
-  &:hover {
-      color: green;
-      transition: 200ms ease-in;
-  }
-`;
-   
-export const Heading = styled.p`
-  font-size: 24px;
-  color: #fff;
-  margin-bottom: 40px;
-  font-weight: bold;
-`;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               <div class="col-md-12 ">
+                    <div class="rcanva">
+
+                        {/* <div class="circle forma list-group list-group-mine  ">
+                            <a class="circle list-group-item" href="/path"><strong><a href="#">Edit profile</a></strong></a>
+                            <a class="circle list-group-item" href="/path"><strong><a href="#">Edit profile</a></strong></a>
+                        </div> */}
+                         <ul class="forma nav nav-tabs">
+                            <li class="circle nav-item">
+                                <a class=" nav-link " href="#"><strong><a href="#">Favotited songs</a></strong></a>
+                            </li>
+                            <li class="circle nav-item">
+                                <a class=" nav-link"  href="#"><strong><a href="#">Friends</a></strong></a>
+                            </li>
+                        </ul>
+                        <div class="list-group list-group-mine">
+                             {friends.map((items, index) => {
+                                return (
+                                         <a class="col-md-12 list-group-item" href="/{items}"><a href="#" class="col-md-9">{items}</a><button type="button" class="col-md-1 delete btn-close" aria-label="Close"></button></a>)  })}
+                        </div>
+                        {/* <Friends/>; */}
+
+                    </div>
+                </div>
+            </div>
+            <div class="leftside">
+            {/* <h4 class="col-md-12 text-right complete"> </h4> */}
+                <h4 class="col-md-7 fieldname">Music preferences</h4>
+
+            </div>
+            <div className="main">
+                <div class="col-md-12 basic body">
+                    <div class="medis lcanva">
+                        <ul class="forma nav nav-tabs">
+                            <li class=" nav-item">
+                                <a class=" nav-link " href="#"><strong>Favorited genres</strong></a>
+                            </li>
+                        </ul>
+                        <div class="list list-group list-group-mine">
+                             {genre.map((items, index) => {
+                                return (
+                                         <a class="col-md-12 list-group-item" href="/{items}"><a href="#" class="col-md-9">{items}</a><button type="button" class="col-md-1 delete btn-close" aria-label="Close"></button></a>)  })}
+                        </div>
+
+                    </div>
+                </div>
