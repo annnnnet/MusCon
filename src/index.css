@@ -14,7 +14,7 @@ main {
 .body {
   height: 100%;
   width: 100%;
-  min-height: 1vh;
+  min-height: 0px;
   margin: 0px;
   padding: 0px;
   display: flex;
@@ -44,6 +44,7 @@ main {
 .yellow_back {
   background-color: #ffd043;
   color: #b61984;
+  /* padding: 0px; */
 }
 
 code {
@@ -52,9 +53,9 @@ code {
 }
 
 .standart {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 300;
-  color: #6a116b;
+  color: #b61984;
   font-family: "Comfortaa", cursive;
   margin: 0px;
   width: 100%;
@@ -67,6 +68,7 @@ code {
   justify-content: center;
   margin: 0px;
   margin-top: 50px;
+  margin-bottom: 0px;
   max-width: auto;
   /* margin-left: 0px; */
   /* margin-right: 15px; */
@@ -78,6 +80,7 @@ code {
   align-items: center;
   justify-content: center;
   margin-top: 0px;
+  /* margin-bottom: 300px; */
   max-width: auto;
   /* margin-bottom: 50px; */
 }
@@ -95,29 +98,26 @@ a[role="button"] {
   padding: 15px;
   margin: 5px;
   background-color: rgba(255, 196, 0, 0);
-  color: #6a116b;
+  color: #b61984;
   border-style: solid;
-  border-width: 1px;
-  border-color: #ffd043;
+  border-width: 3px;
+  border-color: #000000;
   border-radius: 50px;
   max-width: auto;
 }
 
 a[role="button"]:hover {
   background-color: rgba(255, 255, 255, 0);
-  color: #ffd043;
+  color: #000000;
   border-style: solid;
-  border-width: 1px;
-  border-color: #6a116b;
+  border-width: 3px;
+  border-color: #b61984;
 }
 
 .back img {
   width: 100%;
   margin: 0px;
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
-  /* position: relative; */
+  padding: 0px;
 }
 
 .left {
@@ -139,8 +139,19 @@ a[role="button"]:hover {
 .canva {
   height: 100%;
   width: 100%;
-  min-height: 2vh;
+  min-height: 0vh;
   margin: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  margin-top: 0px;
+  padding: 0px;
+}
+
+.title {
+  /* color: #b61984; */
+  font-family: "La Belle Aurore", cursive;
+  color: #000000;
+  font-size: 45px;
+  font-weight: 55px;
+  margin: auto;
   padding: auto;
 }

@@ -4,8 +4,8 @@ import "./header.css";
 const Header = () => {
     return(      
       <header class="header standart">
-        <div class="media col-md-1 text-right">
-           <img src="/images/logo.jpg" class="img-fluid rounded-circle " width="60" height="60"/>
+        <div class="media small_logo col-md-1 text-right">
+           <img src="/images/logo2.png" class="img-fluid  " width="60" height="60"/>
         </div>
         <ul class="header_left_nav col-md-7">
           <li><a href="/singerchoose">Singerchoose</a></li>

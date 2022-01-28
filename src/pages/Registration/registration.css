@@ -1,32 +1,28 @@
 .present {
   /* margin-left: 410px;
   margin-top: 110px; */
-  font-family: "Beth Ellen", cursive;
+  /* font-family: "Beth Ellen", cursive; */
+
   font-size: 100px;
+  font-weight: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: auto;
-  padding: 10px;
-  color: #ffd043;
+  padding: 30px;
+  /* color: #ffd043; */
+  color: #b61984;
   /* font-family: "Dancing Script", cursive; */
 }
 
-h3 {
-  color: #ffd043;
-  font-size: 40px;
-  font-weight: 600px;
-  font-family: "Comfortaa", cursive;
-}
-
-form {
+.signup-form {
   width: 100%;
   height: 100%;
-  max-width: 500px;
+  max-width: 100%;
   min-height: 1vh;
-  padding: 15px;
-  padding-top: 35px;
+  padding: 30px;
+  padding-top: 60px;
   padding-bottom: 15px;
   margin: auto;
   display: flex;
@@ -34,7 +30,9 @@ form {
   align-items: left;
   justify-content: center;
   /* background-color: #80108a25; */
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  border: 2px solid #ffd043;
+  box-shadow: 2px #ffd043;
+  border-radius: 20px;
 }
 
 .form-container {
@@ -42,14 +40,20 @@ form {
   width: 100%;
   min-height: 1vh;
   margin: auto;
-  padding: 10px;
+  padding: 30px;
 }
 
 ::placeholder {
-  font-style: italic;
-  font-size: 1em;
+  font-style: normal;
+  font-size: 1rem;
+  font-weight: 1px;
   color: rgba(97, 29, 153, 0);
   padding: 5px;
+}
+input .form-control:focus {
+  border: 5px solid #ffd043;
+  box-shadow: #ffd043;
+  /* -webkit-box-shadow: none; */
 }
 
 button[type="submit"] {
@@ -62,11 +66,11 @@ button[type="submit"] {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgba(255, 196, 0, 0);
-  color: #6a116b;
+  background-color: #b61984;
+  color: #ffffff;
   border-style: solid;
   border-width: 1px;
-  border-color: #ffd043;
+  border-color: #b61984;
   border-bottom-left-radius: 50px;
   border-top-left-radius: 50px;
   border-bottom-right-radius: 50px;
@@ -77,9 +81,9 @@ button[type="submit"] {
 button[type="submit"]:hover {
   border-style: solid;
   border-width: 1px;
-  background-color: rgba(255, 255, 255, 0);
-  border-color: #6a116b;
-  color: #ffd043;
+  background-color: transparent;
+  border-color: #b61984;
+  color: #b61984;
 }
 
 .form-signup {
@@ -95,7 +99,8 @@ button[type="submit"]:hover {
   align-items: center;
   justify-content: center;
   font-size: calc(3px + 2vmin);
-  color: #ffd043;
+  /* color: #ffd043; */
+  color: #b61984;
   font-weight: 200;
 }
 
@@ -111,8 +116,8 @@ button[type="submit"]:hover {
 }
 
 .form-signup input:hover {
-  color: #6a116b;
-  border-color: #6a116b00;
+  color: #000000;
+  border-color: transparent;
 }
 
 .logo {
@@ -130,23 +135,30 @@ form .form-check {
   line-height: 20px;
   margin: 10px;
   margin-left: 20px;
-  color: #6a116b;
+  color: #000000;
 }
 
 form .already {
   line-height: 20px;
   font-size: 14px;
   margin: 5px;
-  color: #6a116b;
+  color: #000000;
   background-color: #dcd1f3;
+}
+
+p a:hover {
+  color: #b61984;
 }
 
 p a {
   text-decoration: underline;
+  color: #b61984;
 }
 
-p a:hover {
-  color: rgb(255, 196, 0);
+.add_photo {
+  font-size: 10px;
+  font-weight: 200;
+  max-height: 25%;
 }
 
 /* #upload {

@@ -28,7 +28,7 @@ export default function App() {
           <Route path="/my_page">
             <My_Page/>
           </Route>
-          <Route path="/user_page">
+          <Route path="/user/username">
             <User_Page/>
           </Route>
           <Route path="/">

@@ -2,18 +2,18 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: #ffffff00;
+  background-color: rgba(255, 255, 255, 0.7);
   margin: 0px;
   padding: 10px;
   flex-shrink: 0;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.5;
   position: fixed;
   font-family: "Comfortaa", cursive;
   /* font-family: "La Belle Aurore", cursive; */
 }
 
-img {
+.small_logo {
   display: flex;
   margin: auto;
   padding: auto;
@@ -31,15 +31,16 @@ img {
 
 .header_left_nav li a {
   margin-left: 20px;
-  font-size: 14px;
-  color: #6a116b;
+  font-size: large;
+  color: #000000;
 }
 
 .header_left_nav li a:hover {
   margin-left: 20px;
   background-color: transparent;
-  color: #ffd043;
+  color: #b61984;
   border-width: 0mm;
+  text-decoration: underline;
 }
 
 .group {
@@ -53,28 +54,28 @@ img {
 
 a[role="button"] {
   width: 10%;
-  font-size: 14px;
+  font-size: large;
   padding: 15px;
   margin: 5px;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 0.5;
   margin-right: 5px;
   margin-left: 5px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color: rgba(255, 196, 0, 0);
-  color: #6a116b;
+  background-color: #b61984;
+  border-color: #b61984;
+  color: #ffffff;
   border-style: solid;
-  border-width: 1px;
-  border-color: #ffd043;
+  border-width: 2px;
 }
 
 a[role="button"]:hover {
-  background-color: rgba(255, 255, 255, 0);
-  color: #ffd043;
+  background-color: transparent;
+  border-color: #b61984;
+  color: #b61984;
   border-style: solid;
-  border-width: 1px;
-  border-color: #6a116b;
+  border-width: 2px;
 }
