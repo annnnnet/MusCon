@@ -3,7 +3,9 @@ import Main from './pages/main/main';
 import Pd from './pages/post_demonstrate/pd';
 import Singerchoose from './pages/singerchoose/singerchoose';
 import PostCreate from './pages/postcreate/postcreate';
-
+import My_Page from './pages/My_Page/my_page'
+import User_Page from './pages/User_Page/user_page'
+import Registration from './pages/Registration/registration'
 import {
   BrowserRouter as Router,
   Switch,
@@ -29,6 +31,17 @@ export default function App() {
             <Pd />
           </Route>
           
+          <Route path="/My_Page">
+            <My_Page />
+          </Route>
+
+          <Route path="/User_Page">
+            <User_Page />
+          </Route>
+
+          <Route path="/reg">
+            <Registration />
+          </Route>
         </Switch>
       </div>
     </Router>
