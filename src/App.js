@@ -1,49 +1,49 @@
-import './App.css';
 import React from 'react';
-import Registration from './pages/Registration/registration';
-import My_Page from './pages/My_Page/my_page';
-import User_Page from './pages/User_Page/user_page';
-import Polar_Chart from './components/polar_chart/polar_chart';
-// import Map from './Map';
+import Main from './pages/main/main';
+import Pd from './pages/post_demonstrate/pd';
+import Singerchoose from './pages/singerchoose/singerchoose';
+import PostCreate from './pages/postcreate/postcreate';
+import My_Page from './pages/My_Page/my_page'
+import User_Page from './pages/User_Page/user_page'
+import Registration from './pages/Registration/registration'
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  useRouteMatch,
-  useParams
+  Link
 } from "react-router-dom";
-
-
 
 export default function App() {
   return (
-    <header class="App-headrer">
-
     <Router>
+      <div>
         <Switch>
-          <Route path="/registration">
-            <Registration/>
+          <Route path="/Main">
+            <Main />
           </Route>
-          <Route path="/my_page">
-            <My_Page/>
+          <Route path="/Singerchoose">
+            <Singerchoose />
           </Route>
-          <Route path="/user/username">
-            <User_Page/>
+          <Route path="/PostCreate">
+            <PostCreate />
           </Route>
-          <Route path="/">
-            <Home/>
-          </Route>
-          <Route path="/polar_chart">
-            <Polar_Chart/>
+          <Route path="/pd">
+            <Pd />
           </Route>
           
-        </Switch>
-      </Router>
-      </header>
-  );
-}
+          <Route path="/My_Page">
+            <My_Page />
+          </Route>
 
-function Home() {
-  return <h2>Home</h2>;
+          <Route path="/User_Page">
+            <User_Page />
+          </Route>
+
+          <Route path="/reg">
+            <Registration />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
 }
