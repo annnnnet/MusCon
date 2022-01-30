@@ -1,0 +1,31 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "react-app", "prettier"
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest"
+    },
+    "plugins": [
+        "react","prettier"
+    ],
+    "rules": {
+        "prettier/prettier": [
+            "error", {
+                "printWidht": 80,
+                "trailingComma":"es5",
+                "semi": true,
+                "jsxSingleQuote": true,
+                "singleQuote": true,
+                "useTabs": true,
+                "endOfLine": "auto",
+                "tabWidth": 3
+            }
+        ]
+    }
+}
