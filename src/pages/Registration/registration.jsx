@@ -4,7 +4,6 @@ import Footer from '../../components/footer/footer';
 import Header from '../../components/header/header';
 import Polar_Chart from '../../components/polar_chart/polar_chart';
 import { MdOutlineAddAPhoto } from '../../../node_modules/react-icons/md';
-  
 
 const Registration = () => {
     return(

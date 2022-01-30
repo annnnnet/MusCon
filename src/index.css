@@ -1,16 +1,3 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
 main {
   /* margin: 0; */
   font-family: "Comfortaa", cursive;
@@ -63,7 +50,44 @@ main {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+<<<<<<< HEAD
 }  
+=======
+}
+
+.standart {
+  font-size: 15px;
+  font-weight: 300;
+  color: #b61984;
+  font-family: "Comfortaa", cursive;
+  margin: 0px;
+  width: 100%;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0px;
+  margin-top: 50px;
+  margin-bottom: 0px;
+  max-width: auto;
+  /* margin-left: 0px; */
+  /* margin-right: 15px; */
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0px;
+  /* margin-bottom: 300px; */
+  max-width: auto;
+  /* margin-bottom: 50px; */
+}
+>>>>>>> 32486fad904828c7e0da9b3d37d91771b7b11b3c
 
 a[role="button"] {
   display: flex;
@@ -94,6 +118,31 @@ a[role="button"]:hover {
   border-color: #b61984;
 }
 
+<<<<<<< HEAD
+=======
+.back img {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.left {
+  align-items: center;
+  justify-content: left;
+  margin: 0px;
+  padding: 0px;
+  /* padding-left: 10px; */
+}
+
+.right {
+  align-items: center;
+  justify-content: right;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+}
+
+>>>>>>> 32486fad904828c7e0da9b3d37d91771b7b11b3c
 .canva {
   height: 100%;
   width: 100%;
