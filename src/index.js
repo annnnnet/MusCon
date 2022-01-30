@@ -19,7 +19,7 @@ window.$ = $;
     SHOW UPLOADED IMAGE
 * ========================================== */
 // function readURL(input) {
-  
+
 //     if (input.files && input.files[0]) {
 //         var reader = new FileReader();
 
@@ -51,10 +51,10 @@ window.$ = $;
 // }
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+	<React.StrictMode>
+		<App />
+	</React.StrictMode>,
+	document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
