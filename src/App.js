@@ -6,12 +6,20 @@ import PostCreate from './pages/postcreate/postcreate';
 import My_Page from './pages/My_Page/my_page';
 import User_Page from './pages/User_Page/user_page';
 import Registration from './pages/Registration/registration';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
+	Redirect,
+} from 'react-router-dom';
 
 export default function App() {
 	return (
 		<Router>
 			<Switch>
+				<Route exact path='/'>
+					<Redirect to='/Main' />
+				</Route>
 				<Route path='/Main'>
 					<Main />
 				</Route>
