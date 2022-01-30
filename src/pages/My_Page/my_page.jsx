@@ -5,7 +5,6 @@ import { ImPencil } from '../../../node_modules/react-icons/im';
 
 // import { MDBContainer } from "mdbreact";
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
 import './my_page.css';
 import Footer from '../../components/footer/footer';
@@ -181,7 +180,7 @@ const My_Page = () => {
 								</div>
 								<div
 									className='col-md-8  tab-pane fade show active'
-									id='nav-songes'
+									id='nav-songs'
 									role='tabpanel'
 									aria-labelledby='nav-songs-tab'
 								>
