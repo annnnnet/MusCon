@@ -20,7 +20,7 @@ const Pd = () => {
           <News_output/>
         </div>
         <div className="main_wavy_bottom">
-          <img src={require("../../pics/white_bottom_wave_01.png")}/>
+          <img className="wavy" src={require("../../pics/white_bottom_wave_01.png")}/>
         </div>
 
         

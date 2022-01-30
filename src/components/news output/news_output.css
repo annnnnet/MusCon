@@ -59,8 +59,8 @@ hr{
     background: #b61984;
     box-shadow: 5px 2px 5px 2px #b61984;
     text-align: center;
-    font-size: 30px;
-    font-family: "La Belle Aurore";
+    font-size: 35px;
+    font-family: "Neonderthaw";
     color:white;
     padding: 10px;
     margin-right: 0px;
@@ -106,17 +106,4 @@ hr{
 
 .carousel-indicators button{
     background-color: #b61984!important;
-}
-
-.carousel-control-next-icon:after
-{
-  content: '>';
-  font-size: 20px;
-  color: #b61984;
-}
-
-.carousel-control-prev-icon:after {
-  content: '<';
-  font-size: 20px;
-  color: #b61984;
 }

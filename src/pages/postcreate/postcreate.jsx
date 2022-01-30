@@ -71,7 +71,7 @@ const PostCreate = () => {
      
   </form> 
   </div>
-  <div className="yellow_bottom_wave"><img src={require("../../pics/white_bottom_wave_01.png")}/></div>
+  <div className="yellow_bottom_wave"><img className="wavy" src={require("../../pics/white_bottom_wave_01.png")}/></div>
 
     <Footer/>
   </div>

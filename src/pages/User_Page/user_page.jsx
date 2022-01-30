@@ -24,22 +24,19 @@ const songs=["Song1-Artist1", "Song2-Artist2", "Song3-Artist3","Song4-Artist4", 
 
 const User_Page = () => {
     return (
-        <div >
-       <div class="top sticky-top ">
+        <div className='back'>
+       <div class="sticky-top">
           <Header />  
-          </div>
-            <div class="top back">
-                {/* <img src="/images/Wave_Violet_top_right_shape_1.png" /> */}
+          </div>            
                 <img src="/images/Violet_top_left_wave_1.png" />
-        </div>
-                <body class="col-md-12 left violet_back body w-100 ">
+                <body class="col-md-12 violet_back body w-100 ">
                     <div class="col-md-8 column canva ">
                         <h4 class=" col-md-8  heading personal_data">Manuella_Tarly</h4>
                         <div class="row location">
                         <i class=" col-md-1 fa-2x sign" ><ImLocation /></i>
                         <h1 class="col-md-7 location_name">Los-Angles, USA</h1>
                         </div>
-                    <div class="col-md-8 left ">
+                    <div class="col-md-8 ">
                         <img src="/images/ava.jpg" class="img-fluid rounded-circle  link-dark w-50" />
                         <a href="#" role="button" class=" edit col-md-4 text-capitalize btn "><RiUserFollowLine /> Follow back </a>
                         <a href="#" role="button" class=" edit col-md-4 text-capitalize btn "><RiChat1Line/> Send a message </a>
@@ -49,7 +46,7 @@ const User_Page = () => {
             </body >
             {/* <div class="col-md-12 right yellow_back body w-100"> */}
 
-             <body class="col-md-12 right yellow_back body w-100">
+             <body class="col-md-12 yellow_back body w-100">
             <div class="bottom back switch_1">
                 <img   src="/images/Wave_Violet_bottom_right_shape_1.png" />
             <div class="col-md-8 column canva ">
@@ -128,15 +125,10 @@ const User_Page = () => {
                 </div>  
             </div>
             </body>
-            <div class="bottom back">
+            <div class="bottom">
         <img src="/images/Wave_Violet_bottom_right_shape_11.png" />
         </div>
-        
-           
-{/* <Friends/> */}
-        <div class="bottom">
           <Footer /> 
-        </div>
      </div>
      );
 };

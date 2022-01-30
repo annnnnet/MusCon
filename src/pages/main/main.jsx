@@ -1,14 +1,14 @@
 import React from "react";
 import "./main.css";
 import "../../basic.css";
-import logo from "../../pics/logo2.png";
+import logo from "../../pics/last.gif";
 import Footer from "../../components/footer/footer";
 import Header from "../../components/header/header";
 
 const Main = () => {
   return (
     <div class="back">
-      <div class="top sticky-top ">
+      <div class="sticky-top ">
           <Header />  
           </div>
       <div className="content">
@@ -73,7 +73,7 @@ const Main = () => {
           </div>
         </div>
         <div className="main_wavy_bottom">
-          <img src={require("../../pics/white_bottom_wave_01.png")}/>
+          <img className="wavy" src={require("../../pics/white_bottom_wave_01.png")}/>
         </div>
 
         
