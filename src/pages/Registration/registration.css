@@ -1,8 +1,4 @@
-.present {
-  /* margin-left: 410px;
-  margin-top: 110px; */
-  /* font-family: "Beth Ellen", cursive; */
-
+/* .present {
   font-size: 100px;
   font-weight: 100px;
   display: flex;
@@ -11,45 +7,61 @@
   align-items: center;
   margin: auto;
   padding: 30px;
-  /* color: #ffd043; */
   color: #b61984;
-  /* font-family: "Dancing Script", cursive; */
+} */
+
+.reg_wavy_content {
+  width: 100%;
+  position: relative;
+  height: fit-content;
+  background-color: #dcd1f3;
+  margin: 0px;
+  padding: 0 5%;
 }
 
-.signup-form {
-  width: 100%;
-  height: 100%;
+.reg_logo img {
+  display: block;
+  width: 700px;
   max-width: 100%;
-  min-height: 1vh;
-  padding: 30px;
-  padding-top: 60px;
-  padding-bottom: 15px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  justify-content: center;
-  /* background-color: #80108a25; */
-  border: 2px solid #ffd043;
-  box-shadow: 2px #ffd043;
-  border-radius: 20px;
+  margin-top: -20%;
+  margin-bottom: 20%;
 }
 
 .form-container {
   height: 100%;
   width: 100%;
+  max-width: 100%;
   min-height: 1vh;
+  background-color: transparent;
+  margin: 0px;
+  margin-top: -5%;
+  margin-bottom: 5%;
+  padding: auto;
+}
+.signup-form {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  min-height: 1vh;
+  padding: 0px;
   margin: auto;
-  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffd043;
+  box-shadow: 2px #ffd043;
+  border-radius: 20px;
 }
 
 ::placeholder {
   font-style: normal;
-  font-size: 1rem;
-  font-weight: 1px;
+  font-size: 15px;
+  font-weight: 1;
   color: rgba(97, 29, 153, 0);
-  padding: 5px;
+  padding: auto;
 }
+
 input .form-control:focus {
   border: 5px solid #ffd043;
   box-shadow: #ffd043;
@@ -59,6 +71,7 @@ input .form-control:focus {
 button[type="submit"] {
   position: relative;
   padding: 15px;
+  font-size: large;
   font-weight: 400;
   line-height: 1.5;
   margin: auto;
@@ -69,7 +82,7 @@ button[type="submit"] {
   background-color: #b61984;
   color: #ffffff;
   border-style: solid;
-  border-width: 1px;
+  border-width: 2px;
   border-color: #b61984;
   border-bottom-left-radius: 50px;
   border-top-left-radius: 50px;
@@ -80,70 +93,61 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
   border-style: solid;
-  border-width: 1px;
+  border-width: 2px;
   background-color: transparent;
   border-color: #b61984;
   color: #b61984;
 }
 
 .form-signup {
+  font-size: medium;
+  font-weight: 200;
   width: 100%;
   height: 100%;
   min-height: 1vh;
-  padding: 10px;
+  margin: auto;
+  padding: auto;
   padding-top: 5px;
   padding-bottom: 5px;
-  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(3px + 2vmin);
-  /* color: #ffd043; */
   color: #b61984;
-  font-weight: 200;
 }
 
 .form-signup input {
-  z-index: 1;
-  margin-bottom: 2px;
+  margin-bottom: 5px;
   border-radius: 50px;
   border-color: #00000000;
 }
 
 .form-signup input[type="password"] {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
-.form-signup input:hover {
+/* .form-signup input:hover {
   color: #000000;
   border-color: transparent;
-}
-
-.logo {
-  display: block;
-  max-width: auto;
-  max-height: auto;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: right;
-}
+} */
 
 form .form-check {
-  font-size: 14px;
-  line-height: 20px;
+  font-size: small;
   margin: 10px;
   margin-left: 20px;
   color: #000000;
 }
 
 form .already {
-  line-height: 20px;
-  font-size: 14px;
+  font-size: small;
+  margin: 10px;
+  color: #000000;
+}
+
+.warning {
+  font-size: small;
   margin: 5px;
   color: #000000;
-  background-color: #dcd1f3;
 }
 
 p a:hover {
@@ -155,10 +159,33 @@ p a {
   color: #b61984;
 }
 
-.add_photo {
-  font-size: 10px;
-  font-weight: 200;
-  max-height: 25%;
+button.add_photo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: large;
+  font-weight: 400;
+  padding: auto;
+  margin: auto;
+  margin-top: -20%;
+  margin-left: 55%;
+  position: relative;
+  background-color: transparent;
+  border-color: #b61984;
+  color: #b61984;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 50px;
+  width: 100%;
+}
+
+button.add_photo:hover {
+  border-style: solid;
+  border-width: 2px;
+  background-color: #b61984;
+  border-color: #b61984;
+  color: #ffffff;
 }
 
 /* #upload {

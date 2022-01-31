@@ -6,7 +6,7 @@ const Header = () => {
 		<header className='header standart'>
 			<div className='media small_logo col-md-1 text-right'>
 				<img
-					src='/images/logo2.png'
+					src='/images/logo3.png'
 					className='img-fluid  '
 					width='60'
 					height='60'

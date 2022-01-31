@@ -33,7 +33,7 @@ const PostCreate = () => {
 
 	return (
 		<div>
-			<div className='top sticky-top '>
+			<div className='sticky-top '>
 				<Header />
 			</div>
 			<div className='yellow_top_wave'>

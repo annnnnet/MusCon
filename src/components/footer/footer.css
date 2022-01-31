@@ -1,22 +1,23 @@
-.footer{
+.footer {
   margin-bottom: 0px;
-  position: relative; 
+  position: relative;
   margin-top: 10px;
+  width: 100%;
 }
 
-.footer_text{
+.footer_text {
   font-size: large;
   text-align: center;
   width: 100%;
   margin-bottom: 0px;
-  font-family: 'Comfortaa';  
+  font-family: "Comfortaa";
   color: white;
-  position: absolute; 
-  bottom:0px;
+  position: absolute;
+  bottom: 0px;
 }
 
-.footer_wave{
-  position: relative;   
-  bottom:0px;
+.footer_wave {
+  position: relative;
+  bottom: 0px;
   width: 100%;
 }
