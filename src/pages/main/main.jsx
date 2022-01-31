@@ -1,14 +1,15 @@
 import React from "react";
 import "./main.css";
 import "../../basic.css";
-import logo from "../../pics/logo2.png";
+import logo from "../../pics/logo3.gif";
+// import logo from "../../pics/logo2.png";
 import Footer from "../../components/footer/footer";
 import Header from "../../components/header/header";
 
 const Main = () => {
   return (
-    <div class="back">
-      <div class="top sticky-top ">
+    <div class="background">
+      <div class="sticky-top ">
           <Header />  
           </div>
       <div className="content">

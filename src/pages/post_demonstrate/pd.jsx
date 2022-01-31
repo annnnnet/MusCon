@@ -7,8 +7,8 @@ import Header from "../../components/header/header";
 
 const Pd = () => {
   return (
-    <div class="back">
-      <div class="top sticky-top ">
+    <div class="background">
+      <div class="sticky-top ">
           <Header />  
           </div>
       <div className="content">

@@ -21,8 +21,8 @@ var musicians = [
 
 const Singerchoose = () => {
   return (
-    <div class="back">
-      <div class="top sticky-top ">
+    <div class="background">
+      <div class="sticky-top ">
           <Header />  
           </div>
 
