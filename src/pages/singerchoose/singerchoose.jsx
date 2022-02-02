@@ -1,9 +1,9 @@
 import React from 'react';
-import './singerchoose.css';
+import './SingerChoose.css';
 import '../../basic.css';
 import singer from '../../pics/singer.jpg';
-import Footer from '../../components/footer/footer';
-import Header from '../../components/header/header';
+import Footer from '../../components/Footer/Footer';
+import Header from '../../components/Header/Header';
 var musicians = [
 	'BLACKPINK',
 	'Maneskin',
@@ -19,7 +19,7 @@ var musicians = [
 	'Vivaldi',
 ];
 
-const Singerchoose = () => {
+const SingerChoose = () => {
 	return (
 		<div className='background'>
 			<div className='sticky-top '>
@@ -84,4 +84,4 @@ const Singerchoose = () => {
 	);
 };
 
-export default Singerchoose;
+export default SingerChoose;

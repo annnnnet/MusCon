@@ -1,12 +1,11 @@
 import React from 'react';
-import './registration.css';
+import './Registration.css';
 import '../../basic.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
-import Footer from '../../components/footer/footer';
-import Header from '../../components/header/header';
-import Polar_Chart from '../../components/polar_chart/polar_chart';
-import { MdOutlineAddAPhoto } from '../../../node_modules/react-icons/md';
-import logo from '../../pics/last.gif';
+import Footer from '../../components/Footer/Footer';
+import Header from '../../components/Header/Header';
+import PolarChart from '../../components/PolarChart/PolarChart';
+import { MdOutlineAddAPhoto } from 'react-icons/md';
 
 const Registration = () => {
 	return (
@@ -17,7 +16,7 @@ const Registration = () => {
 			<div className='content'>
 				<img
 					className='wavy'
-					src='/images/Violet_top_left_wave_1.png'
+					src='/Images/Violet_top_left_wave_1.png'
 					alt='wave'
 				/>
 
@@ -26,7 +25,7 @@ const Registration = () => {
 					<h1 class="present">MusCon</h1>
           </div> */}
 					<div className='reg_logo col-sm-6 '>
-						<img src='/images/logo3.gif' alt='logo' />
+						<img src='/Images/logo3.gif' alt='logo' />
 					</div>
 
 					<div className='form-container col-sm-6 '>
@@ -38,7 +37,7 @@ const Registration = () => {
 								<div className='form-row  '>
 									<div className=' form-group ava col-md-6'>
 										<img
-											src='/images/ava.jpg'
+											src='/Images/ava.jpg'
 											className='rounded-circle'
 											alt='user_avatar'
 										/>
@@ -133,7 +132,7 @@ const Registration = () => {
 				<div className='bottom'>
 					<img
 						className='wavy'
-						src='/images/Wave_Violet_bottom_right_shape_1.png'
+						src='/Images/Wave_Violet_bottom_right_shape_1.png'
 						alt='wave'
 					/>
 				</div>

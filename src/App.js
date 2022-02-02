@@ -1,11 +1,11 @@
 import React from 'react';
-import Main from './pages/main/main';
-import Pd from './pages/post_demonstrate/pd';
-import Singerchoose from './pages/singerchoose/singerchoose';
-import PostCreate from './pages/postcreate/postcreate';
-import My_Page from './pages/My_Page/my_page';
-import User_Page from './pages/User_Page/user_page';
-import Registration from './pages/Registration/registration';
+import Main from './pages/Main/Main';
+import PostDemonstrate from './pages/PostDemonstrate/PostDemonstrate';
+import SingerChoose from './pages/SingerChoose/SingerChoose';
+import PostCreate from './pages/PostCreate/PostCreate';
+import MyPage from './pages/MyPage/MyPage';
+import UserPage from './pages/UserPage/UserPage';
+import Registration from './pages/Registration/Registration';
 import {
 	BrowserRouter as Router,
 	Switch,
@@ -23,22 +23,22 @@ export default function App() {
 				<Route path='/Main'>
 					<Main />
 				</Route>
-				<Route path='/Singerchoose'>
-					<Singerchoose />
+				<Route path='/SingerChoose'>
+					<SingerChoose />
 				</Route>
 				<Route path='/PostCreate'>
 					<PostCreate />
 				</Route>
-				<Route path='/pd'>
-					<Pd />
+				<Route path='/PostDemonstrate'>
+					<PostDemonstrate />
 				</Route>
-				<Route path='/My_Page'>
-					<My_Page />
+				<Route path='/MyPage'>
+					<MyPage />
 				</Route>
-				<Route path='/User_Page'>
-					<User_Page />
+				<Route path='/UserPage'>
+					<UserPage />
 				</Route>
-				<Route path='/reg'>
+				<Route path='/Registration'>
 					<Registration />
 				</Route>
 			</Switch>

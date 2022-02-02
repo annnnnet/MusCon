@@ -1,10 +1,9 @@
 import React from 'react';
-
 import { PolarArea } from 'react-chartjs-2';
 import { MDBContainer } from 'mdbreact';
 
 // class Polar_Chart extends React.Component {
-const Polar_Chart = () => {
+const PolarChart = () => {
 	const state = {
 		dataPolar: {
 			datasets: [
@@ -35,4 +34,4 @@ const Polar_Chart = () => {
 	//   }
 };
 
-export default Polar_Chart;
+export default PolarChart;

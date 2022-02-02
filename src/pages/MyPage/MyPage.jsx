@@ -1,22 +1,23 @@
 import React from 'react';
-import { ImLocation } from '../../../node_modules/react-icons/im';
-import { RiUserFollowLine } from '../../../node_modules/react-icons/ri';
-import { RiChat1Line } from '../../../node_modules/react-icons/ri';
-// import { MDBContainer } from "mdbreact";
+import { ImLocation } from 'react-icons/im';
+
+import { ImPencil } from 'react-icons/im';
 import '../../index.css';
 import '../../basic.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
-import './user_page.css';
-import Footer from '../../components/footer/footer';
-import Header from '../../components/header/header';
+import 'bootstrap-css-only/css/bootstrap.min.css';
+import './MyPage.css';
+import Footer from '../../components/Footer/Footer';
+import Header from '../../components/Header/Header';
+import Friends from '../../components/tables/friends';
+import PolarChart from '../../components/PolarChart/PolarChart';
 const friends = [
 	{
 		image: (
 			<img
 				className='col-md-2 ava rounded-circle'
-				src='/images/ava.jpg'
+				src='/Images/ava.jpg'
 				alt='friend_avatar'
 			/>
 		),
@@ -26,7 +27,7 @@ const friends = [
 		image: (
 			<img
 				className='col-md-2 ava rounded-circle'
-				src='/images/ava.jpg'
+				src='/Images/ava.jpg'
 				alt='friend_avatar'
 			/>
 		),
@@ -36,7 +37,7 @@ const friends = [
 		image: (
 			<img
 				className='col-md-2 ava rounded-circle'
-				src='/images/ava.jpg'
+				src='/Images/ava.jpg'
 				alt='friend_avatar'
 			/>
 		),
@@ -46,7 +47,7 @@ const friends = [
 		image: (
 			<img
 				className='col-md-2 ava rounded-circle'
-				src='/images/ava.jpg'
+				src='/Images/ava.jpg'
 				alt='friend_avatar'
 			/>
 		),
@@ -56,7 +57,7 @@ const friends = [
 		image: (
 			<img
 				className='col-md-2 ava rounded-circle'
-				src='/images/ava.jpg'
+				src='/Images/ava.jpg'
 				alt='friend_avatar'
 			/>
 		),
@@ -71,7 +72,8 @@ const songs = [
 	'Song4-Artist4',
 	'Song5-Artist5',
 ];
-const User_Page = () => {
+
+const MyPage = () => {
 	return (
 		<div className='background standart'>
 			<div className='sticky-top '>
@@ -80,7 +82,7 @@ const User_Page = () => {
 			<div className='content'>
 				<img
 					className='wavy'
-					src='/images/Violet_top_left_wave_1.png'
+					src='/Images/Violet_top_left_wave_1.png'
 					alt='wave'
 				/>
 				<div className='my_page_wavy_content'>
@@ -95,11 +97,11 @@ const User_Page = () => {
 								</i>
 								<h1 className='col-sm-7 location_name'>
 									Los-Angles, USA
-								</h1>{' '}
+								</h1>
 							</div>
 							<div className=' col-sm-10 ava_reg canva'>
 								<img
-									src='/images/ava.jpg'
+									src='/Images/ava.jpg'
 									className='col-sm-12 rounded-circle'
 									alt='user_avatar'
 								/>
@@ -108,14 +110,7 @@ const User_Page = () => {
 									role='button'
 									className='edit col-sm-8 text-capitalize btn'
 								>
-									<RiUserFollowLine /> Follow back{' '}
-								</a>
-								<a
-									href='#'
-									role='button'
-									className=' edit col-sm-8 text-capitalize btn '
-								>
-									<RiChat1Line /> Send a message{' '}
+									<ImPencil /> Edit profile{' '}
 								</a>
 							</div>
 						</div>
@@ -125,13 +120,14 @@ const User_Page = () => {
 						<div className='bottom switch_1'>
 							<img
 								className='wavy'
-								src='/images/Wave_Violet_bottom_right_shape_1.png'
+								src='/Images/Wave_Violet_bottom_right_shape_1.png'
 								alt='wave'
 							/>
 							<div className='col-sm-12 canva '>
 								<h1 className='col-sm-8 heading  favorites'>
 									Favorites
 								</h1>
+
 								<div className='col-sm-8 table_1'>
 									<nav className=' col-sm-12  '>
 										<div
@@ -170,7 +166,7 @@ const User_Page = () => {
 											role='tabpanel'
 											aria-labelledby='nav-friends-tab'
 										>
-											<div className='list-group-item list'>
+											<div className=' list-group-item list'>
 												{friends
 													.slice(0, friends.length)
 													.map((item, index) => {
@@ -190,10 +186,9 @@ const User_Page = () => {
 																</a>
 																<button
 																	type='button'
-																	className=' col-sm-2 right add_1 btn'
-																>
-																	<i className='col-sm-2 left fas fa-plus'></i>
-																</button>
+																	className=' col-sm-2 right delete_1 btn-close'
+																	aria-label='Close'
+																></button>
 															</div>
 														);
 													})}
@@ -220,10 +215,9 @@ const User_Page = () => {
 															</h4>
 															<button
 																type='button'
-																className=' col-sm-2 right add_2 btn'
-															>
-																<i className='col-sm-2 left fas fa-plus'></i>
-															</button>
+																className=' col-sm-2 right delete_2 btn-close'
+																aria-label='Close'
+															></button>
 														</div>
 													);
 												})}
@@ -234,11 +228,12 @@ const User_Page = () => {
 							</div>
 						</div>
 					</div>
+
 					<div className='left violet_back body'>
 						<div className='bottom switch_2'>
 							<img
-								className='wavy'
-								src='/images/Wave_Violet_top_right_shape_1.png'
+								className=''
+								src='/Images/Wave_Violet_top_right_shape_1.png'
 								alt='wave'
 							/>
 							<div className='col-sm-12 canva '>
@@ -262,7 +257,7 @@ const User_Page = () => {
 												aria-controls='nav-genres'
 											>
 												Genres
-											</button>{' '}
+											</button>
 										</div>
 									</nav>
 									<div className='col-sm-12 tab-content'>
@@ -287,10 +282,9 @@ const User_Page = () => {
 															</h4>
 															<button
 																type='button'
-																className=' col-sm-2 right add_2 btn'
-															>
-																<i className='col-sm-2 left fas fa-plus'></i>
-															</button>
+																className=' col-sm-2 right delete_2 btn-close'
+																aria-label='Close'
+															></button>
 														</div>
 													);
 												})}
@@ -301,13 +295,13 @@ const User_Page = () => {
 							</div>
 						</div>
 					</div>
-				</div>
-				<div className='bottom'>
-					<img
-						className='wavy'
-						src='/images/Wave_Violet_bottom_right_shape_11.png'
-						alt='wave'
-					/>
+					<div className='bottom'>
+						<img
+							className='wavy'
+							src='/Images/Wave_Violet_bottom_right_shape_11.png'
+							alt='wave'
+						/>
+					</div>
 				</div>
 				<Footer />
 			</div>
@@ -315,4 +309,4 @@ const User_Page = () => {
 	);
 };
 
-export default User_Page;
+export default MyPage;

@@ -1,10 +1,10 @@
 import React from 'react';
 import 'react-dropzone-uploader/dist/styles.css';
-import './postcreate.css';
+import './PostCreate.css';
 import '../../basic.css';
 import Dropzone from 'react-dropzone-uploader';
-import Footer from '../../components/footer/footer';
-import Header from '../../components/header/header';
+import Footer from '../../components/Footer/Footer';
+import Header from '../../components/Header/Header';
 
 const args = {
 	user_avatar: require('../../pics/singer.jpg'),

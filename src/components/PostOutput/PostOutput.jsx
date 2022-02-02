@@ -1,5 +1,5 @@
 import React from 'react';
-import './news_output.css';
+import './PostOutput.css';
 import '../../basic.css';
 import { Carousel } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -20,7 +20,7 @@ var post_args = {
 	],
 };
 
-function News_output() {
+function PostOutput() {
 	return (
 		<div className='post'>
 			<div className='flexy'>
@@ -54,4 +54,4 @@ function News_output() {
 		</div>
 	);
 }
-export default News_output;
+export default PostOutput;

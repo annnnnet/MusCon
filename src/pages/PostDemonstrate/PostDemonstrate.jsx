@@ -1,11 +1,11 @@
 import React from 'react';
-import '../main/main.css';
+import '../Main/Main.css';
 import '../../basic.css';
-import News_output from '../../components/news output/news_output';
-import Footer from '../../components/footer/footer';
-import Header from '../../components/header/header';
+import News_output from '../../components/PostOutput/PostOutput';
+import Footer from '../../components/Footer/Footer';
+import Header from '../../components/Header/Header';
 
-const Pd = () => {
+const PostDemonstrate = () => {
 	return (
 		<div className='background'>
 			<div className='sticky-top '>
@@ -34,4 +34,4 @@ const Pd = () => {
 	);
 };
 
-export default Pd;
+export default PostDemonstrate;
