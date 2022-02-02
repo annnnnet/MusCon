@@ -50,9 +50,6 @@ main {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-<<<<<<< HEAD
-}  
-=======
 }
 
 .standart {
@@ -87,7 +84,6 @@ code {
   max-width: auto;
   /* margin-bottom: 50px; */
 }
->>>>>>> 32486fad904828c7e0da9b3d37d91771b7b11b3c
 
 a[role="button"] {
   display: flex;
@@ -118,14 +114,6 @@ a[role="button"]:hover {
   border-color: #b61984;
 }
 
-<<<<<<< HEAD
-=======
-.back img {
-  width: 100%;
-  margin: 0px;
-  padding: 0px;
-}
-
 .left {
   align-items: center;
   justify-content: left;
@@ -142,7 +130,6 @@ a[role="button"]:hover {
   width: 100%;
 }
 
->>>>>>> 32486fad904828c7e0da9b3d37d91771b7b11b3c
 .canva {
   height: 100%;
   width: 100%;

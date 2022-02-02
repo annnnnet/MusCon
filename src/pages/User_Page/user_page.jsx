@@ -15,6 +15,7 @@ const friends = [
 			<img
 				className='col-md-2 ava rounded-circle link-dark'
 				src='/images/ava.jpg'
+				alt='friend_avatar'
 			/>
 		),
 		name: 'Username1',
@@ -24,6 +25,7 @@ const friends = [
 			<img
 				className='col-md-2 ava rounded-circle link-dark'
 				src='/images/ava.jpg'
+				alt='friend_avatar'
 			/>
 		),
 		name: 'Username2',
@@ -33,6 +35,7 @@ const friends = [
 			<img
 				className='col-md-2 ava rounded-circle link-dark'
 				src='/images/ava.jpg'
+				alt='friend_avatar'
 			/>
 		),
 		name: 'Username3',
@@ -42,6 +45,7 @@ const friends = [
 			<img
 				className='col-md-2 ava rounded-circle link-dark'
 				src='/images/ava.jpg'
+				alt='friend_avatar'
 			/>
 		),
 		name: 'Username4',
@@ -51,6 +55,7 @@ const friends = [
 			<img
 				className='col-md-2 ava rounded-circle link-dark'
 				src='/images/ava.jpg'
+				alt='friend_avatar'
 			/>
 		),
 		name: 'Username5',
@@ -66,13 +71,17 @@ const songs = [
 ];
 
 const My_Page = () => {
-    return (
-        <div className='back'>
-       <div class="sticky-top">
-          <Header />  
-          </div>            
-                <img src="/images/Violet_top_left_wave_1.png" />
-                <body className='col-md-12 left violet_back body w-100 '>
+	return (
+		<div className='back'>
+			<div className='sticky-top'>
+				<Header />
+			</div>
+			<img
+				className='wavy'
+				src='/images/Violet_top_left_wave_1.png'
+				alt='wave'
+			/>
+			<body className='col-md-12 left violet_back body w-100 '>
 				<div className='col-md-8 column canva '>
 					<h4 className=' col-md-8  heading personal_data'>
 						Manuella_Tarly
@@ -87,6 +96,7 @@ const My_Page = () => {
 						<img
 							src='/images/ava.jpg'
 							className='img-fluid rounded-circle  link-dark w-50'
+							alt='friend_avatar'
 						/>
 						<a
 							href='#'
@@ -109,8 +119,12 @@ const My_Page = () => {
 			{/* <div class="col-md-12 right yellow_back body w-100"> */}
 
 			<body className='col-md-12 right yellow_back body w-100'>
-				<div className='bottom back switch_1'>
-					<img src='/images/Wave_Violet_bottom_right_shape_1.png' />
+				<div className=''>
+					<img
+						className='wavy'
+						src='/images/Wave_Violet_bottom_right_shape_1.png'
+						alt='wave'
+					/>
 					<div className='col-md-8 column canva '>
 						<h1 className='col-md-8 heading favorites'>Favorites</h1>
 
@@ -210,8 +224,9 @@ const My_Page = () => {
 			<body className='col-md-12 left violet_back body pt-0 w-100'>
 				<div className='top back switch_2'>
 					<img
-						className=''
+						className='wavy'
 						src='/images/Wave_Violet_top_right_shape_1.png'
+						alt='wave'
 					/>
 					<div className='col-md-8 column violet_back canva '>
 						<h1 className='col-md-6 title  heading pref'>
@@ -267,14 +282,14 @@ const My_Page = () => {
 					</div>
 				</div>
 			</body>
-			<div className='bottom back'>
-				<img src='/images/Wave_Violet_bottom_right_shape_11.png' />
+			<div>
+				<img
+					className='wavy'
+					src='/images/Wave_Violet_bottom_right_shape_11.png'
+					alt='wave'
+				/>
 			</div>
-
-			{/* <Friends/> */}
-			<div className='bottom'>
-				<Footer />
-			</div>
+			<Footer />
 		</div>
 	);
 };

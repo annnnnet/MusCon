@@ -1,42 +1,47 @@
 import React from 'react';
-import "./header.css";
-import styled from 'styled-components'
-import logo from '../../pics/logo.png';
-import {
-  BrowserRouter as Router,
-  NavLink
-} from "react-router-dom";
-
-const Link = styled(NavLink)`     
-  color: black;
-  &:hover {
-    text-decoration: underline;
-    color: #b61984;
-  }
-  `
+import './header.css';
 
 const Header = () => {
-    return(<header className="header">
-      <div className="header_logo">
-            <img  src={logo}></img>
-        </div>
-    <ul className="header_left_nav">
-              <li>
-            <Link to="/main">Main</Link>
-          </li>
-          <li>
-            <Link to="/singerchoose">Singerchoose</Link>
-          </li>
-          <li>
-            <Link to="/PostCreate">Poscreate</Link>
-          </li>
-        </ul>
+	return (
+		<header className='header standart'>
+			<div className='media small_logo col-md-1 text-right'>
+				<img
+					src='/images/logo.png'
+					className='img-fluid  '
+					width='60'
+					height='60'
+					alt='logo'
+				/>
+			</div>
+			<ul className='header_left_nav col-md-7'>
+				<li>
+					<a href='/singerchoose'>Singerchoose</a>
+				</li>
+				<li>
+					<a href='/my_page'>My page</a>
+				</li>
+				<li>
+					<a href='/genrechoose'>Genrechoose</a>
+				</li>
+			</ul>
 
-      <div className="header_buttons">
-      <button type="button" class="header_vertical_button">Login</button>
-      <button type="button" class="header_vertical_button">Sign up</button>
-    </div>
-  </header>
-    );
+			<div className='group standart col-md-4'>
+				<a
+					href='/login'
+					role='button'
+					className='text-capitalize btn col-md-4  justify-content-right'
+				>
+					Login
+				</a>
+				<a
+					href='/registration'
+					role='button'
+					className='text-capitalize btn active col-md-4  justify-content-left'
+				>
+					Sign-Up
+				</a>
+			</div>
+		</header>
+	);
 };
 export default Header;

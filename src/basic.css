@@ -16,14 +16,6 @@
     font-family: 'Comfortaa'; 
 }
 
-hr{
-    border: none;
-    color: #b61984;
-    background-color: #b61984;
-    height: 3px;
-    margin-top: 0px;
-}
-
 .center{
     margin-left: auto;
     margin-right: auto;

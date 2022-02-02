@@ -24,7 +24,11 @@ function News_output() {
 	return (
 		<div className='post'>
 			<div className='flexy'>
-				<img className='post_user_logo' src={post_args.user_avatar} />
+				<img
+					className='post_user_logo'
+					src={post_args.user_avatar}
+					alt='post_author_avatar'
+				/>
 				<p className='post_username'>{post_args.username}</p>
 				<p className='post-genre'>{post_args.genre}</p>
 			</div>
@@ -40,7 +44,7 @@ function News_output() {
 								<img
 									className='post_carousel_img mx-auto d-block'
 									src={pic}
-									alt='First slide'
+									alt='Carousel slide'
 								/>
 							</Carousel.Item>
 						);
