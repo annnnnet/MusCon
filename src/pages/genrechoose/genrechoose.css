@@ -1,0 +1,109 @@
+.sc_top {
+    position: relative;
+  }
+  
+  .sc_top_content {
+    font-family: "Comfortaa";
+    position: absolute;
+    top:30%;
+    width: 100%;
+  }
+  
+  #sc_text{
+      text-align: center;
+      font-family: "Comfortaa";
+      font-size: 60px;
+  }
+  
+  .sc_wavy_content{
+      width: 100%;
+      position: relative;
+      height: fit-content;
+      background-color: #dcd1f3;
+      background-image: url("../../pics/white_bottom_wave_02.png");
+      background-position: bottom;
+      background-repeat: no-repeat;
+  }
+  
+  .sc_search_box {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    width: fit-content;
+  }
+  
+  .sc_search {
+    margin: 20px;
+    width: 70%;
+    padding: 5px 15px;
+    font-size: large;
+    text-align: center;
+    border-radius: 50px;
+    border: 3px solid #b61984;
+    height: fit-content;
+  }
+  
+  .sc_button {
+    height: 100%;
+    width: fit-content;
+    margin: 20px;
+    padding: 0px 15px;
+    font-size: x-large;
+    background-color: #b61984;
+    border-radius: 50px;
+    border: 3px solid #b61984;
+    color: white;
+  }
+  
+  .sc_button:hover{
+      background-color: white; 
+      color: #b61984;
+  }
+  
+  .sc_musician {
+    font-size: x-large;
+    padding: 15px;
+    margin: 10px 1%;
+    padding-bottom: 0px;
+    border: #dcd1f3 3px solid!important;
+    text-align: center;
+  }
+  
+  .sc_musician div {
+    height: max-content;
+  }
+  
+  
+  .sc_singer{
+      margin: 0!important;
+      padding: 5% 0;
+      font-size: 24px;
+  }
+  
+  .sc_plus{
+      width: 36px;
+      height: fit-content;
+      padding: 0;
+      margin-top: 5%;
+      margin-right: 0%;
+      margin-left: auto;
+      border: none;
+      border-radius: 50px;
+      background-color: white;
+  }
+  
+  .sc_plus svg{
+      fill:#b61984;
+      width: 36px;
+      border-radius: 50px;
+      border: 3px solid #b61984;
+  }
+  
+  .sc_plus:hover{
+      background-color: #b61984;
+  }
+  
+  .sc_plus svg:hover{
+      fill:white;
+  }
