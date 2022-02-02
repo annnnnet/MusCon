@@ -2,10 +2,11 @@ import React from 'react';
 import { ImLocation } from '../../../node_modules/react-icons/im';
 
 import { ImPencil } from '../../../node_modules/react-icons/im';
-
-// import { MDBContainer } from "mdbreact";
+import '../../index.css';
+import '../../basic.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'mdbreact/dist/css/mdb.css';
+import 'bootstrap-css-only/css/bootstrap.min.css';
 import './my_page.css';
 import Footer from '../../components/footer/footer';
 import Header from '../../components/header/header';
@@ -15,7 +16,7 @@ const friends = [
 	{
 		image: (
 			<img
-				className='col-md-2 ava rounded-circle link-dark'
+				className='col-md-2 ava rounded-circle'
 				src='/images/ava.jpg'
 				alt='friend_avatar'
 			/>
@@ -25,7 +26,7 @@ const friends = [
 	{
 		image: (
 			<img
-				className='col-md-2 ava rounded-circle link-dark'
+				className='col-md-2 ava rounded-circle'
 				src='/images/ava.jpg'
 				alt='friend_avatar'
 			/>
@@ -35,7 +36,7 @@ const friends = [
 	{
 		image: (
 			<img
-				className='col-md-2 ava rounded-circle link-dark'
+				className='col-md-2 ava rounded-circle'
 				src='/images/ava.jpg'
 				alt='friend_avatar'
 			/>
@@ -45,7 +46,7 @@ const friends = [
 	{
 		image: (
 			<img
-				className='col-md-2 ava rounded-circle link-dark'
+				className='col-md-2 ava rounded-circle'
 				src='/images/ava.jpg'
 				alt='friend_avatar'
 			/>
@@ -55,7 +56,7 @@ const friends = [
 	{
 		image: (
 			<img
-				className='col-md-2 ava rounded-circle link-dark'
+				className='col-md-2 ava rounded-circle'
 				src='/images/ava.jpg'
 				alt='friend_avatar'
 			/>
@@ -74,219 +75,243 @@ const songs = [
 
 const My_Page = () => {
 	return (
-		<div className='standart'>
+		<div className='background standart'>
 			<div className='sticky-top '>
 				<Header />
 			</div>
-			<div>
+			<div className='content'>
 				<img
 					className='wavy'
 					src='/images/Violet_top_left_wave_1.png'
 					alt='wave'
 				/>
-			</div>
-			<body className='col-md-12 left violet_back body w-100 '>
-				<div className='col-md-8 column canva '>
-					<h4 className=' col-md-8  heading personal_data'>
-						Manuella_Tarly
-					</h4>
-					<div className='row location'>
-						<i className=' col-md-1 fa-2x sign'>
-							<ImLocation />
-						</i>
-						<h1 className='col-md-7 location_name'>Los-Angles, USA</h1>
-					</div>
-					<div className='col-md-8 left '>
-						<img
-							src='/images/ava.jpg'
-							className='img-fluid rounded-circle  link-dark w-50'
-							alt='user_avatar'
-						/>
-						<a
-							href='#'
-							role='button'
-							className=' edit col-md-4 text-capitalize btn '
-						>
-							<ImPencil /> Edit profile{' '}
-						</a>
-					</div>
-				</div>
-				{/* </div>   */}
-			</body>
-			{/* <div class="col-md-12 right yellow_back body w-100"> */}
-
-			<body className='col-md-12 right yellow_back body w-100'>
-				<div className='bottom back switch_1'>
-					<img
-						className='wavy'
-						src='/images/Wave_Violet_bottom_right_shape_1.png'
-						alt='wave'
-					/>
-					<div className='col-md-8 column canva '>
-						<h1 className='col-md-8 heading favorites'>Favorites</h1>
-
-						<div className='col-md-8 table_1 '>
-							<nav className=' col-md-12  '>
-								<div
-									className='nav w-100 title nav-tabs'
-									id='nav-tab'
-									role='tablist'
+				<div className='my_page_wavy_content'>
+					<div className='left violet_back body'>
+						<div className='col-sm-8 canva'>
+							<h4 className='col-sm-8  heading personal_data'>
+								Manuella_Tarly
+							</h4>
+							<div className='row location'>
+								<i className='col-sm-1 fa-2x sign_loc'>
+									<ImLocation />
+								</i>
+								<h1 className='col-sm-7 location_name'>
+									Los-Angles, USA
+								</h1>
+							</div>
+							<div className=' col-sm-10 ava_reg canva'>
+								<img
+									src='/images/ava.jpg'
+									className='col-sm-12 rounded-circle'
+									alt='user_avatar'
+								/>
+								<a
+									href='#'
+									role='button'
+									className='edit col-sm-8 text-capitalize btn'
 								>
-									<button
-										className='col-md-6 nav-link'
-										id='nav-songs-tab'
-										data-bs-toggle='tab'
-										data-bs-target='#nav-songs'
-										type='button'
-										role='tab'
-										aria-controls='nav-songs'
-									>
-										Favorited songs
-									</button>
-									<button
-										className=' col-md-6 nav-link'
-										id='nav-friends-tab'
-										data-bs-toggle='tab'
-										data-bs-target='#nav-friends'
-										type='button'
-										role='tab'
-										aria-controls='nav-friends'
-									>
-										Friends
-									</button>
-								</div>
-							</nav>
-							<div className='col-md-12 tab-content'>
-								<div
-									className='col-md-12  tab-pane fade '
-									id='nav-friends'
-									role='tabpanel'
-									aria-labelledby='nav-friends-tab'
-								>
-									<div className='w-100 list-group-item list'>
-										{friends
-											.slice(0, friends.length)
-											.map((item, index) => {
-												return (
-													<div
-														className='col-md-12 row'
-														key={index}
-													>
-														<a
-															href='/user/#'
-															className='col-md-12  element '
+									<ImPencil /> Edit profile{' '}
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<div className=' right yellow_back body'>
+						<div className='bottom switch_1'>
+							<img
+								className='wavy'
+								src='/images/Wave_Violet_bottom_right_shape_1.png'
+								alt='wave'
+							/>
+							<div className='col-sm-12 canva '>
+								<h1 className='col-sm-8 heading  favorites'>
+									Favorites
+								</h1>
+
+								<div className='col-sm-8 table_1'>
+									<nav className=' col-sm-12  '>
+										<div
+											className='nav title nav-tabs'
+											id='nav-tab'
+											role='tablist'
+										>
+											<button
+												className='col-sm-6 nav-link'
+												id='nav-songs-tab'
+												data-bs-toggle='tab'
+												data-bs-target='#nav-songs'
+												type='button'
+												role='tab'
+												aria-controls='nav-songs'
+											>
+												Favorited songs
+											</button>
+											<button
+												className='col-sm-6 nav-link'
+												id='nav-friends-tab'
+												data-bs-toggle='tab'
+												data-bs-target='#nav-friends'
+												type='button'
+												role='tab'
+												aria-controls='nav-friends'
+											>
+												Friends
+											</button>
+										</div>
+									</nav>
+									<div className='col-sm-12 tab-content'>
+										<div
+											className='col-sm-8  tab-pane fade '
+											id='nav-friends'
+											role='tabpanel'
+											aria-labelledby='nav-friends-tab'
+										>
+											<div className=' list-group-item list'>
+												{friends
+													.slice(0, friends.length)
+													.map((item, index) => {
+														return (
+															<div
+																className='col-sm-12 row'
+																key={index}
+															>
+																<a
+																	href='/user/#'
+																	className='col-sm-12  element '
+																>
+																	{item.image}
+																	<h4 className='col-sm-10 username'>
+																		{item.name}
+																	</h4>
+																</a>
+																<button
+																	type='button'
+																	className=' col-sm-2 right delete_1 btn-close'
+																	aria-label='Close'
+																></button>
+															</div>
+														);
+													})}
+											</div>
+										</div>
+										<div
+											className='col-sm-8  tab-pane fade show active'
+											id='nav-songs'
+											role='tabpanel'
+											aria-labelledby='nav-songs-tab'
+										>
+											<div className='list-group-item list'>
+												{songs.map((item, index) => {
+													return (
+														<div
+															className='col-sm-12 row'
+															key={index}
 														>
-															{item.image}
-															<h4 className='col-md-8 username'>
-																{item.name}
+															<h4
+																className='col-sm-10 element song'
+																href='/{items}'
+															>
+																{item}
 															</h4>
-														</a>
-														<button
-															type='button'
-															className=' col-md-4 right delete btn-close'
-															aria-label='Close'
-														></button>
-													</div>
-												);
-											})}
-									</div>
-								</div>
-								<div
-									className='col-md-8  tab-pane fade show active'
-									id='nav-songs'
-									role='tabpanel'
-									aria-labelledby='nav-songs-tab'
-								>
-									<div className='w-100 list-group-item list'>
-										{songs.map((item, index) => {
-											return (
-												<div className='col-md-12 row' key={index}>
-													<h4
-														className='w-100  element songs'
-														href='/{items}'
-													>
-														{item}
-													</h4>
-												</div>
-											);
-										})}
+															<button
+																type='button'
+																className=' col-sm-2 right delete_2 btn-close'
+																aria-label='Close'
+															></button>
+														</div>
+													);
+												})}
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-			</body>
 
-			<body className='col-md-12 left violet_back body pt-0 w-100'>
-				<div className='switch_2'>
+					<div className='left violet_back body'>
+						<div className='bottom switch_2'>
+							<img
+								className=''
+								src='/images/Wave_Violet_top_right_shape_1.png'
+								alt='wave'
+							/>
+							<div className='col-sm-12 canva '>
+								<h1 className='col-sm-8 heading pref'>
+									Music preferences
+								</h1>
+								<div className='col-sm-8 table_2 '>
+									<nav className='col-sm-12 '>
+										<div
+											className='nav title nav-tabs'
+											id='nav-tab'
+											role='tablist'
+										>
+											<button
+												className='col-sm-12 nav-link '
+												id='nav-geners-tab'
+												data-bs-toggle='tab'
+												data-bs-target='#nav-genres'
+												type='button'
+												role='tab'
+												aria-controls='nav-genres'
+											>
+												Genres
+											</button>
+										</div>
+									</nav>
+									<div className='col-sm-12 tab-content'>
+										<div
+											className='col-sm-8 tab-pane fade show active'
+											id='nav-genres'
+											role='tabpanel'
+											aria-labelledby='nav-genres-tab'
+										>
+											<div className='list-group-item list'>
+												{genres.map((item, index) => {
+													return (
+														<div
+															className='left col-sm-12 row'
+															key={index}
+														>
+															<h4
+																className='col-sm-10 element genre'
+																href='/{items}'
+															>
+																{item}
+															</h4>
+															<button
+																type='button'
+																className=' col-sm-2 right delete_2 btn-close'
+																aria-label='Close'
+															></button>
+														</div>
+													);
+												})}
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div className='bottom'>
+						<img
+							className='wavy'
+							src='/images/Wave_Violet_bottom_right_shape_11.png'
+							alt='wave'
+						/>
+					</div>
+				</div>
+				<div>
 					<img
 						className='wavy'
-						src='/images/Wave_Violet_top_right_shape_1.png'
+						src='/images/Wave_Violet_bottom_right_shape_11.png'
 						alt='wave'
 					/>
-					<div className='col-md-8 column violet_back canva '>
-						<h1 className='col-md-6 title heading pref'>
-							Music preferences
-						</h1>
-						<div className='col-md-6 table_2 '>
-							<nav className=' col-md-12  '>
-								<div
-									className='nav w-100 nav-tabs'
-									id='nav-tab'
-									role='tablist'
-								>
-									<button
-										className='col-md-12 nav-link '
-										id='nav-geners-tab'
-										data-bs-toggle='tab'
-										data-bs-target='#nav-genres'
-										type='button'
-										role='tab'
-										aria-controls='nav-genres'
-									>
-										Genres
-									</button>
-								</div>
-							</nav>
-							<div className='col-md-12 tab-content'>
-								<div
-									className='col-md-8  tab-pane fade show active'
-									id='nav-genres'
-									role='tabpanel'
-									aria-labelledby='nav-genres-tab'
-								>
-									<div className='w-100 list-group-item list'>
-										{genres.map((item, index) => {
-											return (
-												<div
-													className='col-md-12 row w-100'
-													key={index}
-												>
-													<h4
-														className='col-md-12 w-100 element genre'
-														href='/{items}'
-													>
-														{item}
-													</h4>
-												</div>
-											);
-										})}
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
 				</div>
-			</body>
-			<div>
-				<img
-					className='wavy'
-					src='/images/Wave_Violet_bottom_right_shape_11.png'
-					alt='wave'
-				/>
+				<Footer />
 			</div>
-			<Footer />
 		</div>
 	);
 };

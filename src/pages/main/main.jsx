@@ -7,7 +7,7 @@ import Header from '../../components/header/header';
 
 const Main = () => {
 	return (
-		<div className='back'>
+		<div className='background'>
 			<div className='sticky-top '>
 				<Header />
 			</div>

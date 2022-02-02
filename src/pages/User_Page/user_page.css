@@ -1,28 +1,30 @@
-.main {
-  display: flex;
-  flex-direction: row;
-}
-
 .location {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: left;
   color: #000000;
   padding: auto;
-  margin: 10px;
-  margin-left: 20px;
+  /* margin: 10px;
+  margin-left: 0px; */
+  margin: auto;
+  margin-bottom: 20px;
 }
 
-.sign {
-  margin-right: 10px;
+.sign_loc {
+  margin: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .location_name {
   font-family: "La Belle Aurore", cursive;
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 200;
   padding: auto;
   margin: auto;
-  margin-left: 40px;
+  margin-left: 20px;
   margin-top: 20px;
-
   color: #000000;
   position: absolute;
 }
@@ -32,57 +34,50 @@
   flex-direction: column;
   padding: auto;
   margin: auto;
+  font-size: xx-large;
+  font-weight: 400;
+  margin-bottom: 10px;
+  font-family: "Comforta", cursive;
+  color: #b61984;
 }
 
 .personal_data {
   align-items: flex-start;
   justify-content: left;
-  margin-top: 0px;
-  margin-left: 20px;
-  margin-bottom: 10px;
-  font-size: 35px;
-  font-weight: 450px;
-  /* font-family: "La Belle Aurore", cursive; */
+  margin-left: 0px;
+  padding-left: 10px;
+  font-size: xx-large;
+  font-weight: 300;
   font-family: "Comforta", cursive;
 }
 
-.favorites {
+.ava_reg {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: right;
-  margin-top: 0px;
-  /* margin-left: 0px; */
-  margin-right: 20px;
-  margin-bottom: 60px;
-  font-size: 45px;
-  font-weight: 550px;
-  font-family: "Comforta", cursive;
-  /* font-family: "Beth Ellen", cursive; */
-}
-
-.pref {
-  align-items: center;
-  justify-content: left;
-  margin-top: 0px;
-  margin-left: 20px;
-  margin-bottom: 10px;
-  font-size: 45px;
-  font-weight: 550px;
-  /* font-family: "La Belle Aurore", cursive; */
-  font-family: "Comforta", cursive;
+  justify-content: center;
+  width: fit-content;
+  margin: auto;
+  padding: 0px;
+  margin-left: 0px;
 }
 
 a[role="button"].edit {
   width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin: auto;
-  margin-top: 10px;
   padding: auto;
+  margin: 0px;
+  margin-top: 10px;
+  font-size: medium;
+  font-weight: 200;
 }
-
+.switch_1 {
+  margin: 0px;
+  width: 100%;
+}
 .table_1 {
   display: flex;
   flex-direction: column;
@@ -90,21 +85,18 @@ a[role="button"].edit {
   justify-content: right;
   width: 100%;
   margin: auto;
-  margin-top: 50px;
-  margin-right: 20px;
+  margin-top: 20px;
+  margin-right: 50px;
   margin-bottom: 50px;
 }
 
-.table_2 {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: left;
-  width: 100%;
-  margin: auto;
-  margin-top: 50px;
-  margin-left: 10px;
-  margin-bottom: 50px;
+#nav-tab button[role="tab"] {
+  font-size: xx-large;
+  font-family: "La Belle Aurore", cursive;
+  background-color: transparent;
+  border: transparent;
+  color: #000000;
+  border-bottom: 1px solid #ffffff;
 }
 
 #nav-tab button[role="tab"]:hover {
@@ -115,13 +107,12 @@ a[role="button"].edit {
   border-bottom: 1px solid #000000;
 }
 
-#nav-tab button[role="tab"] {
-  font-size: 40px;
-  font-family: "La Belle Aurore", cursive;
-  background-color: transparent;
-  border: transparent;
-  color: #000000;
-  border-bottom: 1px solid #ffffff;
+.favorites {
+  justify-content: right;
+  align-items: center;
+  margin-right: 50px;
+  margin-bottom: 50px;
+  font-size: xxx-large;
 }
 
 .tab-content {
@@ -135,82 +126,54 @@ a[role="button"].edit {
   padding: 0px;
 }
 
-.list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: auto;
-  margin: auto;
-  margin: 0px;
-  padding: 0px;
-  background-color: transparent;
-  border-color: transparent;
-}
-
-button[type="button"].delete {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: right;
-  margin: auto;
-  padding: auto;
-  margin-top: -60px;
-  margin-right: 10px;
-}
-
-button[type="button"].delete:hover {
-  width: 100%;
-  margin: auto;
-  padding: auto;
-  margin-top: -50px;
-  margin-right: 10px;
-}
-
-.switch_1 {
-  margin: 0px;
-  margin-bottom: 0px;
-}
-.switch_2 {
-  margin: 0px;
-  margin-top: -378px;
-}
-
-.ava {
-  flex-direction: row;
-  align-items: center;
-  justify-content: left;
-  margin: auto;
-  /* size: 25%; */
-}
-
-.element {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: left;
-  padding: 10px;
-  padding-left: 10px;
-  border-color: transparent;
-  border-bottom: 1px solid rgb(255, 255, 255);
-}
-.element:hover {
-  border-color: transparent;
-  border-bottom: 1px solid#b61984;
-}
-
 .username {
   flex-direction: row;
   align-items: center;
   justify-content: left;
   margin: 0px;
-  font-size: 18px;
+  font-size: large;
   color: #b61984;
 }
 .username:hover {
   color: #ffffff;
+}
+
+.song {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding: auto;
+  font-size: large;
+  color: #b61984;
+}
+.song:hover {
+  color: #ffffff;
+}
+
+.switch_2 {
+  margin: 0px;
+  margin-top: -378px;
+  width: 100%;
+}
+
+.table_2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: left;
+  width: 100%;
+  margin: auto;
+  margin-top: 20px;
+  margin-left: 50px;
+  margin-bottom: 50px;
+}
+.pref {
+  justify-content: left;
+  align-items: center;
+  margin-left: 50px;
+  margin-bottom: 50px;
+  font-size: xxx-large;
 }
 
 .genre {
@@ -220,7 +183,7 @@ button[type="button"].delete:hover {
   justify-content: center;
   margin: auto;
   padding: auto;
-  font-size: 20px;
+  font-size: large;
   color: #b61984;
 }
 
@@ -228,23 +191,84 @@ button[type="button"].delete:hover {
   color: #ffffff;
 }
 
-.songs {
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: auto;
+  margin: auto;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.element {
+  width: 100%;
+  max-height: 100%;
+  min-height: 50px;
+  display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin: 0px;
-  padding: 0px;
-  font-size: 20px;
-  color: #b61984;
+  padding: 10px;
+  margin: auto;
+  border-color: transparent;
+  border-bottom: 1px solid rgb(255, 255, 255);
+}
+.element:hover {
+  border-color: transparent;
+  border-bottom: 1px solid#b61984;
 }
 
-.songs:hover {
-  color: #ffffff;
-}
-
-.end {
+/* .end {
   margin: 0px;
   margin-left: -15px;
   margin-right: -15px;
   margin-top: -378px;
+} */
+
+button[type="button"].add_2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: right;
+  margin: auto;
+  padding: auto;
+  margin-top: -40px;
+  margin-right: 43px;
+  border: transparent;
+  box-shadow: none;
+  color: rgb(71, 71, 71);
+}
+
+button[type="button"].add_2:hover {
+  width: 100%;
+  margin: auto;
+  padding: auto;
+  margin-top: -40px;
+  margin-right: 43px;
+}
+
+button[type="button"].add_1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: right;
+  margin: auto;
+  padding: auto;
+  margin-top: -65px;
+  margin-right: 43px;
+  border: transparent;
+  box-shadow: none;
+  color: rgb(71, 71, 71);
+}
+
+button[type="button"].add_1:hover {
+  width: 100%;
+  margin: auto;
+  padding: auto;
+  margin-top: -65px;
+  margin-right: 43px;
 }
