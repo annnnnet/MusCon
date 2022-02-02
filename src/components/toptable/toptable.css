@@ -1,0 +1,42 @@
+.Table {
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  }
+  
+  th {
+    text-align: center; 
+    padding: 8px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #b61984 ;
+    color: white ;
+  } 
+  
+
+  td {
+    text-align: center;
+    padding: 8px;
+  }
+
+  tr {
+      text-align: center;
+      background-color: #ffd043;  
+      
+  }
+  
+/* 
+  tr:nth-child(even){
+     */
+
+  tr:hover{
+    background-color: #ffffff ;
+    
+  }
+
+  th, td {
+    border-bottom: 1px solid #ddd;
+  }
