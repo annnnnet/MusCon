@@ -1,12 +1,12 @@
 import React from 'react';
-import './header.css';
+import './Header.css';
 
 const Header = () => {
 	return (
 		<header className='header standart'>
 			<div className='media small_logo col-md-1 text-right'>
 				<img
-					src='/images/logo2.png'
+					src='/images/logo3.png'
 					className='img-fluid  '
 					width='60'
 					height='60'
@@ -15,13 +15,13 @@ const Header = () => {
 			</div>
 			<ul className='header_left_nav col-md-7'>
 				<li>
-					<a href='/singerchoose'>Singerchoose</a>
+					<a href='/SingerChoose'>SingerChoose</a>
 				</li>
 				<li>
-					<a href='/my_page'>My page</a>
+					<a href='/MyPage'>My page</a>
 				</li>
 				<li>
-					<a href='/genrechoose'>Genrechoose</a>
+					<a href='/GenreChoose'>GenreChoose</a>
 				</li>
 			</ul>
 

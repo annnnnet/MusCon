@@ -2,7 +2,6 @@
     width: 100%;
     height: auto;
     position: relative; 
-    z-index: -1;
 }
 
 .main_wavy_content{
@@ -63,7 +62,7 @@
   padding: 5px;
   margin-bottom:20px;
   border-radius: 50px;
-  border: 1px solid #b61984;
+  border: 2px solid #b61984;
   font-family: 'Comfortaa';
   font-size: 35px;
   font-weight: 100;
@@ -82,7 +81,7 @@
     padding: 5px;
     margin-bottom:20px;
     border-radius: 50px;
-    border: 1px solid #b61984;
+    border: 2px solid #b61984;
     font-family: 'Comfortaa';
     font-size: 35px;
     font-weight: 100;
@@ -112,7 +111,7 @@
 
 .sm {
     fill:#b61984;
-    border: 3px solid #b61984;
+    border: 2px solid #b61984;
     border-radius: 50%;
 }
 

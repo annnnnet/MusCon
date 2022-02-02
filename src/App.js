@@ -1,25 +1,21 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Main from './pages/main/main';
-import Pd from './pages/post_demonstrate/pd';
-import Singerchoose from './pages/singerchoose/singerchoose';
+import Main from './pages/Main/Main';
+import PostDemonstrate from './pages/PostDemonstrate/PostDemonstrate';
+import SingerChoose from './pages/SingerChoose/SingerChoose';
 import Genrechoose from './pages/genrechoose/genrechoose';
-import PostCreate from './pages/postcreate/postcreate';
-import My_Page from './pages/My_Page/my_page';
-import User_Page from './pages/User_Page/user_page';
-import Registration from './pages/Registration/registration';
+import PostCreate from './pages/PostCreate/PostCreate';
+import MyPage from './pages/MyPage/MyPage';
+import UserPage from './pages/UserPage/UserPage';
+import Registration from './pages/Registration/Registration';
+import Chart from './pages/chart/chart';
 import Friends from './components/friendCard/cards';
 import Toptable from './components/toptable/toptable';
-
 import {
 	BrowserRouter as Router,
 	Switch,
 	Route,
 	Redirect,
 } from 'react-router-dom';
-import Chart from './pages/chart/chart';
-import Example from './components/toptable/aditional';
-import Example1 from './components/toptable/test';
 
 export default function App() {
 	return (
@@ -31,35 +27,32 @@ export default function App() {
 				<Route path='/Main'>
 					<Main />
 				</Route>
-				<Route path='/Singerchoose'>
-					<Singerchoose />
-				</Route>
-				<Route path='/Genrechoose'>
-					<Genrechoose />
+				<Route path='/SingerChoose'>
+					<SingerChoose />
 				</Route>
 				<Route path='/PostCreate'>
 					<PostCreate />
 				</Route>
-				<Route path='/pd'>
-					<Pd />
+				<Route path='/PostDemonstrate'>
+					<PostDemonstrate />
 				</Route>
-				<Route path='/My_Page'>
-					<My_Page />
+				<Route path='/MyPage'>
+					<MyPage />
 				</Route>
-				<Route path='/User_Page'>
-					<User_Page />
+				<Route path='/UserPage'>
+					<UserPage />
 				</Route>
-				<Route path='/reg'>
+				<Route path='/Registration'>
 					<Registration />
-				</Route>
-				<Route path='/table'>
-					<Toptable />
 				</Route>
 				<Route path='/Friends'>
 					<Friends />
 				</Route>
 				<Route path='/Chart'>
 					<Chart />
+        </Route>
+        <Route path='/GenreСhoose'>
+					<Genrechoose />
 				</Route>
 			</Switch>
 		</Router>

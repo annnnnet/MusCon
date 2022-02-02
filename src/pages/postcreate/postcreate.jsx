@@ -1,10 +1,10 @@
-import React, { Component, useState } from 'react';
+import React from 'react';
 import 'react-dropzone-uploader/dist/styles.css';
-import './postcreate.css';
+import './PostCreate.css';
 import '../../basic.css';
 import Dropzone from 'react-dropzone-uploader';
-import Footer from '../../components/footer/footer';
-import Header from '../../components/header/header';
+import Footer from '../../components/Footer/Footer';
+import Header from '../../components/Header/Header';
 
 const args = {
 	user_avatar: require('../../pics/singer.jpg'),
@@ -33,13 +33,17 @@ const PostCreate = () => {
 
 	return (
 		<div>
-			<div className='top sticky-top '>
+			<div className='sticky-top '>
 				<Header />
 			</div>
 			<div className='yellow_top_wave'>
 				<form className='post_create_form'>
 					<div className='flexy'>
-						<img className='post_user_logo' src={args.user_avatar} />
+						<img
+							className='post_user_logo'
+							src={args.user_avatar}
+							alt='post_author_avatar'
+						/>
 						<p className='post_username'>{args.username}</p>
 						<button className='post_it'>Post it!</button>
 					</div>
@@ -59,7 +63,7 @@ const PostCreate = () => {
 						<br />
 						<label htmlFor='genre'>Choose genre:</label>
 						<br />
-						<select name='genre' required>
+						<select className='genre-select' name='genre' required>
 							{genresopt}
 						</select>
 						<div className='select-arrow'></div>
@@ -76,7 +80,11 @@ const PostCreate = () => {
 				</form>
 			</div>
 			<div className='yellow_bottom_wave'>
-				<img src={require('../../pics/white_bottom_wave_01.png')} />
+				<img
+					className='wavy'
+					src={require('../../pics/white_bottom_wave_01.png')}
+					alt='wave'
+				/>
 			</div>
 
 			<Footer />
