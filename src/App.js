@@ -50,8 +50,8 @@ export default function App() {
 				</Route>
 				<Route path='/Chart'>
 					<Chart />
-        </Route>
-        <Route path='/GenreСhoose'>
+				</Route>
+				<Route path='/GenreChoose'>
 					<Genrechoose />
 				</Route>
 			</Switch>
