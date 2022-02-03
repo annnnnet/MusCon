@@ -10,8 +10,6 @@ import 'bootstrap-css-only/css/bootstrap.min.css';
 import './MyPage.css';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
-import Friends from '../../components/tables/friends';
-import PolarChart from '../../components/PolarChart/PolarChart';
 const friends = [
 	{
 		image: (
