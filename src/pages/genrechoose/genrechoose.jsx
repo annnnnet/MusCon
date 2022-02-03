@@ -1,8 +1,8 @@
 import React from 'react';
-import './genrechoose.css';
+import './Genrechoose.css';
 import '../../basic.css';
-import Footer from '../../components/footer/footer';
-import Header from '../../components/header/header';
+import Footer from '../../components/Footer/Footer';
+import Header from '../../components/Header/Header';
 var musicians = [
 	'Pop',
 	'Rock',
