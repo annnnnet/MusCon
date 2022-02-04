@@ -11,29 +11,37 @@ import Chart from './pages/Chart/Chart';
 import Friends from './components/friendCard/cards';
 // import Toptable from './components/toptable/toptable';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// import { logout } from './actions/auth';
+// import { clearMessage } from './actions/message';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { history } from './helpers/history';
 
 export default function App() {
 	return (
-		<Router>
+		<Router history={history}>
 			<Routes>
 				<Route exact path='/' element={<Main />} />
-				<Route path='/Main' element={<Main />} />
+				<Route exact path='/Main' element={<Main />} />
 
-				<Route path='/SingerChoose' element={<SingerChoose />} />
-				<Route path='/PostCreate' element={<PostCreate />} />
-				<Route path='/PostDemonstrate' element={<PostDemonstrate />} />
+				<Route exact path='/SingerChoose' element={<SingerChoose />} />
+				<Route exact path='/PostCreate' element={<PostCreate />} />
+				<Route
+					exact
+					path='/PostDemonstrate'
+					element={<PostDemonstrate />}
+				/>
 
-				<Route path='/MyPage' element={<MyPage />} />
+				<Route exact path='/MyPage' element={<MyPage />} />
 
-				<Route path='/UserPage' element={<UserPage />} />
+				<Route exact path='/UserPage' element={<UserPage />} />
 
-				<Route path='/Registration' element={<Registration />} />
+				<Route exact path='/signup' element={<Registration />} />
 
-				<Route path='/Friends' element={<Friends />} />
+				<Route exact path='/Friends' element={<Friends />} />
 
-				<Route path='/Chart' element={<Chart />} />
+				<Route exact path='/Chart' element={<Chart />} />
 
-				<Route path='/GenreChoose' element={<Genrechoose />} />
+				<Route exact path='/GenreChoose' element={<Genrechoose />} />
 			</Routes>
 		</Router>
 	);

@@ -30,6 +30,7 @@ const Genrechoose = () => {
 					<img
 						className='wavy'
 						src={require('../../pics/purple_bottom_wave_01.png')}
+						alt='wave'
 					/>
 					<div className='sc_top_content'>
 						<h1 id='sc_text'>Choose favourite genres:</h1>
