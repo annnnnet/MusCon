@@ -29,14 +29,14 @@ const Header = () => {
 				<a
 					href='/login'
 					role='button'
-					className='text-capitalize btn col-md-4  justify-content-right'
+					className='action_button text-capitalize btn col-md-4  justify-content-right'
 				>
 					Login
 				</a>
 				<a
-					href='/registration'
+					href='/signup'
 					role='button'
-					className='text-capitalize btn active col-md-4  justify-content-left'
+					className='action_button text-capitalize btn active col-md-4  justify-content-left'
 				>
 					Sign-Up
 				</a>
