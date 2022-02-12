@@ -1,4 +1,6 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import Main from './pages/Main/Main';
 import PostDemonstrate from './pages/PostDemonstrate/PostDemonstrate';
 import SingerChoose from './pages/SingerChoose/SingerChoose';
@@ -9,12 +11,13 @@ import UserPage from './pages/UserPage/UserPage';
 import Registration from './pages/Registration/Registration';
 import Chart from './pages/Chart/Chart';
 import Friends from './components/friendCard/cards';
+import Login from './pages/Login/Login';
+
 // import Toptable from './components/toptable/toptable';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import { logout } from './actions/auth';
-// import { clearMessage } from './actions/message';
+// import { BrowserRouter as Router, Routes, Route, Switch } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { history } from './helpers/history';
+// import AuthVerify from "./common/AuthVerify";
 
 export default function App() {
 	return (
@@ -35,7 +38,9 @@ export default function App() {
 
 				<Route exact path='/UserPage' element={<UserPage />} />
 
-				<Route exact path='/signup' element={<Registration />} />
+				<Route exact path='/Signup' element={<Registration />} />
+
+				<Route exact path='/Login' element={<Login />} />
 
 				<Route exact path='/Friends' element={<Friends />} />
 

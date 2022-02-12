@@ -9,9 +9,6 @@ import logo from '../../pics/last.gif';
 import { MdOutlineAddAPhoto } from 'react-icons/md';
 
 import { useDispatch, useSelector } from 'react-redux';
-// import Form from '../../../node_modules/react-validation/build/button';
-// import Input from '../../../node_modules/react-validation/build/button';
-// import CheckButton from '../../../node_modules/react-validation/build/button';
 import Form from 'react-validation/build/form';
 import Input from 'react-validation/build/input';
 import CheckButton from 'react-validation/build/button';
@@ -237,14 +234,14 @@ const Registration = () => {
 												</div>
 											</div>
 											<div className='center'>
-												<div className=' col-sm-6 form-group'>
+												<div className=' col-sm-12 form-group'>
 													<button className='btn' type='submit'>
 														Sign Up
 													</button>
 												</div>
 												<p className='already'>
-													You already have an account?{' '}
-													<a href='/login'> Login here.</a>
+													Already have an account?{' '}
+													<a href='/Login'> Log in</a>
 												</p>
 											</div>
 										</main>

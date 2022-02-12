@@ -4,8 +4,11 @@ import '../../basic.css';
 import logo from '../../pics/last.gif';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
+// import UserService from '../../services/user.service';
 
 const Main = () => {
+	// const isLoggedIn = true;
+
 	return (
 		<div className='background standart'>
 			<div className='sticky-top'>

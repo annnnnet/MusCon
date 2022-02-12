@@ -1,6 +1,8 @@
 import React from 'react';
+// import React, { useState, useEffect } from 'react';
+import { Navigate } from 'react-router-dom';
+// import { useSelector } from 'react-redux';
 import { ImLocation } from 'react-icons/im';
-
 import { ImPencil } from 'react-icons/im';
 import '../../basic.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
@@ -9,6 +11,9 @@ import 'bootstrap-css-only/css/bootstrap.min.css';
 import './MyPage.css';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
+// import UserService from '../../services/user.service';
+// import EventBus from '../../common/EventBus';
+
 const friends = [
 	{
 		image: (
@@ -71,8 +76,42 @@ const songs = [
 ];
 
 const MyPage = () => {
+	// const { user: currentUser } = useSelector((state) => state.auth);
+	var isLoggedIn = true;
+	// if (!currentUser) {
+	// 	return <Navigate replace to='/login' />;
+	// }
+	if (!isLoggedIn) {
+		return <Navigate replace to='/login' />;
+	}
+	// eslint-disable-next-line react-hooks/rules-of-hooks
+	// const [content, setContent] = useState(false);
+
+	// eslint-disable-next-line react-hooks/rules-of-hooks
+	// useEffect(() => {
+	// 	UserService.getUserBoard().then(
+	// 		(response) => {
+	// 			setContent(response.data);
+	// 		},
+	// 		(error) => {
+	// 			setContent(
+	// 				(error.response &&
+	// 					error.response.data &&
+	// 					error.response.data.message) ||
+	// 					error.message ||
+	// 					error.toString()
+	// 			);
+
+	// 			if (error.response && error.response.status === 401) {
+	// 				EventBus.dispatch('logout');
+	// 			}
+	// 		}
+	// 	);
+	// }, []);
+
 	return (
 		<div className='background standart'>
+			{/* {content} */}
 			<div className='sticky-top '>
 				<Header />
 			</div>
@@ -87,6 +126,7 @@ const MyPage = () => {
 						<div className='col-sm-8 canva'>
 							<h4 className='col-sm-8  heading personal_data'>
 								Manuella_Tarly
+								{/* {currentUser.username} */}
 							</h4>
 							<div className='row location'>
 								<i className='col-sm-1 fa-2x sign_loc'>
@@ -94,6 +134,7 @@ const MyPage = () => {
 								</i>
 								<h1 className='col-sm-7 location_name'>
 									Los-Angles, USA
+									{/* {currentUser.city} */}
 								</h1>
 							</div>
 							<div className=' col-sm-10 ava_reg canva'>
@@ -103,7 +144,7 @@ const MyPage = () => {
 									alt='user_avatar'
 								/>
 								<a
-									href='#'
+									href='/'
 									role='button'
 									className='on_page action_button col-sm-8 text-capitalize btn'
 								>
