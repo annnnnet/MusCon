@@ -1,5 +1,5 @@
 import React from 'react';
-import './genrechoose.css';
+import './Genrechoose.css';
 import '../../basic.css';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
@@ -44,6 +44,7 @@ const Genrechoose = () => {
 					<img
 						className='wavy'
 						src={require('../../pics/purple_bottom_wave_01.png')}
+						alt='wave'
 					/>
 					<div className='sc_top_content'>
 						<h1 id='sc_text'>Choose favourite genres:</h1>

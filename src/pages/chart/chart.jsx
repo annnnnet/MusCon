@@ -1,5 +1,5 @@
 import React from 'react';
-import './chart.css';
+import './Chart.css';
 import '../../basic.css';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
