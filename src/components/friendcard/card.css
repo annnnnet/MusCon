@@ -4,7 +4,6 @@ body{
 
 .card{
     width: 320px;
-    border-radius: 50px;
 }
 
 .card:hover{

@@ -8,7 +8,7 @@ import MyPage from './pages/MyPage/MyPage';
 import UserPage from './pages/UserPage/UserPage';
 import Registration from './pages/Registration/Registration';
 import Chart from './pages/chart/chart';
-import Friends from './components/friendCard/cards';
+import Friends from './components/friendcard/cards';
 import Toptable from './components/toptable/toptable';
 import {
 	BrowserRouter as Router,

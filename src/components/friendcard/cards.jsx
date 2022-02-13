@@ -53,8 +53,8 @@ import img2 from '../../pics/singer.jpg';
 // export default Friends;
 
 import singer from '../../pics/singer.jpg';
-import Footer from '../../components/footer/footer';
-import Header from '../../components/header/header';
+import Footer from '../../components/Footer/Footer';
+import Header from '../../components/Header/Header';
 
 var friends = [
 	'Tom',

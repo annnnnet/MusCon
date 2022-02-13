@@ -1,8 +1,8 @@
 import React from 'react';
 import './chart.css';
 import '../../basic.css';
-import Footer from '../../components/footer/footer';
-import Header from '../../components/header/header';
+import Footer from '../../components/Footer/Footer';
+import Header from '../../components/Header/Header';
 import Toptable from '../../components/toptable/toptable';
 
 const Chart = () => {

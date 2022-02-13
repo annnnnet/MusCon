@@ -1,24 +1,38 @@
 import React from 'react';
 import './genrechoose.css';
 import '../../basic.css';
-import Footer from '../../components/footer/footer';
-import Header from '../../components/header/header';
-var musicians = [
-	'Pop',
-	'Rock',
-	'Rap',
-	'Hip-hop',
-	'Punk',
-	'Classical',
-	'Jazz',
-	'K-pop',
-	'Metal',
-	'Techno',
-	'Country',
-	'Indi',
-];
+import Footer from '../../components/Footer/Footer';
+import Header from '../../components/Header/Header';
+import { useState, useEffect } from 'react';
 
 const Genrechoose = () => {
+	const [data, setData] = useState(null);
+	const [loading, setLoading] = useState(true);
+	const [error, setError] = useState(null);
+
+	useEffect(() => {
+		fetch(`https://muscon.herokuapp.com/genres`)
+			.then((response) => {
+				if (!response.ok) {
+					throw new Error(
+						`This is an HTTP error: The status is ${response.status}`
+					);
+				}
+				return response.json();
+			})
+			.then((actualData) => {
+				setData(actualData);
+				setError(null);
+			})
+			.catch((err) => {
+				setError(err.message);
+				setData(null);
+			})
+			.finally(() => {
+				setLoading(false);
+			});
+	}, []);
+
 	return (
 		<div className='back'>
 			<div className='top sticky-top '>
@@ -46,32 +60,33 @@ const Genrechoose = () => {
 				<div className='sc_wavy_content'>
 					<div className='block'>
 						<div className='row products-container'>
-							{musicians.map((items, index) => {
-								return (
-									<div
-										key={index}
-										className='col-xxl-1 col-xl-3 col-lg-4 col-md-6 col-sm-12'
-									>
-										<div className='sc_musician card'>
-											<div className='flexy'>
-												<p className='sc_singer'>{items}</p>
-												<button className='sc_plus'>
-													<svg
-														xmlns='http://www.w3.org/2000/svg'
-														className='bi bi-plus-lg'
-														viewBox='0 0 16 16'
-													>
-														<path
-															fillRule='evenodd'
-															d='M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z'
-														/>
-													</svg>
-												</button>
+							{data &&
+								data.map((number) => {
+									return (
+										<div
+											key={number.toString()}
+											className='col-xxl-1 col-xl-3 col-lg-4 col-md-6 col-sm-12'
+										>
+											<div className='sc_musician card'>
+												<div className='flexy'>
+													<p className='sc_singer'>{number}</p>
+													<button className='sc_plus'>
+														<svg
+															xmlns='http://www.w3.org/2000/svg'
+															className='bi bi-plus-lg'
+															viewBox='0 0 16 16'
+														>
+															<path
+																fillRule='evenodd'
+																d='M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z'
+															/>
+														</svg>
+													</button>
+												</div>
 											</div>
 										</div>
-									</div>
-								);
-							})}
+									);
+								})}
 						</div>
 					</div>
 				</div>
