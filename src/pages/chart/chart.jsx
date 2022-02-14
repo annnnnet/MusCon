@@ -3,7 +3,7 @@ import './Chart.css';
 import '../../basic.css';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
-import Toptable from '../../components/toptable/toptable';
+import Toptable from '../../components/TopTable/TopTable';
 
 const Chart = () => {
 	return (
@@ -11,10 +11,26 @@ const Chart = () => {
 			<div className='top sticky-top '>
 				<Header />
 			</div>
-			<div className='table-inner d-flex align-items-center'>
-				<Toptable />
+			<div className='row'>
+				<img
+					className='wavy'
+					src={require('../../pics/purple_bottom_wave_01.png')}
+					alt='wave'
+				/>
+				<div className='table-responsive col-md-6'>
+					<Toptable />
+				</div>
+				<div className='table-responsive col-md-6'>
+					<Toptable />
+				</div>
 			</div>
-
+			<div className='main_wavy_bottom'>
+				<img
+					className='wavy'
+					src={require('../../pics/white_bottom_wave_01.png')}
+					alt='wave'
+				/>
+			</div>
 			<Footer />
 		</div>
 	);
