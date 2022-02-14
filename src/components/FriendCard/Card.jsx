@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import './card.css';
+import './Сard.css';
 const Card = (props) => {
 	return (
 		<div className='card text-center shadow'>

@@ -2,14 +2,15 @@ import React from 'react';
 import Main from './pages/Main/Main';
 import PostDemonstrate from './pages/PostDemonstrate/PostDemonstrate';
 import SingerChoose from './pages/SingerChoose/SingerChoose';
-import Genrechoose from './pages/Genrechoose/Genrechoose';
+import GenreChoose from './pages/GenreChoose/GenreChoose';
 import PostCreate from './pages/PostCreate/PostCreate';
 import MyPage from './pages/MyPage/MyPage';
 import UserPage from './pages/UserPage/UserPage';
 import Registration from './pages/Registration/Registration';
 import Chart from './pages/Chart/Chart';
-import Friends from './components/friendCard/cards';
-// import Toptable from './components/toptable/toptable';
+import Friends from './components/FriendCard/Cards';
+import Recommendation from './components/FriendCard/Rec';
+import Example from './components/TopTable/tb';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 export default function App() {
@@ -33,7 +34,11 @@ export default function App() {
 
 				<Route path='/Chart' element={<Chart />} />
 
-				<Route path='/GenreChoose' element={<Genrechoose />} />
+				<Route path='/GenreChoose' element={<GenreChoose />} />
+
+				<Route path='/Rec' element={<Recommendation />} />
+
+				<Route path='/Ex' element={<Example />} />
 			</Routes>
 		</Router>
 	);
