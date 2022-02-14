@@ -1,5 +1,5 @@
 import React from 'react';
-import './Genrechoose.css';
+import './GenreChoose.css';
 import '../../basic.css';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
@@ -18,7 +18,7 @@ var musicians = [
 	'Indi',
 ];
 
-const Genrechoose = () => {
+const GenreChoose = () => {
 	return (
 		<div className='back'>
 			<div className='top sticky-top '>
@@ -81,4 +81,4 @@ const Genrechoose = () => {
 	);
 };
 
-export default Genrechoose;
+export default GenreChoose;
