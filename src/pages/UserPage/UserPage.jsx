@@ -3,7 +3,6 @@ import { ImLocation } from 'react-icons/im';
 import { RiUserFollowLine } from 'react-icons/ri';
 import { RiChat1Line } from 'react-icons/ri';
 // import { MDBContainer } from "mdbreact";
-import '../../index.css';
 import '../../basic.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
@@ -83,7 +82,7 @@ const UserPage = () => {
 					src='/Images/Violet_top_left_wave_1.png'
 					alt='wave'
 				/>
-				<div className='my_page_wavy_content'>
+				<div>
 					<div className='left violet_back body'>
 						<div className='col-sm-8 canva'>
 							<h4 className='col-sm-8  heading personal_data'>
@@ -106,14 +105,14 @@ const UserPage = () => {
 								<a
 									href='#'
 									role='button'
-									className='edit col-sm-8 text-capitalize btn'
+									className='on_page  action_button col-sm-8 text-capitalize btn'
 								>
 									<RiUserFollowLine /> Follow back{' '}
 								</a>
 								<a
 									href='#'
 									role='button'
-									className=' edit col-sm-8 text-capitalize btn '
+									className='on_page action_button  col-sm-8 text-capitalize btn '
 								>
 									<RiChat1Line /> Send a message{' '}
 								</a>
@@ -302,10 +301,10 @@ const UserPage = () => {
 						</div>
 					</div>
 				</div>
-				<div className='bottom'>
+				<div className='main_wavy_bottom'>
 					<img
 						className='wavy'
-						src='Images/Wave_Violet_bottom_right_shape_11.png'
+						src={require('../../pics/white_bottom_wave_01.png')}
 						alt='wave'
 					/>
 				</div>

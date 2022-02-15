@@ -1,4 +1,6 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import Main from './pages/Main/Main';
 import PostDemonstrate from './pages/PostDemonstrate/PostDemonstrate';
 import SingerChoose from './pages/SingerChoose/SingerChoose';
@@ -9,36 +11,46 @@ import UserPage from './pages/UserPage/UserPage';
 import Registration from './pages/Registration/Registration';
 import Chart from './pages/Chart/Chart';
 import Friends from './components/FriendCard/Cards';
+import Login from './pages/Login/Login';
 import Recommendation from './components/FriendCard/Rec';
 import Example from './components/TopTable/tb';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { history } from './helpers/history';
+
 
 export default function App() {
 	return (
-		<Router>
+		<Router history={history}>
 			<Routes>
 				<Route exact path='/' element={<Main />} />
-				<Route path='/Main' element={<Main />} />
+				<Route exact path='/Main' element={<Main />} />
 
-				<Route path='/SingerChoose' element={<SingerChoose />} />
-				<Route path='/PostCreate' element={<PostCreate />} />
-				<Route path='/PostDemonstrate' element={<PostDemonstrate />} />
+				<Route exact path='/SingerChoose' element={<SingerChoose />} />
+				<Route exact path='/PostCreate' element={<PostCreate />} />
+				<Route
+					exact
+					path='/PostDemonstrate'
+					element={<PostDemonstrate />}
+				/>
 
-				<Route path='/MyPage' element={<MyPage />} />
+				<Route exact path='/MyPage' element={<MyPage />} />
 
-				<Route path='/UserPage' element={<UserPage />} />
+				<Route exact path='/UserPage' element={<UserPage />} />
 
-				<Route path='/Registration' element={<Registration />} />
+				<Route exact path='/Signup' element={<Registration />} />
 
-				<Route path='/Friends' element={<Friends />} />
+				<Route exact path='/Login' element={<Login />} />
 
-				<Route path='/Chart' element={<Chart />} />
+				<Route exact path='/Friends' element={<Friends />} />
 
-				<Route path='/GenreChoose' element={<GenreChoose />} />
+				<Route exact path='/Chart' element={<Chart />} />
 
-				<Route path='/Rec' element={<Recommendation />} />
+				<Route exact path='/GenreChoose' element={<GenreChoose />} />
 
-				<Route path='/Ex' element={<Example />} />
+				<Route exact path='/Rec' element={<Recommendation />} />
+
+				<Route exact path='/Ex' element={<Example />} />
 			</Routes>
 		</Router>
 	);
