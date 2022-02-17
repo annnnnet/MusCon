@@ -18,7 +18,6 @@ import Example from './components/TopTable/tb';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { history } from './helpers/history';
 
-
 export default function App() {
 	return (
 		<Router history={history}>

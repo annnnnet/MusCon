@@ -2,12 +2,13 @@ import axios from 'axios';
 
 const API_URL = 'https://muscon.herokuapp.com/';
 
-const register = (username, email, city, password) => {
+const register = (username, email, password, city, photo) => {
 	return axios.post(API_URL + 'signup', {
 		username,
 		email,
-		city,
 		password,
+		city,
+		photo,
 	});
 };
 
@@ -21,7 +22,6 @@ const login = (username, password) => {
 			if (response.data.accessToken) {
 				localStorage.setItem('user', JSON.stringify(response.data));
 			}
-
 			return response.data;
 		});
 };
