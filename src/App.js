@@ -4,13 +4,13 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Main from './pages/Main/Main';
 import PostDemonstrate from './pages/PostDemonstrate/PostDemonstrate';
 import SingerChoose from './pages/SingerChoose/SingerChoose';
-import Genrechoose from './pages/Genrechoose/Genrechoose';
+import Genrechoose from './pages/GenreChoose/GenreChoose';
 import PostCreate from './pages/PostCreate/PostCreate';
 import MyPage from './pages/MyPage/MyPage';
 import UserPage from './pages/UserPage/UserPage';
 import Registration from './pages/Registration/Registration';
-import Chart from './pages/Chart/Chart';
-import Friends from './components/friendCard/cards';
+import Chart from './pages/chart/chart';
+import Friends from './components/friendcard/cards';
 import Login from './pages/Login/Login';
 
 // import Toptable from './components/toptable/toptable';

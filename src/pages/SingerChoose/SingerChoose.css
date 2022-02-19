@@ -75,6 +75,9 @@
   height: max-content;
 }
 
+.sc_musician img{
+  height:300px;
+}
 
 .sc_singer{
     margin: 0!important;
