@@ -4,20 +4,19 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Main from './pages/Main/Main';
 import PostDemonstrate from './pages/PostDemonstrate/PostDemonstrate';
 import SingerChoose from './pages/SingerChoose/SingerChoose';
-import Genrechoose from './pages/GenreChoose/GenreChoose';
+import GenreChoose from './pages/GenreChoose/GenreChoose';
 import PostCreate from './pages/PostCreate/PostCreate';
 import MyPage from './pages/MyPage/MyPage';
 import UserPage from './pages/UserPage/UserPage';
 import Registration from './pages/Registration/Registration';
-import Chart from './pages/chart/chart';
-import Friends from './components/friendcard/cards';
+import Chart from './pages/Chart/Chart';
+import Friends from './components/FriendCard/Cards';
 import Login from './pages/Login/Login';
+import Recommendation from './components/FriendCard/Rec';
+import Example from './components/TopTable/tb';
 
-// import Toptable from './components/toptable/toptable';
-// import { BrowserRouter as Router, Routes, Route, Switch } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { history } from './helpers/history';
-// import AuthVerify from "./common/AuthVerify";
 
 export default function App() {
 	return (
@@ -46,7 +45,11 @@ export default function App() {
 
 				<Route exact path='/Chart' element={<Chart />} />
 
-				<Route exact path='/GenreChoose' element={<Genrechoose />} />
+				<Route exact path='/GenreChoose' element={<GenreChoose />} />
+
+				<Route exact path='/Rec' element={<Recommendation />} />
+
+				<Route exact path='/Ex' element={<Example />} />
 			</Routes>
 		</Router>
 	);

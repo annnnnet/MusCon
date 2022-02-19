@@ -67,13 +67,8 @@ const friends = [
 	},
 ];
 const genres = ['Genre1', 'Genre2', 'Genre3', 'Genre4', 'Genre5'];
-const songs = [
-	'Song1-Artist1',
-	'Song2-Artist2',
-	'Song3-Artist3',
-	'Song4-Artist4',
-	'Song5-Artist5',
-];
+const songs = ['Song1', 'Song2', 'Song3', 'Song4', 'Song5'];
+const artists = ['Artist1', 'Artist2', 'Artist3', 'Artist4', 'Artist5'];
 
 const MyPage = () => {
 	// const { user: currentUser } = useSelector((state) => state.auth);
@@ -274,7 +269,7 @@ const MyPage = () => {
 								src='/Images/Wave_Violet_top_right_shape_1.png'
 								alt='wave'
 							/>
-							<div className='col-sm-12 canva '>
+							<div className='col-sm-12 violet_back canva '>
 								<h1 className='col-sm-8 heading pref'>
 									Music preferences
 								</h1>
@@ -286,7 +281,7 @@ const MyPage = () => {
 											role='tablist'
 										>
 											<button
-												className='col-sm-12 nav-link '
+												className='col-sm-6 nav-link '
 												id='nav-geners-tab'
 												data-bs-toggle='tab'
 												data-bs-target='#nav-genres'
@@ -295,6 +290,17 @@ const MyPage = () => {
 												aria-controls='nav-genres'
 											>
 												Genres
+											</button>
+											<button
+												className='col-sm-6 nav-link'
+												id='nav-artists-tab'
+												data-bs-toggle='tab'
+												data-bs-target='#nav-artists'
+												type='button'
+												role='tab'
+												aria-controls='nav-artists'
+											>
+												Artists
 											</button>
 										</div>
 									</nav>
@@ -314,6 +320,35 @@ const MyPage = () => {
 														>
 															<h4
 																className='col-sm-10 element genre'
+																href='/{items}'
+															>
+																{item}
+															</h4>
+															<button
+																type='button'
+																className=' col-sm-2 right delete_2 btn-close'
+																aria-label='Close'
+															></button>
+														</div>
+													);
+												})}
+											</div>
+										</div>
+										<div
+											className='col-sm-8  tab-pane fade'
+											id='nav-artists'
+											role='tabpanel'
+											aria-labelledby='nav-artists-tab'
+										>
+											<div className='list-group-item list'>
+												{artists.map((item, index) => {
+													return (
+														<div
+															className='col-sm-12 row'
+															key={index}
+														>
+															<h4
+																className='col-sm-10 element song'
 																href='/{items}'
 															>
 																{item}

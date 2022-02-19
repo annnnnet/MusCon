@@ -63,10 +63,16 @@ const Registration = () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [city, setCity] = useState('');
+	const [photo, setPhoto] = useState('');
 	const [successful, setSuccessful] = useState(false);
 
 	const { message } = useSelector((state) => state.message);
 	const dispatch = useDispatch();
+
+	const onChangePhoto = (e) => {
+		const photo = e.target.value;
+		setPhoto(photo);
+	};
 
 	const onChangeUsername = (e) => {
 		const username = e.target.value;
@@ -96,7 +102,7 @@ const Registration = () => {
 		form.current.validateAll();
 
 		if (checkBtn.current.context._errors.length === 0) {
-			dispatch(register(username, email, city, password))
+			dispatch(register(username, email, password, city, photo))
 				.then(() => {
 					setSuccessful(true);
 				})
@@ -142,6 +148,8 @@ const Registration = () => {
 														src='/Images/ava.jpg'
 														className='rounded-circle'
 														alt='user_avatar'
+														value={photo}
+														onChange={onChangePhoto}
 													/>
 													<button className='col-sm-1 btn btn-circle add_photo btn-lg '>
 														<MdOutlineAddAPhoto />

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Card from './card';
+import Card from './Card';
 import img1 from '../../pics/singer.jpg';
 import img2 from '../../pics/singer.jpg';
 
@@ -54,8 +54,8 @@ import img2 from '../../pics/singer.jpg';
 // export default Friends;
 
 import singer from '../../pics/singer.jpg';
-import Footer from '../../components/Footer/Footer';
-import Header from '../../components/Header/Header';
+import Footer from '../Footer/Footer';
+import Header from '../Header/Header';
 
 var friends = [
 	'Tom',

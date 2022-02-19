@@ -1,5 +1,5 @@
 import React from 'react';
-import './toptable.css';
+import './TopTable.css';
 import Table from 'react-bootstrap/Table';
 
 const data = [
@@ -37,8 +37,8 @@ const Rad4 = {
 
 function Toptable() {
 	return (
-		<div className='Table'>
-			<Table borderless class='table'>
+		<div className='Table '>
+			<Table borderless class='table '>
 				<tr>
 					<th style={Rad}>№</th>
 					<th style={Rad1}>Author</th>
