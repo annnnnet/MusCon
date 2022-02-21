@@ -13,11 +13,11 @@ import Chart from './pages/Chart/Chart';
 import Friends from './components/FriendCard/Cards';
 import Login from './pages/Login/Login';
 import Recommendation from './components/FriendCard/Rec';
-import Example from './components/TopTable/tb';
+// import Example from './components/TopTable/tb';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { history } from './helpers/history';
-
+import Test from './components/TopTable/Test';
 
 export default function App() {
 	return (
@@ -50,7 +50,7 @@ export default function App() {
 
 				<Route exact path='/Rec' element={<Recommendation />} />
 
-				<Route exact path='/Ex' element={<Example />} />
+				<Route exact path='/Ex' element={<Test />} />
 			</Routes>
 		</Router>
 	);

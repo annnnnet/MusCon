@@ -1,61 +1,8 @@
-import React, { Component } from 'react';
-
-import Card from './Card';
-import img1 from '../../pics/singer.jpg';
-import img2 from '../../pics/singer.jpg';
-
-// class Friends extends Component {
-// 	render() {
-// 		return (
-// 			<div className='container-fluid d-flex justify-content-center'>
-// 				<div className='row'>
-// 					<div className='col-xxl-1 col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12 '>
-// 						<Card imgsrc={img1} title='Mark' />
-// 					</div>
-// 					<div className='col-xxl-1 col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12'>
-// 						<Card imgsrc={img2} title='John' />
-// 					</div>
-// 					<div className='col-xxl-1 col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12'>
-// 						<Card imgsrc={img1} title='Nick' />
-// 					</div>
-// 					<div className='col-xxl-1 col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12'>
-// 						<Card imgsrc={img1} title='Nick' />
-// 					</div>
-// 					<div className='col-xxl-1 col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12'>
-// 						<Card imgsrc={img1} title='Nick' />
-// 					</div>
-// 					<div className='col-xxl-1 col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12'>
-// 						<Card imgsrc={img1} title='Nick' />
-// 					</div>
-// 					<div className='col-xxl-1 col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12'>
-// 						<Card imgsrc={img1} title='Nick' />
-// 					</div>
-// 					<div className='col-xxl-1 col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12'>
-// 						<Card imgsrc={img1} title='Nick' />
-// 					</div>
-// 					<div className='col-xxl-1 col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12'>
-// 						<Card imgsrc={img1} title='Nick' />
-// 					</div>
-// 					<div className='col-xxl-1 col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12'>
-// 						<Card imgsrc={img1} title='Nick' />
-// 					</div>
-// 					<div className='col-xxl-1 col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12'>
-// 						<Card imgsrc={img1} title='Nick' />
-// 					</div>
-// 					<div className='col-xxl-1 col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12'>
-// 						<Card imgsrc={img1} title='Nick' />
-// 					</div>
-// 				</div>
-// 			</div>
-// 		);
-// 	}
-// }
-
-// export default Friends;
-
+import React from 'react';
 import singer from '../../pics/singer.jpg';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
+import './Cards.css';
 
 var friends = [
 	'Tom',
@@ -81,6 +28,11 @@ const Friends = () => {
 
 			<div className='content'>
 				<div className='sc_top'>
+					{/* <img
+						className='wavy'
+						src={require('../../pics/yellow_top_wave_01.png')}
+						alt='wave'
+					/> */}
 					<img
 						className='wavy'
 						src={require('../../pics/purple_bottom_wave_01.png')}
@@ -118,7 +70,7 @@ const Friends = () => {
 												</p>
 												<a
 													href='#'
-													className='btn btn-outline-success'
+													className='btn btn-outline-warning'
 												>
 													Add friend
 												</a>
