@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import './Registration.css';
+import './registration.css';
 import '../../basic.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import Footer from '../../components/Footer/Footer';
