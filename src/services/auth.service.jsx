@@ -16,11 +16,18 @@ const register = (username, email, password, city, photo) => {
 const login = (username, password) => {
 	return axios
 		.get(API_URL + 'login', {
+<<<<<<< HEAD
 			username,
 			password,
+=======
+			auth: {
+				username,
+				password,
+			},
+>>>>>>> 22d82b0805355db52a0ec020207c95d1e15b3083
 		})
 		.then((response) => {
-			if (response.data.accessToken) {
+			if (response.data.token) {
 				localStorage.setItem('user', JSON.stringify(response.data));
 			}
 			return response.data;
