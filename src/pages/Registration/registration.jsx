@@ -55,7 +55,7 @@ const vpassword = (value) => {
 	}
 };
 
-const Registration = () => {
+const Registration = (props) => {
 	const form = useRef();
 	const checkBtn = useRef();
 
@@ -105,6 +105,9 @@ const Registration = () => {
 			dispatch(register(username, email, password, city, photo))
 				.then(() => {
 					setSuccessful(true);
+					// eslint-disable-next-line react/prop-types
+					// props.history.push('/Login');
+					window.location.reload();
 				})
 				.catch(() => {
 					setSuccessful(false);
@@ -258,12 +261,9 @@ const Registration = () => {
 
 								{message && (
 									<div className='form-group'>
+										if {message === 'successful operation'}:
 										<div
-											className={
-												successful
-													? 'alert alert-success'
-													: 'alert alert-danger'
-											}
+											className={successful ? 'done' : 'tip'}
 											role='alert'
 										>
 											{message}

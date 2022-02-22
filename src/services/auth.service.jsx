@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_URL = 'https://muscon.herokuapp.com/';
+// const API_URL = 'https://muscon.herokuapp.com/';
+const API_URL = 'http://127.0.0.1:5000/';
 
 const register = (username, email, password, city, photo) => {
 	return axios.post(API_URL + 'signup', {
@@ -14,7 +15,7 @@ const register = (username, email, password, city, photo) => {
 
 const login = (username, password) => {
 	return axios
-		.post(API_URL + 'login', {
+		.get(API_URL + 'login', {
 			username,
 			password,
 		})
