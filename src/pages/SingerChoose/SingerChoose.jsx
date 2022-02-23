@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import './SingerChoose.css';
 import '../../basic.css';
 import singer from '../../pics/singer.jpg';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 
@@ -14,6 +14,25 @@ const SingerChoose = () => {
 	const genres = new FormData();
 	const location = useLocation();
 	genres.append('genres', location.state.genres);
+
+	const [checked, setChecked] = useState([]);
+
+	const handleCheck = (event) => {
+		var updatedList = [...checked];
+		if (event.target.checked) {
+			updatedList = [...checked, event.target.value];
+		} else {
+			updatedList.splice(checked.indexOf(event.target.value), 1);
+		}
+		setChecked(updatedList);
+	};
+
+	const checkedItems = checked.length
+		? checked.reduce((total, item) => {
+				return total + ', ' + item;
+		  })
+		: '';
+
 	useEffect(() => {
 		fetch(`http://127.0.0.1:5000/get_artists`, {
 			method: 'POST',
@@ -84,18 +103,12 @@ const SingerChoose = () => {
 													<p className='sc_singer'>
 														{artist.name}
 													</p>
-													<button className='sc_plus'>
-														<svg
-															xmlns='http://www.w3.org/2000/svg'
-															className='bi bi-plus-lg'
-															viewBox='0 0 16 16'
-														>
-															<path
-																fillRule='evenodd'
-																d='M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z'
-															/>
-														</svg>
-													</button>
+													<input
+														value={artist.id}
+														type='checkbox'
+														onChange={handleCheck}
+														className='checkboxstyle red'
+													/>
 												</div>
 											</div>
 										</div>
@@ -103,6 +116,15 @@ const SingerChoose = () => {
 								})}
 						</div>
 					</div>
+					<button className='submit_button center'>
+						<Link
+							to='/Friends'
+							state={{ genres: checkedItems }}
+							className='submit_button_text'
+						>
+							Move to friends
+						</Link>
+					</button>
 				</div>
 			</div>
 			<Footer />
