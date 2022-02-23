@@ -52,14 +52,16 @@
 
 .main_buttons {
   margin: auto;
+  flex-direction: column;
   height: 100%;
   width: 50%;
 }
 
-.main_vertical_button_left {
+a[role="button"].main_vertical_button_left {
   background-color: #b61984;
   width: 75%;
   padding: 5px;
+  margin-top: 20px;
   margin-bottom: 20px;
   border-radius: 50px;
   border: 2px solid #b61984;
@@ -69,16 +71,18 @@
   color: white;
 }
 
-.main_vertical_button_left:hover {
+a[role="button"].main_vertical_button_left:hover {
   background-color: white;
   color: #b61984;
+  text-decoration: none;
 }
 
-.main_vertical_button_right {
+a[role="button"].main_vertical_button_right {
   background-color: #b61984;
   width: 75%;
   margin-left: 25%;
   padding: 5px;
+  margin-top: 20px;
   margin-bottom: 20px;
   border-radius: 50px;
   border: 2px solid #b61984;
@@ -88,21 +92,25 @@
   color: white;
 }
 
-.main_vertical_button_right:hover {
+a[role="button"].main_vertical_button_right:hover {
   background-color: white;
   color: #b61984;
+  text-decoration: none;
 }
 
-.main_horizontal_buttons {
+a[role="button"].main_horizontal_buttons {
   display: flex;
   justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-.main_horizontal_button {
+a[role="button"].main_horizontal_button {
   background-color: #dcd1f3;
   width: 30%;
   max-width: 80px;
   margin-top: 20px;
+  margin-bottom: 20px;
   display: inline;
   border-radius: 50px;
   border: none;
@@ -119,7 +127,7 @@
   fill: white;
 }
 
-.main_wavy_bottom{
-    background-color: #dcd1f3;
-    margin-bottom: 0;
+.main_wavy_bottom {
+  background-color: #dcd1f3;
+  margin-bottom: 0;
 }

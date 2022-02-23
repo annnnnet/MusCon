@@ -7,7 +7,7 @@ import Header from '../../components/Header/Header';
 import logo from '../../pics/last.gif';
 // import PolarChart from '../../components/PolarChart/PolarChart';
 import { MdOutlineAddAPhoto } from 'react-icons/md';
-
+import { Navigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Form from 'react-validation/build/form';
 import Input from 'react-validation/build/input';
@@ -55,7 +55,7 @@ const vpassword = (value) => {
 	}
 };
 
-const Registration = () => {
+const Registration = (props) => {
 	const form = useRef();
 	const checkBtn = useRef();
 
@@ -256,14 +256,12 @@ const Registration = () => {
 									</div>
 								)}
 
+								{successful && <Navigate replace to='/Login' />}
 								{message && (
 									<div className='form-group'>
+										{/* {message === 'successful operation'}: */}
 										<div
-											className={
-												successful
-													? 'alert alert-success'
-													: 'alert alert-danger'
-											}
+											className={!successful && 'tip'}
 											role='alert'
 										>
 											{message}

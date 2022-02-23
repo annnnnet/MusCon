@@ -187,6 +187,14 @@ button.add_photo:hover {
   color: #ff4343;
 }
 
+.done {
+  font-size: smaller;
+  max-height: min-content;
+  margin: 0px;
+  padding: 0px;
+  color: #ffffff;
+}
+
 /* #upload {
   opacity: 0;
 }
