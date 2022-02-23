@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import './SingerChoose.css';
 import '../../basic.css';
 import singer from '../../pics/singer.jpg';
+import { useLocation } from 'react-router-dom';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 
@@ -11,9 +12,10 @@ const SingerChoose = () => {
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
 	const genres = new FormData();
-	genres.append('genres', 'pop, hip-pop');
+	const location = useLocation();
+	genres.append('genres', location.state.genres);
 	useEffect(() => {
-		fetch(`https://muscon.herokuapp.com/artists`, {
+		fetch(`http://127.0.0.1:5000/get_artists`, {
 			method: 'POST',
 			body: genres,
 		})

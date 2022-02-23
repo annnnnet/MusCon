@@ -19,7 +19,7 @@ const genresopt = genres.map((genre, index) => {
 
 const PostCreate = () => {
 	const getUploadParams = () => {
-		return { url: 'https://httpbin.org/post' };
+		return { url: 'http://127.0.0.1:5000/post' };
 	};
 
 	const handleChangeStatus = ({ meta }, status) => {

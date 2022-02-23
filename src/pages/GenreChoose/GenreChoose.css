@@ -189,29 +189,47 @@
       font-size: 24px;
   }
   
-  .sc_plus{
-      width: 36px;
-      height: fit-content;
-      padding: 0;
-      margin-top: 5%;
-      margin-right: 0%;
-      margin-left: auto;
-      border: none;
-      border-radius: 50px;
-      background-color: white;
+  .checkboxstyle{
+    accent-color: #b61984;
+    height: 30px;
+    width: 30px;
+    font-size: 36px;
+    color:#b61984;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 0%;
+    margin-left: auto;  
   }
-  
-  .sc_plus svg{
-      fill:#b61984;
-      width: 36px;
-      border-radius: 50px;
-      border: 3px solid #b61984;
+
+  .submit_button_text{
+    color:white;
+    margin: 5px 35px;
   }
-  
-  .sc_plus:hover{
+
+  .submit_button{
       background-color: #b61984;
-  }
-  
-  .sc_plus svg:hover{
-      fill:white;
-  }
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+      align-self: center;
+      padding:0;
+      border-radius: 50px;
+      border: 2px solid #b61984;
+      font-family: "Comfortaa";
+      font-size: 30px;
+      font-weight: 100;
+      color: white !important;
+      margin-top: 100px;
+      text-decoration: none; 
+    }
+    
+    .submit_button:hover {
+      background-color: white;
+      color: #b61984;
+      text-decoration: none; 
+    }
+    
+    .submit_button_text:hover{
+      color: #b61984;
+      text-decoration: none; 
+    }

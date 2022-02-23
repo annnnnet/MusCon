@@ -14,7 +14,7 @@ import Friends from './components/FriendCard/Cards';
 import Login from './pages/Login/Login';
 import Recommendation from './components/FriendCard/Rec';
 import Example from './components/TopTable/tb';
-
+import UserChange from './pages/UserChange/UserChange';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { history } from './helpers/history';
 
@@ -40,6 +40,8 @@ export default function App() {
 				<Route exact path='/Signup' element={<Registration />} />
 
 				<Route exact path='/Login' element={<Login />} />
+
+				<Route exact path='/UserChange' element={<UserChange />} />
 
 				<Route exact path='/Friends' element={<Friends />} />
 
