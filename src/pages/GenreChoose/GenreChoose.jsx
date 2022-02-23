@@ -68,11 +68,13 @@ const Genrechoose = () => {
 
 	const onLinkClick = (e) => {
 		e.preventDefault();
-		let auth = localStorage.getItem('user');
+		const token = localStorage.getItem('token');
 		fetch(`http://127.0.0.1:5000/edit_genre`, {
 			method: 'PUT',
 			headers: {
-				Authorization: `Bearer ${auth}`,
+				Accept: 'application/json',
+				'Content-Type': 'application/json',
+				Authorization: 'Bearer ' + token,
 			},
 			body: JSON.stringify({ genre_id: ['pop', 'songwriter', 'soul'] }),
 		})

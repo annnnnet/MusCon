@@ -57,7 +57,7 @@
   width: 50%;
 }
 
-a[role="button"].main_vertical_button_left {
+.main_vertical_button_left {
   background-color: #b61984;
   width: 75%;
   padding: 5px;
@@ -71,13 +71,13 @@ a[role="button"].main_vertical_button_left {
   color: white;
 }
 
-a[role="button"].main_vertical_button_left:hover {
+.main_vertical_button_left:hover {
   background-color: white;
   color: #b61984;
   text-decoration: none;
 }
 
-a[role="button"].main_vertical_button_right {
+.main_vertical_button_right {
   background-color: #b61984;
   width: 75%;
   margin-left: 25%;
@@ -92,20 +92,20 @@ a[role="button"].main_vertical_button_right {
   color: white;
 }
 
-a[role="button"].main_vertical_button_right:hover {
+.main_vertical_button_right:hover {
   background-color: white;
   color: #b61984;
   text-decoration: none;
 }
 
-a[role="button"].main_horizontal_buttons {
+.main_horizontal_buttons {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-a[role="button"].main_horizontal_button {
+.main_horizontal_button {
   background-color: #dcd1f3;
   width: 30%;
   max-width: 80px;
