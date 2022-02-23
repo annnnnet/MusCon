@@ -5,6 +5,7 @@ import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 var genres = [
 	'Pop',
 	'Rock',
@@ -89,6 +90,9 @@ const Genrechoose = () => {
 			.then((actualData) => {
 				setData(actualData);
 				setError(null);
+				if (data) {
+					return <Navigate replace to='/Singerchoose' />;
+				}
 			})
 			.catch((err) => {
 				setError(err.message);
