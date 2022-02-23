@@ -34,7 +34,7 @@ const Header = (active) => {
 	}, [currentUser, logOut]);
 	return (
 		<header className='header standart'>
-			<div className='media small_logo col-md-1 text-right'>
+			<div className='media small_logo col-sm-1 text-right'>
 				<img
 					src='/images/logo3.png'
 					className='img-fluid  '
@@ -45,7 +45,7 @@ const Header = (active) => {
 			</div>
 			{active ? (
 				<>
-					<ul className='header_left_nav col-md-7'>
+					<ul className='header_left_nav col-sm-7'>
 						<li>
 							<a href='/MyPage'>My page</a>
 						</li>
@@ -62,11 +62,11 @@ const Header = (active) => {
 							<a href='/SingerChoose'>SingerChoose</a>
 						</li>
 					</ul>
-					<div className='group standart col-md-4'>
+					<div className='group standart col-sm-4'>
 						<a
 							href='/Main'
 							role='button'
-							className='action_button text-capitalize btn col-md-4  justify-content-right'
+							className='action_button text-capitalize btn col-sm-4  justify-content-right'
 							onClick={logOut}
 						>
 							Logout
@@ -75,7 +75,7 @@ const Header = (active) => {
 				</>
 			) : (
 				<>
-					<ul className='header_left_nav col-md-7'>
+					<ul className='header_left_nav col-sm-7'>
 						<li>
 							<a href='/Main'>Main</a>
 						</li>
@@ -84,18 +84,18 @@ const Header = (active) => {
 						</li>
 					</ul>
 
-					<div className='group standart col-md-4'>
+					<div className='group standart col-sm-4'>
 						<a
 							href='/Login'
 							role='button'
-							className='action_button text-capitalize btn col-md-4  justify-content-right'
+							className='action_button text-capitalize btn col-sm-4  justify-content-right'
 						>
 							Login
 						</a>
 						<a
 							href='/Signup'
 							role='button'
-							className='action_button text-capitalize btn active col-md-4  justify-content-left'
+							className='action_button text-capitalize btn active col-sm-4  justify-content-left'
 						>
 							Sign-Up
 						</a>

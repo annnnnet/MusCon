@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import './registration.css';
+import './Registration.css';
 import '../../basic.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import Footer from '../../components/Footer/Footer';
@@ -7,7 +7,7 @@ import Header from '../../components/Header/Header';
 import logo from '../../pics/last.gif';
 // import PolarChart from '../../components/PolarChart/PolarChart';
 import { MdOutlineAddAPhoto } from 'react-icons/md';
-
+import { Navigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Form from 'react-validation/build/form';
 import Input from 'react-validation/build/input';
@@ -105,9 +105,6 @@ const Registration = (props) => {
 			dispatch(register(username, email, password, city, photo))
 				.then(() => {
 					setSuccessful(true);
-					// eslint-disable-next-line react/prop-types
-					// props.history.push('/Login');
-					window.location.reload();
 				})
 				.catch(() => {
 					setSuccessful(false);
@@ -259,11 +256,12 @@ const Registration = (props) => {
 									</div>
 								)}
 
+								{successful && <Navigate replace to='/Login' />}
 								{message && (
 									<div className='form-group'>
-										if {message === 'successful operation'}:
+										{/* {message === 'successful operation'}: */}
 										<div
-											className={successful ? 'done' : 'tip'}
+											className={!successful && 'tip'}
 											role='alert'
 										>
 											{message}

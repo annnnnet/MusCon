@@ -1,7 +1,7 @@
-import React from 'react';
-// import React, { useState, useEffect } from 'react';
+// import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navigate } from 'react-router-dom';
-// import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { ImLocation } from 'react-icons/im';
 import { ImPencil } from 'react-icons/im';
 import '../../basic.css';
@@ -13,6 +13,8 @@ import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 // import UserService from '../../services/user.service';
 // import EventBus from '../../common/EventBus';
+// import axios from 'axios';
+// import { get_user } from '../../actions/auth';
 
 const friends = [
 	{
@@ -71,37 +73,44 @@ const songs = ['Song1', 'Song2', 'Song3', 'Song4', 'Song5'];
 const artists = ['Artist1', 'Artist2', 'Artist3', 'Artist4', 'Artist5'];
 
 const MyPage = () => {
-	// const { user: currentUser } = useSelector((state) => state.auth);
-	var isLoggedIn = true;
-	// if (!currentUser) {
-	// 	return <Navigate replace to='/login' />;
-	// }
-	if (!isLoggedIn) {
-		return <Navigate replace to='/login' />;
+	const { user: currentUser } = useSelector((state) => state.auth);
+	if (!currentUser) {
+		return <Navigate replace to='/Login' />;
 	}
 	// eslint-disable-next-line react-hooks/rules-of-hooks
-	// const [content, setContent] = useState(false);
-
-	// eslint-disable-next-line react-hooks/rules-of-hooks
+	// const [content, setContent] = useState(null);
+	// //eslint-disable-next-line react-hooks/rules-of-hooks
 	// useEffect(() => {
-	// 	UserService.getUserBoard().then(
+	// 	UserService.getUser().then(
 	// 		(response) => {
 	// 			setContent(response.data);
 	// 		},
 	// 		(error) => {
-	// 			setContent(
-	// 				(error.response &&
-	// 					error.response.data &&
-	// 					error.response.data.message) ||
-	// 					error.message ||
-	// 					error.toString()
-	// 			);
-
-	// 			if (error.response && error.response.status === 401) {
+	// 			if (error.response && error.response.status === 404) {
+	// 				EventBus.dispatch('logout');
+	// 			}
+	// 			if (error.response && error.response.status === 403) {
 	// 				EventBus.dispatch('logout');
 	// 			}
 	// 		}
 	// 	);
+	// }, []);
+
+	// const fetchData = async () => {
+	// 	setLoading(true);
+	// 	try {
+	// 		const res = await axios.get('/get_user');
+	// 		setContent(res.data);
+	// 		setError(null);
+	// 	} catch (err) {
+	// 		setError(err);
+	// 	} finally {
+	// 		setLoading(false);
+	// 	}
+	// };
+	// // eslint-disable-next-line react-hooks/rules-of-hooks
+	// useEffect(() => {
+	// 	fetchData();
 	// }, []);
 
 	return (
@@ -120,7 +129,8 @@ const MyPage = () => {
 					<div className='left violet_back body'>
 						<div className='col-sm-8 canva'>
 							<h4 className='col-sm-8  heading personal_data'>
-								Manuella_Tarly
+								Ira Koval
+								{/* {content.username} */}
 								{/* {currentUser.username} */}
 							</h4>
 							<div className='row location'>
@@ -129,7 +139,7 @@ const MyPage = () => {
 								</i>
 								<h1 className='col-sm-7 location_name'>
 									Los-Angles, USA
-									{/* {currentUser.city} */}
+									{/* {content.city} */}
 								</h1>
 							</div>
 							<div className=' col-sm-10 ava_reg canva'>
@@ -139,7 +149,7 @@ const MyPage = () => {
 									alt='user_avatar'
 								/>
 								<a
-									href='/'
+									href='/UserChange'
 									role='button'
 									className='on_page action_button col-sm-8 text-capitalize btn'
 								>
@@ -209,7 +219,7 @@ const MyPage = () => {
 																key={index}
 															>
 																<a
-																	href='/user/#'
+																	href='/user/#}'
 																	className='col-sm-12  element '
 																>
 																	{item.image}
@@ -225,6 +235,13 @@ const MyPage = () => {
 															</div>
 														);
 													})}
+												<a
+													href='/Friends'
+													role='button'
+													className='change on_page col-sm-2  center btn text-capitalize btn'
+												>
+													<ImPencil /> Edit{' '}
+												</a>
 											</div>
 										</div>
 										<div
@@ -254,6 +271,13 @@ const MyPage = () => {
 														</div>
 													);
 												})}
+												<a
+													href='/GenreChoose'
+													role='button'
+													className='change on_page col-sm-2  center btn text-capitalize btn'
+												>
+													<ImPencil /> Edit{' '}
+												</a>
 											</div>
 										</div>
 									</div>
@@ -332,6 +356,13 @@ const MyPage = () => {
 														</div>
 													);
 												})}
+												<a
+													href='/GenreChoose'
+													role='button'
+													className='change on_page col-sm-2  center btn text-capitalize btn'
+												>
+													<ImPencil /> Edit{' '}
+												</a>
 											</div>
 										</div>
 										<div
@@ -361,6 +392,13 @@ const MyPage = () => {
 														</div>
 													);
 												})}
+												<a
+													href='/SingerChoose'
+													role='button'
+													className='change on_page col-sm-2  center btn text-capitalize btn'
+												>
+													<ImPencil /> Edit{' '}
+												</a>
 											</div>
 										</div>
 									</div>

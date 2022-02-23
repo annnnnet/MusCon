@@ -182,3 +182,130 @@ a[role="button"].on_page {
   margin: 0px;
   padding: 0 5%;
 }
+
+.tab-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0px;
+  margin-bottom: 8px;
+  padding: 0px;
+}
+
+.table_1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: right;
+  width: 100%;
+  padding: 20px;
+  margin: auto;
+  margin-top: 20px;
+  margin-right: 50px;
+  margin-bottom: 340px;
+}
+
+.table_2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: left;
+  width: 100%;
+  margin: auto;
+  margin-top: 20px;
+  margin-left: 50px;
+  margin-bottom: 50px;
+}
+
+.element {
+  width: 100%;
+  max-height: 100%;
+  min-height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin: auto;
+  border-color: transparent;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  text-decoration: transparent underline;
+}
+.element:hover {
+  border-color: transparent;
+  border-bottom: 1px solid#b61984;
+  text-decoration: transparent underline;
+}
+
+.username {
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  margin: 0px;
+  font-size: large;
+  color: #b61984;
+}
+.username:hover {
+  color: #ffffff;
+}
+
+.song {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding: auto;
+  font-size: large;
+  color: #b61984;
+}
+.song:hover {
+  color: #ffffff;
+}
+
+.genre {
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding: auto;
+  font-size: large;
+  color: #b61984;
+}
+
+.genre:hover {
+  color: #ffffff;
+}
+
+.location {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: left;
+  color: #000000;
+  padding: auto;
+  /* margin: 10px;
+  margin-left: 0px; */
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.sign_loc {
+  margin: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.location_name {
+  font-family: "La Belle Aurore", cursive;
+  font-size: 20px;
+  font-weight: 200;
+  padding: auto;
+  margin: auto;
+  margin-left: 20px;
+  margin-top: 20px;
+  color: #000000;
+  position: absolute;
+}

@@ -31,6 +31,7 @@ const Login = (props) => {
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
 	const [loading, setLoading] = useState(false);
+	// const [successful, setSuccessful] = useState(false);
 
 	const { isLoggedIn } = useSelector((state) => state.auth);
 	const { message } = useSelector((state) => state.message);
@@ -58,7 +59,7 @@ const Login = (props) => {
 			dispatch(login(username, password))
 				.then(() => {
 					// eslint-disable-next-line react/prop-types
-					props.history.push('/MyPage');
+					props.history.push('/GenreChoose');
 					window.location.reload();
 				})
 				.catch(() => {
@@ -70,7 +71,7 @@ const Login = (props) => {
 	};
 
 	if (isLoggedIn) {
-		return <Navigate replace to='/MyPage' />;
+		return <Navigate replace to='/Genrechoose' />;
 	}
 
 	return (
@@ -100,7 +101,6 @@ const Login = (props) => {
 								<h3 className='text-center title'>
 									<strong>Enter</strong> into an account
 								</h3>
-
 								<main className='col-sm-10 form-signup text-left'>
 									<div className='form-row  '>
 										<div className='form-group col-sm-12'>
@@ -158,10 +158,10 @@ const Login = (props) => {
 										</p>
 									</div>
 								</main>
-
+								{/* {isLoggedIn && <Navigate replace to='/MyPage' />} */}
 								{message && (
 									<div className='form-group'>
-										<div className='done' role='alert'>
+										<div className='tip' role='alert'>
 											{message}
 										</div>
 									</div>

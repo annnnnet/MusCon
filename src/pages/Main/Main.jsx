@@ -35,19 +35,21 @@ const Main = () => {
 								<p id='main_text_4'>for you</p>
 							</div>
 							<div className='main_buttons'>
-								<button
-									type='button'
+								<a
+									href='/Login'
+									role='button'
 									className='main_vertical_button_right'
 								>
 									Log in
-								</button>
+								</a>
 								<br></br>
-								<button
-									type='button'
+								<a
+									href='/Signup'
+									role='button'
 									className='main_vertical_button_left'
 								>
 									Sign up
-								</button>
+								</a>
 								{/* <div className='main_horizontal_buttons'>
 									<button
 										type='button'
