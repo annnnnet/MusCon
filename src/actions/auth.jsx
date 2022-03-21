@@ -5,6 +5,8 @@ import {
 	LOGIN_FAIL,
 	LOGOUT,
 	SET_MESSAGE,
+	// GET_USER_SUCCESS,
+	// GET_USER_FAIL,
 } from './types';
 
 import AuthService from '../services/auth.service';
@@ -79,7 +81,7 @@ export const login = (username, password) => (dispatch) => {
 	);
 };
 
-// export const get_user = () => (dispatch) => {
+// export const get_user = (jwt) => (dispatch) => {
 // 	return UserService.get_user().then(
 // 		(data) => {
 // 			dispatch({

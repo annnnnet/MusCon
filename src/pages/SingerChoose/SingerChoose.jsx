@@ -116,13 +116,22 @@ const SingerChoose = () => {
 								})}
 						</div>
 					</div>
-					<button className='submit_button center'>
+					{/* <button className='submit_button center'>
 						<Link
 							to='/Friends'
 							state={{ genres: checkedItems }}
 							className='submit_button_text'
 						>
 							Move to friends
+						</Link>
+					</button> */}
+					<button className='submit_button center'>
+						<Link
+							to='/MyPage'
+							state={{ genres: checkedItems }}
+							className='submit_button_text'
+						>
+							Move to my account
 						</Link>
 					</button>
 				</div>

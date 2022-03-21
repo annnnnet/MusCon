@@ -281,7 +281,7 @@ a[role="button"].on_page {
 
 .location {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
   justify-content: left;
   color: #000000;
@@ -289,23 +289,22 @@ a[role="button"].on_page {
   /* margin: 10px;
   margin-left: 0px; */
   margin: auto;
-  margin-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 .sign_loc {
   margin: 0px;
-  padding-left: 0px;
-  padding-right: 0px;
+  margin-right: -2%;
+  padding: 0px;
 }
 
 .location_name {
   font-family: "La Belle Aurore", cursive;
   font-size: 20px;
   font-weight: 200;
-  padding: auto;
-  margin: auto;
-  margin-left: 20px;
-  margin-top: 20px;
+  padding: 0px;
+  padding-top: 20px;
+  margin-left: -2%;
   color: #000000;
-  position: absolute;
+  position: static;
 }

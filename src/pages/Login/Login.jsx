@@ -71,7 +71,7 @@ const Login = (props) => {
 	};
 
 	if (isLoggedIn) {
-		return <Navigate replace to='/Genrechoose' />;
+		return <Navigate replace to='/MyPage' />;
 	}
 
 	return (
