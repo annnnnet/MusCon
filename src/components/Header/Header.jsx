@@ -8,7 +8,7 @@ import { clearMessage } from '../../actions/message';
 
 import { history } from '../../helpers/history';
 
-const Header = (active) => {
+const Header = () => {
 	const { user: currentUser } = useSelector((state) => state.auth);
 	const dispatch = useDispatch();
 	// const { isLoggedIn } = true;
@@ -43,7 +43,7 @@ const Header = (active) => {
 					alt='logo'
 				/>
 			</div>
-			{active ? (
+			{currentUser ? (
 				<>
 					<ul className='header_left_nav col-sm-7'>
 						<li>
@@ -55,12 +55,12 @@ const Header = (active) => {
 						<li>
 							<a href='/PostDemostrate'>News</a>
 						</li>
-						<li>
+						{/* <li>
 							<a href='/GenreChoose'>GenreChoose</a>
 						</li>
 						<li>
 							<a href='/SingerChoose'>SingerChoose</a>
-						</li>
+						</li> */}
 					</ul>
 					<div className='group standart col-sm-4'>
 						<a

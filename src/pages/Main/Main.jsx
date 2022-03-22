@@ -1,14 +1,19 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import './Main.css';
 import '../../basic.css';
 import logo from '../../pics/last.gif';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import { Link } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 // import UserService from '../../services/user.service';
 
 const Main = () => {
-	// const isLoggedIn = true;
+	const { isLoggedIn } = useSelector((state) => state.auth);
+	if (isLoggedIn) {
+		return <Navigate replace to='/MyPage' />;
+	}
 
 	return (
 		<div className='background standart'>

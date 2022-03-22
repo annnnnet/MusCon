@@ -15,6 +15,9 @@ const getUser = () => {
 	return axios
 		.get(API_URL + 'get_user', { headers: authHeader() })
 		.then((response) => {
+			if (response.data.username) {
+				localStorage.setItem('user_data', JSON.stringify(response.data));
+			}
 			return response.data;
 		});
 };

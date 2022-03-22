@@ -1,5 +1,5 @@
 // import React from 'react';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { ImLocation } from 'react-icons/im';
@@ -11,10 +11,8 @@ import 'bootstrap-css-only/css/bootstrap.min.css';
 import './MyPage.css';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
-// import UserService from '../../services/user.service';
-// import EventBus from '../../common/EventBus';
-// import axios from 'axios';
-// import { get_user } from '../../actions/auth';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 
 const friends = [
 	{
@@ -78,40 +76,25 @@ const MyPage = () => {
 		return <Navigate replace to='/Login' />;
 	}
 	// eslint-disable-next-line react-hooks/rules-of-hooks
-	// const [content, setContent] = useState(null);
-	// //eslint-disable-next-line react-hooks/rules-of-hooks
-	// useEffect(() => {
-	// 	UserService.getUser().then(
-	// 		(response) => {
-	// 			setContent(response.data);
-	// 		},
-	// 		(error) => {
-	// 			if (error.response && error.response.status === 404) {
-	// 				EventBus.dispatch('logout');
-	// 			}
-	// 			if (error.response && error.response.status === 403) {
-	// 				EventBus.dispatch('logout');
-	// 			}
-	// 		}
-	// 	);
-	// }, []);
+	const [data, setData] = useState(null);
+	const user = JSON.parse(localStorage.getItem('user'));
 
-	// const fetchData = async () => {
-	// 	setLoading(true);
-	// 	try {
-	// 		const res = await axios.get('/get_user');
-	// 		setContent(res.data);
-	// 		setError(null);
-	// 	} catch (err) {
-	// 		setError(err);
-	// 	} finally {
-	// 		setLoading(false);
-	// 	}
-	// };
-	// // eslint-disable-next-line react-hooks/rules-of-hooks
-	// useEffect(() => {
-	// 	fetchData();
-	// }, []);
+	// eslint-disable-next-line react-hooks/rules-of-hooks
+	useEffect(() => {
+		axios
+			.get('http://127.0.0.1:5000/user', {
+				headers: { Authorization: 'Bearer ' + user.token },
+			})
+			.then((actualData) => {
+				console.log(actualData.data);
+				this.setData(JSON.stringify(actualData.data));
+				return actualData.data;
+			})
+			.catch((error) => {
+				console.log(error);
+				setData(null);
+			});
+	}, []);
 
 	return (
 		<div className='background standart'>
@@ -128,16 +111,28 @@ const MyPage = () => {
 				<div>
 					<div className='left violet_back body'>
 						<div className='col-sm-8 canva'>
-							<h4 className='col-sm-8  heading personal_data'>
-								Ira Koval
-								{/* {content.username} */}
-								{/* {currentUser.username} */}
-							</h4>
+							{data ? (
+								data.map((user_data) => {
+									return (
+										<h4
+											className='col-sm-8  heading personal_data'
+											key={user_data}
+										>
+											{user_data.username}
+										</h4>
+									);
+								})
+							) : (
+								<h4 className='col-sm-8  heading personal_data'>
+									John
+								</h4>
+							)}
+
 							<div className='row location'>
-								<i className='col-sm-1 fa-2x sign_loc'>
+								<i className='col-1 fa-2x sign_loc'>
 									<ImLocation />
 								</i>
-								<h1 className='col-sm-7 location_name'>
+								<h1 className='col-7 location_name'>
 									Los-Angles, USA
 									{/* {content.city} */}
 								</h1>
