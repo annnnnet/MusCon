@@ -6,8 +6,8 @@ import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import logo from '../../pics/last.gif';
 // import PolarChart from '../../components/PolarChart/PolarChart';
+import { useLocation, Link, Navigate } from 'react-router-dom';
 import { MdOutlineAddAPhoto } from 'react-icons/md';
-
 import { useDispatch, useSelector } from 'react-redux';
 import Form from 'react-validation/build/form';
 import Input from 'react-validation/build/input';
@@ -79,6 +79,31 @@ const UserChange = () => {
 				});
 		}
 	};
+
+	const user_data = new FormData();
+	user_data.append('username', username);
+	user_data.append('city', city);
+
+	const onLinkClick = (e) => {
+		e.preventDefault();
+		const tokenData = JSON.parse(localStorage.getItem('user'));
+		fetch(`http://127.0.0.1:5000/edit_profile`, {
+			method: 'PUT',
+			headers: {
+				'Content-Type': 'application/json',
+				Authorization: `Bearer ${tokenData.token}`,
+			},
+			body: user_data,
+		}).then((response) => {
+			if (!response.ok) {
+				throw new Error(
+					`This is an HTTP error: The status is ${response.status}`
+				);
+			}
+			return <Navigate replace to='/MyPage' />;
+		});
+	};
+
 	return (
 		<div className='background standart '>
 			<div className='sticky-top '>
@@ -161,7 +186,11 @@ const UserChange = () => {
 											</div>
 											<div className='center'>
 												<div className=' col-sm-12 form-group'>
-													<button className='btn' type='submit'>
+													<button
+														className='btn'
+														type='submit'
+														onClick={onLinkClick}
+													>
 														Save changes
 													</button>
 												</div>
