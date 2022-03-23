@@ -70,9 +70,9 @@ const Login = (props) => {
 		}
 	};
 
-	if (isLoggedIn) {
-		return <Navigate replace to='/MyPage' />;
-	}
+	// if (isLoggedIn) {
+	// 	return <Navigate replace to='/MyPage' />;
+	// }
 
 	return (
 		<div className='background standart '>
