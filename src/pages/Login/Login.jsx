@@ -13,6 +13,7 @@ import Form from 'react-validation/build/form';
 import Input from 'react-validation/build/input';
 import CheckButton from 'react-validation/build/button';
 import { login } from '../../actions/auth';
+import { Link } from 'react-router-dom';
 
 const required = (value) => {
 	if (!value) {
@@ -148,8 +149,7 @@ const Login = (props) => {
 												type='submit'
 												disabled={loading}
 											>
-												{/* {loading} */}
-												Log In
+												<Link to='/Genrechoose'>Log In</Link>
 											</button>
 										</div>
 										<p className='already'>
@@ -158,7 +158,6 @@ const Login = (props) => {
 										</p>
 									</div>
 								</main>
-								{/* {isLoggedIn && <Navigate replace to='/MyPage' />} */}
 								{message && (
 									<div className='form-group'>
 										<div className='tip' role='alert'>
