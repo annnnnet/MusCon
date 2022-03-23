@@ -76,25 +76,38 @@ const MyPage = () => {
 		return <Navigate replace to='/Login' />;
 	}
 	// eslint-disable-next-line react-hooks/rules-of-hooks
-	const [data, setData] = useState(null);
+	const [data, setData] = useState([]);
 	const user = JSON.parse(localStorage.getItem('user'));
 
 	// eslint-disable-next-line react-hooks/rules-of-hooks
 	useEffect(() => {
-		axios
-			.get('http://127.0.0.1:5000/user', {
-				headers: { Authorization: 'Bearer ' + user.token },
+		fetch(`http://127.0.0.1:5000/user`, {
+			method: 'GET',
+			headers: {
+				Authorization: 'Bearer ' + user.token,
+			},
+		})
+			.then((response) => {
+				if (!response.ok) {
+					throw new Error(
+						`This is an HTTP error: The status is ${response.status}`
+					);
+				}
+				return response.json();
 			})
 			.then((actualData) => {
-				console.log(actualData.data);
-				this.setData(JSON.stringify(actualData.data));
-				return actualData.data;
+				console.log(actualData);
+				setData(actualData);
 			})
 			.catch((error) => {
 				console.log(error);
 				setData(null);
 			});
 	}, []);
+
+	// const genres = { data.genre_id };
+	// const songs = data.track_id;
+	// const artists = data.artist_id;
 
 	return (
 		<div className='background standart'>
@@ -110,43 +123,60 @@ const MyPage = () => {
 				/>
 				<div>
 					<div className='left violet_back body'>
-						<div className='col-sm-8 canva'>
-							{data &&
-								data.map((user_data) => {
-									return (
-										<h4
-											className='col-sm-8  heading personal_data'
-											key={user_data}
-										>
-											{user_data.username}
-										</h4>
-									);
-								})}
+						{data ? (
+							<div className='col-sm-8 canva' key={data}>
+								<h4 className='col-sm-8  heading personal_data'>
+									{data.username}
+								</h4>
 
-							<div className='row location'>
-								<i className='col-1 fa-2x sign_loc'>
-									<ImLocation />
-								</i>
-								<h1 className='col-7 location_name'>
-									Los-Angles, USA
-									{/* {content.city} */}
-								</h1>
+								<div className='row location'>
+									<i className='col-1 fa-2x sign_loc'>
+										<ImLocation />
+									</i>
+									<h1 className='col-7 location_name'>{data.city}</h1>
+								</div>
+								<div className=' col-sm-10 ava_reg canva'>
+									<img
+										src='/Images/ava.jpg'
+										className='col-sm-12 rounded-circle'
+										alt='user_avatar'
+									/>
+									<a
+										href='/UserChange'
+										role='button'
+										className='on_page action_button col-sm-8 text-capitalize btn'
+									>
+										<ImPencil /> Edit profile{' '}
+									</a>
+								</div>
 							</div>
-							<div className=' col-sm-10 ava_reg canva'>
-								<img
-									src='/Images/ava.jpg'
-									className='col-sm-12 rounded-circle'
-									alt='user_avatar'
-								/>
-								<a
-									href='/UserChange'
-									role='button'
-									className='on_page action_button col-sm-8 text-capitalize btn'
-								>
-									<ImPencil /> Edit profile{' '}
-								</a>
+						) : (
+							<div className='col-sm-8 canva' key={data}>
+								<h4 className='col-sm-8  heading personal_data'>
+									John
+								</h4>
+								<div className='row location'>
+									<i className='col-1 fa-2x sign_loc'>
+										<ImLocation />
+									</i>
+									<h1 className='col-7 location_name'>LA, USA</h1>
+								</div>
+								<div className=' col-sm-10 ava_reg canva'>
+									<img
+										src='/Images/ava.jpg'
+										className='col-sm-12 rounded-circle'
+										alt='user_avatar'
+									/>
+									<a
+										href='/UserChange'
+										role='button'
+										className='on_page action_button col-sm-8 text-capitalize btn'
+									>
+										<ImPencil /> Edit profile{' '}
+									</a>
+								</div>
 							</div>
-						</div>
+						)}
 					</div>
 
 					<div className=' right yellow_back body'>
