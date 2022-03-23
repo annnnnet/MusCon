@@ -25,6 +25,16 @@ const required = (value) => {
 	}
 };
 
+const validEmail = (value) => {
+	if (!isEmail(value)) {
+		return (
+			<div className='tip' role='alert'>
+				This is not a valid email.
+			</div>
+		);
+	}
+};
+
 const vusername = (value) => {
 	if (value.length < 3 || value.length > 20) {
 		return (
@@ -35,11 +45,23 @@ const vusername = (value) => {
 	}
 };
 
+const vpassword = (value) => {
+	if (value.length < 6 || value.length > 40) {
+		return (
+			<div className='tip' role='alert'>
+				The password must be between 6 and 40 characters.
+			</div>
+		);
+	}
+};
+
 const UserChange = () => {
 	const form = useRef();
 	const checkBtn = useRef();
 
 	const [username, setUsername] = useState('');
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
 	const [city, setCity] = useState('');
 	const [photo, setPhoto] = useState('');
 	const [successful, setSuccessful] = useState(false);
@@ -57,9 +79,19 @@ const UserChange = () => {
 		setUsername(username);
 	};
 
+	const onChangeEmail = (e) => {
+		const email = e.target.value;
+		setEmail(email);
+	};
+
 	const onChangeCity = (e) => {
 		const city = e.target.value;
 		setCity(city);
+	};
+
+	const onChangePassword = (e) => {
+		const password = e.target.value;
+		setPassword(password);
 	};
 
 	const handleRegister = (e) => {
@@ -162,8 +194,27 @@ const UserChange = () => {
 														onChange={onChangeUsername}
 														validations={[required, vusername]}
 														id='floatingInput'
-														placeholder={username}
+														placeholder='Input username'
 													/>
+												</div>
+
+												<div className='form-group col-sm-12'>
+													<label
+														htmlFor='floatingInput'
+														className='control-label '
+													>
+														Email address
+													</label>
+													<Input
+														type='email'
+														className='form-control'
+														name='email'
+														value={email}
+														onChange={onChangeEmail}
+														validations={[required, validEmail]}
+														id='floatingInput'
+														placeholder='name@example.com'
+													/>{' '}
 												</div>
 												<div className='form-group col-sm-12'>
 													<label
@@ -180,7 +231,25 @@ const UserChange = () => {
 														onChange={onChangeCity}
 														validations={[required]}
 														id='floatingInput'
-														placeholder={city}
+														placeholder='Input city and country'
+													/>
+												</div>
+												<div className='form-group col-sm-12'>
+													<label
+														htmlFor='floatingPassword'
+														className='control-label '
+													>
+														Password
+													</label>
+													<Input
+														type='password'
+														className='form-control'
+														name='password'
+														value={password}
+														onChange={onChangePassword}
+														validations={[required, vpassword]}
+														id='floatingPassword'
+														placeholder='Input password'
 													/>
 												</div>
 											</div>

@@ -111,7 +111,7 @@ const MyPage = () => {
 				<div>
 					<div className='left violet_back body'>
 						<div className='col-sm-8 canva'>
-							{data ? (
+							{data &&
 								data.map((user_data) => {
 									return (
 										<h4
@@ -121,12 +121,7 @@ const MyPage = () => {
 											{user_data.username}
 										</h4>
 									);
-								})
-							) : (
-								<h4 className='col-sm-8  heading personal_data'>
-									John
-								</h4>
-							)}
+								})}
 
 							<div className='row location'>
 								<i className='col-1 fa-2x sign_loc'>
