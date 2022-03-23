@@ -8,15 +8,17 @@ import GenreChoose from './pages/GenreChoose/GenreChoose';
 import PostCreate from './pages/PostCreate/PostCreate';
 import MyPage from './pages/MyPage/MyPage';
 import UserPage from './pages/UserPage/UserPage';
-import Registration from './pages/Registration/registration';
+import Registration from './pages/Registration/Registration';
 import Chart from './pages/Chart/Chart';
 import Friends from './components/FriendCard/Cards';
 import Login from './pages/Login/Login';
 import Recommendation from './components/FriendCard/Rec';
-import Example from './components/TopTable/tb';
-import UserChange from './pages/UserChange/UserChange';
+// import Example from './components/TopTable/tb';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { history } from './helpers/history';
+import Example1 from './components/TopTable/tb';
+import Songs from './pages/Songs/Songs';
 
 export default function App() {
 	return (
@@ -41,8 +43,6 @@ export default function App() {
 
 				<Route exact path='/Login' element={<Login />} />
 
-				<Route exact path='/UserChange' element={<UserChange />} />
-
 				<Route exact path='/Friends' element={<Friends />} />
 
 				<Route exact path='/Chart' element={<Chart />} />
@@ -51,7 +51,8 @@ export default function App() {
 
 				<Route exact path='/Rec' element={<Recommendation />} />
 
-				<Route exact path='/Ex' element={<Example />} />
+				{/* <Route exact path='/Ex' element={<Example1 />} /> */}
+				<Route exact path='/Ex' element={<Songs />} />
 			</Routes>
 		</Router>
 	);
