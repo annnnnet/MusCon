@@ -6,8 +6,8 @@ import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import logo from '../../pics/last.gif';
 // import PolarChart from '../../components/PolarChart/PolarChart';
+import { useLocation, Link, Navigate } from 'react-router-dom';
 import { MdOutlineAddAPhoto } from 'react-icons/md';
-
 import { useDispatch, useSelector } from 'react-redux';
 import Form from 'react-validation/build/form';
 import Input from 'react-validation/build/input';
@@ -25,6 +25,16 @@ const required = (value) => {
 	}
 };
 
+const validEmail = (value) => {
+	if (!isEmail(value)) {
+		return (
+			<div className='tip' role='alert'>
+				This is not a valid email.
+			</div>
+		);
+	}
+};
+
 const vusername = (value) => {
 	if (value.length < 3 || value.length > 20) {
 		return (
@@ -35,11 +45,26 @@ const vusername = (value) => {
 	}
 };
 
+const vpassword = (value) => {
+	if (value.length < 6 || value.length > 40) {
+		return (
+			<div className='tip' role='alert'>
+				The password must be between 6 and 40 characters.
+			</div>
+		);
+	}
+};
+
 const UserChange = () => {
+	const location = useLocation();
+	const user_old = new Object();
+	user_old = location.state.user_data;
 	const form = useRef();
 	const checkBtn = useRef();
 
 	const [username, setUsername] = useState('');
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
 	const [city, setCity] = useState('');
 	const [photo, setPhoto] = useState('');
 	const [successful, setSuccessful] = useState(false);
@@ -57,9 +82,19 @@ const UserChange = () => {
 		setUsername(username);
 	};
 
+	const onChangeEmail = (e) => {
+		const email = e.target.value;
+		setEmail(email);
+	};
+
 	const onChangeCity = (e) => {
 		const city = e.target.value;
 		setCity(city);
+	};
+
+	const onChangePassword = (e) => {
+		const password = e.target.value;
+		setPassword(password);
 	};
 
 	const handleRegister = (e) => {
@@ -79,6 +114,31 @@ const UserChange = () => {
 				});
 		}
 	};
+
+	const user_data = new FormData();
+	user_data.append('username', username);
+	user_data.append('city', city);
+
+	const onLinkClick = (e) => {
+		e.preventDefault();
+		const tokenData = JSON.parse(localStorage.getItem('user'));
+		fetch(`http://127.0.0.1:5000/edit_profile`, {
+			method: 'PUT',
+			headers: {
+				'Content-Type': 'application/json',
+				Authorization: `Bearer ${tokenData.token}`,
+			},
+			body: user_data,
+		}).then((response) => {
+			if (!response.ok) {
+				throw new Error(
+					`This is an HTTP error: The status is ${response.status}`
+				);
+			}
+			return <Navigate replace to='/MyPage' />;
+		});
+	};
+
 	return (
 		<div className='background standart '>
 			<div className='sticky-top '>
@@ -137,8 +197,27 @@ const UserChange = () => {
 														onChange={onChangeUsername}
 														validations={[required, vusername]}
 														id='floatingInput'
-														placeholder={username}
+														placeholder='Input username'
 													/>
+												</div>
+
+												<div className='form-group col-sm-12'>
+													<label
+														htmlFor='floatingInput'
+														className='control-label '
+													>
+														Email address
+													</label>
+													<Input
+														type='email'
+														className='form-control'
+														name='email'
+														value={email}
+														onChange={onChangeEmail}
+														validations={[required, validEmail]}
+														id='floatingInput'
+														placeholder='name@example.com'
+													/>{' '}
 												</div>
 												<div className='form-group col-sm-12'>
 													<label
@@ -155,13 +234,35 @@ const UserChange = () => {
 														onChange={onChangeCity}
 														validations={[required]}
 														id='floatingInput'
-														placeholder={city}
+														placeholder='Input city and country'
+													/>
+												</div>
+												<div className='form-group col-sm-12'>
+													<label
+														htmlFor='floatingPassword'
+														className='control-label '
+													>
+														Password
+													</label>
+													<Input
+														type='password'
+														className='form-control'
+														name='password'
+														value={password}
+														onChange={onChangePassword}
+														validations={[required, vpassword]}
+														id='floatingPassword'
+														placeholder='Input password'
 													/>
 												</div>
 											</div>
 											<div className='center'>
 												<div className=' col-sm-12 form-group'>
-													<button className='btn' type='submit'>
+													<button
+														className='btn'
+														type='submit'
+														onClick={onLinkClick}
+													>
 														Save changes
 													</button>
 												</div>

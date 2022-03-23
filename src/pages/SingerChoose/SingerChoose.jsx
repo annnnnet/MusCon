@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import './SingerChoose.css';
 import '../../basic.css';
 import singer from '../../pics/singer.jpg';
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation, Link, Navigate } from 'react-router-dom';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 
@@ -58,6 +58,41 @@ const SingerChoose = () => {
 				setLoading(false);
 			});
 	}, []);
+
+	const onLinkClick = (e) => {
+		e.preventDefault();
+		const tokenData = JSON.parse(localStorage.getItem('user'));
+		fetch(`http://127.0.0.1:5000/edit_artist`, {
+			method: 'PUT',
+			headers: {
+				'Content-Type': 'application/json',
+				Authorization: `Bearer ${tokenData.token}`,
+			},
+			body: JSON.stringify({ artist_id: checked }),
+		})
+			.then((response) => {
+				if (!response.ok) {
+					throw new Error(
+						`This is an HTTP error: The status is ${response.status}`
+					);
+				}
+				return response.json();
+			})
+			.then((actualData) => {
+				setData(actualData);
+				setError(null);
+				if (data) {
+					return <Navigate replace to='/Singerchoose' />;
+				}
+			})
+			.catch((err) => {
+				setError(err.message);
+				setData(null);
+			})
+			.finally(() => {
+				setLoading(false);
+			});
+	};
 
 	return (
 		<div className='background'>
@@ -116,22 +151,9 @@ const SingerChoose = () => {
 								})}
 						</div>
 					</div>
-					{/* <button className='submit_button center'>
-						<Link
-							to='/Friends'
-							state={{ genres: checkedItems }}
-							className='submit_button_text'
-						>
+					<button className='submit_button center' onClick={onLinkClick}>
+						<Link to='/Friends' className='submit_button_text'>
 							Move to friends
-						</Link>
-					</button> */}
-					<button className='submit_button center'>
-						<Link
-							to='/MyPage'
-							state={{ genres: checkedItems }}
-							className='submit_button_text'
-						>
-							Move to my account
 						</Link>
 					</button>
 				</div>
