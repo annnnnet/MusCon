@@ -62,6 +62,7 @@ const Login = (props) => {
 					// eslint-disable-next-line react/prop-types
 					props.history.push('/GenreChoose');
 					window.location.reload();
+					return <Navigate replace to='/GenreChoose' />;
 				})
 				.catch(() => {
 					setLoading(false);
@@ -71,9 +72,9 @@ const Login = (props) => {
 		}
 	};
 
-	if (isLoggedIn) {
-		return <Navigate replace to='/MyPage' />;
-	}
+	// if (isLoggedIn) {
+	// 	v
+	// }
 
 	return (
 		<div className='background standart '>
