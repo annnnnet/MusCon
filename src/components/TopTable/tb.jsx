@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/js/src/collapse.js';
-
+import './tb.css';
 export class Example1 extends Component {
 	render() {
 		return (
@@ -9,35 +9,47 @@ export class Example1 extends Component {
 				<div className='card'>
 					<div className='card-header'>
 						<a
-							className='btn'
+							className='collapsed btn btn-outline-warning'
 							data-bs-toggle='collapse'
 							href='#collapseOne'
 						>
-							First
+							Lana Del Ray
 						</a>
 					</div>
 					<div
 						id='collapseOne'
-						className='collapse show'
+						className='collapse'
 						data-bs-parent='#accordion'
 					>
 						<div className='card-body'>
 							<table className='table'>
 								<tbody>
 									<tr>
-										<td>John</td>
-										<td>Doe</td>
-										<td>john@example.com</td>
+										<td>Summertime sadness</td>
+
+										<td>
+											<div className='float-end'>
+												<a className='btn btn-circle '>+</a>
+											</div>
+										</td>
 									</tr>
 									<tr>
-										<td>Mary</td>
-										<td>Moe</td>
-										<td>mary@example.com</td>
+										<td>Dark paradise</td>
+
+										<td>
+											<div className='float-end'>
+												<a className='btn btn-circle'>+</a>
+											</div>
+										</td>
 									</tr>
 									<tr>
-										<td>July</td>
-										<td>Dooley</td>
-										<td>july@example.com</td>
+										<td>Yuong and beautiful</td>
+
+										<td>
+											<div className='float-end'>
+												<a className='btn btn-circle'>+</a>
+											</div>
+										</td>
 									</tr>
 								</tbody>
 							</table>
@@ -48,11 +60,11 @@ export class Example1 extends Component {
 				<div className='card'>
 					<div className='card-header'>
 						<a
-							className='collapsed btn'
+							className='collapsed btn btn-outline-warning'
 							data-bs-toggle='collapse'
 							href='#collapseTwo'
 						>
-							Second
+							Adele
 						</a>
 					</div>
 					<div
@@ -64,19 +76,31 @@ export class Example1 extends Component {
 							<table className='table'>
 								<tbody>
 									<tr>
-										<td>John</td>
-										<td>Doe</td>
-										<td>john@example.com</td>
+										<td>Hello</td>
+
+										<td>
+											<div className='float-end'>
+												<a className='btn btn-circle'>+</a>
+											</div>
+										</td>
 									</tr>
 									<tr>
-										<td>Mary</td>
-										<td>Moe</td>
-										<td>mary@example.com</td>
+										<td>Easy on me</td>
+
+										<td>
+											<div className='float-end'>
+												<a className='btn btn-circle'>+</a>
+											</div>
+										</td>
 									</tr>
 									<tr>
-										<td>July</td>
-										<td>Dooley</td>
-										<td>july@example.com</td>
+										<td>Skyfall</td>
+
+										<td>
+											<div className='float-end'>
+												<a className='btn btn-circle'>+</a>
+											</div>
+										</td>
 									</tr>
 								</tbody>
 							</table>
@@ -87,11 +111,11 @@ export class Example1 extends Component {
 				<div className='card'>
 					<div className='card-header'>
 						<a
-							className='collapsed btn'
+							className='collapsed btn btn-outline-warning'
 							data-bs-toggle='collapse'
 							href='#collapseThree'
 						>
-							Third
+							Eminem
 						</a>
 					</div>
 					<div
@@ -103,19 +127,132 @@ export class Example1 extends Component {
 							<table className='table'>
 								<tbody>
 									<tr>
-										<td>John</td>
-										<td>Doe</td>
-										<td>john@example.com</td>
+										<td>Lose yourself</td>
+
+										<td>
+											<div className='float-end'>
+												<a className='btn btn-circle'>+</a>
+											</div>
+										</td>
 									</tr>
 									<tr>
-										<td>Mary</td>
-										<td>Moe</td>
-										<td>mary@example.com</td>
+										<td>Rap God</td>
+
+										<td>
+											<div className='float-end'>
+												<a className='btn btn-circle'>+</a>
+											</div>
+										</td>
 									</tr>
 									<tr>
-										<td>July</td>
-										<td>Dooley</td>
-										<td>july@example.com</td>
+										<td>Not Afraid</td>
+
+										<td>
+											<div className='float-end'>
+												<a className='btn btn-circle'>+</a>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div className='card'>
+					<div className='card-header'>
+						<a
+							className='collapsed btn btn-outline-warning'
+							data-bs-toggle='collapse'
+							href='#collapseFour'
+						>
+							The Weeknd
+						</a>
+					</div>
+					<div
+						id='collapseFour'
+						className='collapse'
+						data-bs-parent='#accordion'
+					>
+						<div className='card-body'>
+							<table className='table'>
+								<tbody>
+									<tr>
+										<td>Blinding Lights</td>
+
+										<td>
+											<div className='float-end'>
+												<a className='btn btn-circle '>+</a>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>The Hills</td>
+
+										<td>
+											<div className='float-end'>
+												<a className='btn btn-circle'>+</a>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>Call Out My Name</td>
+
+										<td>
+											<div className='float-end'>
+												<a className='btn btn-circle'>+</a>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
+				<div className='card'>
+					<div className='card-header'>
+						<a
+							className='collapsed btn btn-outline-warning'
+							data-bs-toggle='collapse'
+							href='#collapseFive'
+						>
+							Ed Sheeran
+						</a>
+					</div>
+					<div
+						id='collapseFive'
+						className='collapse'
+						data-bs-parent='#accordion'
+					>
+						<div className='card-body'>
+							<table className='table'>
+								<tbody>
+									<tr>
+										<td>Bad Habits</td>
+
+										<td>
+											<div className='float-end'>
+												<a className='btn btn-circle '>+</a>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>Shape of You</td>
+
+										<td>
+											<div className='float-end'>
+												<a className='btn btn-circle'>+</a>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>Perfect</td>
+
+										<td>
+											<div className='float-end'>
+												<a className='btn btn-circle'>+</a>
+											</div>
+										</td>
 									</tr>
 								</tbody>
 							</table>
