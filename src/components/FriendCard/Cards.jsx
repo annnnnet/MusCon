@@ -70,7 +70,7 @@ const Friends = () => {
 											<div className='card text-center shadow'>
 												<div className='overflow'>
 													{/* <img
-														src={friends.image.url}
+														src={friends.image}
 														alt='example'
 														className='card-img-top'
 													/> */}
@@ -87,7 +87,7 @@ const Friends = () => {
 															to='/UserPage'
 															className='submit_button_text'
 														>
-															Add friend
+															View profile
 														</Link>
 													</button>
 												</div>
