@@ -13,6 +13,7 @@ import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const friends = [
 	{
@@ -109,6 +110,13 @@ const MyPage = () => {
 	// const songs = data.track_id;
 	// const artists = data.artist_id;
 
+	const user_data = new Object();
+	user_data.username = 'Aneki';
+	user_data.email = 'email@gmail.com';
+	user_data.city = 'Aneki';
+	user_data.password = 'Aneki';
+	user_data.photo = null;
+
 	return (
 		<div className='background standart'>
 			{/* {content} */}
@@ -141,13 +149,13 @@ const MyPage = () => {
 										className='col-sm-12 rounded-circle'
 										alt='user_avatar'
 									/>
-									<a
-										href='/UserChange'
-										role='button'
+									<Link
+										to='/UserChange'
+										state={{ user_data: user_data }}
 										className='on_page action_button col-sm-8 text-capitalize btn'
 									>
 										<ImPencil /> Edit profile{' '}
-									</a>
+									</Link>
 								</div>
 							</div>
 						) : (

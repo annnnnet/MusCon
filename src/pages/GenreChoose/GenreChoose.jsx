@@ -6,20 +6,6 @@ import Header from '../../components/Header/Header';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
-var genres = [
-	'Pop',
-	'Rock',
-	'Rap',
-	'Hip-hop',
-	'Punk',
-	'Classical',
-	'Jazz',
-	'K-pop',
-	'Metal',
-	'Techno',
-	'Country',
-	'Indi',
-];
 
 const Genrechoose = () => {
 	const [data, setData] = useState(null);

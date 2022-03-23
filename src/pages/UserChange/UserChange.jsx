@@ -56,6 +56,9 @@ const vpassword = (value) => {
 };
 
 const UserChange = () => {
+	const location = useLocation();
+	const user_old = new Object();
+	user_old = location.state.user_data;
 	const form = useRef();
 	const checkBtn = useRef();
 
