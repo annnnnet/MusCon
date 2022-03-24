@@ -68,17 +68,19 @@ const friends = [
 	},
 ];
 const genres = ['Genre1', 'Genre2', 'Genre3', 'Genre4', 'Genre5'];
-const songs = [
-	'Гімн України - Тіна Кароль',
-	'Lucy - SEV',
-	'Мовчати - Скрябін',
-	'Рандеву - Артем Пивоваров',
-	'Mala Fama - Danna Paola',
-];
+
 const artists = ['Artist1', 'Artist2', 'Artist3', 'Artist4', 'Artist5'];
 
 const MyPage = () => {
 	const { user: currentUser } = useSelector((state) => state.auth);
+	const [songs, setSongs] = useState([
+		'Гімн України - Тіна Кароль',
+		'Lucy - SEV',
+		'Мовчати - Скрябін',
+		'Рандеву - Артем Пивоваров',
+		'Mala Fama - Danna Paola',
+	]);
+
 	if (!currentUser) {
 		return <Navigate replace to='/Login' />;
 	}
@@ -190,38 +192,6 @@ const MyPage = () => {
 		});
 	};
 
-	// eslint-disable-next-line react-hooks/rules-of-hooks
-	const [loading, setLoading] = useState(true);
-	// eslint-disable-next-line react-hooks/rules-of-hooks
-	const [error, setError] = useState(null);
-	const onLinkClick = (e, name) => {
-		e.preventDefault();
-		fetch(`http://127.0.0.1:5000/edit_user_genre/${name}`, {
-			method: 'DELETE',
-			headers: {
-				Authorization: 'Bearer ' + user.token,
-			},
-		})
-			.then((response) => {
-				if (!response.ok) {
-					throw new Error(
-						`This is an HTTP error: The status is ${response.status}`
-					);
-				}
-				return response.json();
-			})
-			.then((actualData) => {
-				setMyGenres(actualData);
-				setError(null);
-			})
-			.catch((err) => {
-				setError(err.message);
-			})
-			.finally(() => {
-				setLoading(false);
-			});
-	};
-
 	const getUserFriends = () => {
 		getUserId().then((my_id) => {
 			fetch(`http://127.0.0.1:5000//${my_id}/friends`, {
@@ -255,6 +225,13 @@ const MyPage = () => {
 		getUserGenres();
 		getUserArtists();
 		getUserFriends();
+		// setSongs([
+		// 	'Гімн України - Тіна Кароль',
+		// 	'Lucy - SEV',
+		// 	'Мовчати - Скрябін',
+		// 	'Рандеву - Артем Пивоваров',
+		// 	'Mala Fama - Danna Paola',
+		// ]);
 	}, []);
 
 	// eslint-disable-next-line react-hooks/rules-of-hooks
@@ -265,6 +242,12 @@ const MyPage = () => {
 	const [my_artists, setMyArtists] = useState([]);
 	// eslint-disable-next-line react-hooks/rules-of-hooks
 	const [my_friends, setMyFriends] = useState([]);
+
+	const removeSong = (index) => {
+		songs.splice(index, 1);
+		setSongs(songs);
+	};
+
 	return (
 		<div className='background standart'>
 			{/* {content} */}
@@ -491,6 +474,9 @@ const MyPage = () => {
 																type='button'
 																className=' col-sm-2 right delete_2 btn-close'
 																aria-label='Close'
+																onClick={() =>
+																	removeSong(index)
+																}
 															></button>
 														</div>
 													);

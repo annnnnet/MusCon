@@ -162,30 +162,6 @@ const UserPage = () => {
 	const [error, setError] = useState(null);
 	const onLinkClick = (e, name) => {
 		e.preventDefault();
-		fetch(`http://127.0.0.1:5000/edit_user_genre/${name}`, {
-			method: 'DELETE',
-			headers: {
-				Authorization: 'Bearer ' + current_user.token,
-			},
-		})
-			.then((response) => {
-				if (!response.ok) {
-					throw new Error(
-						`This is an HTTP error: The status is ${response.status}`
-					);
-				}
-				return response.json();
-			})
-			.then((actualData) => {
-				setMyGenres(actualData);
-				setError(null);
-			})
-			.catch((err) => {
-				setError(err.message);
-			})
-			.finally(() => {
-				setLoading(false);
-			});
 	};
 
 	const getUserFriends = () => {
