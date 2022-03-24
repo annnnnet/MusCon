@@ -53,7 +53,7 @@ const Header = () => {
 							<a href='/PostCreate'>Create a post</a>
 						</li>
 						<li>
-							<a href='/PostDemostrate'>News</a>
+							<a href='/PostDemonstrate'>News</a>
 						</li>
 						<li>
 							<a href='/Ex'>SongChoose</a>

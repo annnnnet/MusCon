@@ -8,7 +8,7 @@ import GenreChoose from './pages/GenreChoose/GenreChoose';
 import PostCreate from './pages/PostCreate/PostCreate';
 import MyPage from './pages/MyPage/MyPage';
 import UserPage from './pages/UserPage/UserPage';
-import Registration from './pages/Registration/Registration';
+import Registration from './pages/Registration/registration';
 import Chart from './pages/Chart/Chart';
 import Friends from './components/FriendCard/Cards';
 import Login from './pages/Login/Login';

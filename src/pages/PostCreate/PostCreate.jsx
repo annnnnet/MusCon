@@ -40,7 +40,7 @@ const PostCreate = () => {
 
 	const setGenresData = async () => {
 		const response = await fetch(`http://127.0.0.1:5000/genres`);
-		const genres = response.json();
+		const genres = await response.json();
 
 		const genresopt = genres.map((genre, index) => {
 			return <option key={index}>{genre}</option>;
@@ -66,13 +66,12 @@ const PostCreate = () => {
 	const createPost = async (title, text, genre_id) => {
 		const photo = null;
 		const body = JSON.stringify({ title, text, genre_id, photo });
-		const token = localStorage.getItem('token');
+		const tokenData = JSON.parse(localStorage.getItem('user'));
 		fetch(`http://127.0.0.1:5000/wall`, {
-			method: 'PUT',
+			method: 'POST',
 			headers: {
-				Accept: 'application/json',
 				'Content-Type': 'application/json',
-				Authorization: 'Bearer ' + token,
+				Authorization: 'Bearer ' + tokenData.token,
 			},
 			body,
 		});
