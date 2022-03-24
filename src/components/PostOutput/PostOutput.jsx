@@ -40,14 +40,44 @@ var post_args = [
 const PostOutput = () => {
 	const [posts, setPostData] = useState([]);
 
+	const tokenData = JSON.parse(localStorage.getItem('user'));
 	const getAllPosts = async () => {
-		const response = await fetch(`http://127.0.0.1:5000/genres`);
-		const posts = response.json();
-		setPostData(posts);
+		const response = await fetch(`http://127.0.0.1:5000/news`, {
+			method: 'GET',
+			headers: {
+				'Content-Type': 'application/json',
+				Authorization: 'Bearer ' + tokenData.token,
+			},
+		});
+		return response.json();
 	};
 
+	const getUserInfo = async (post) => {
+		const tokenData = JSON.parse(localStorage.getItem('user'));
+		const response = await fetch(
+			`http://127.0.0.1:5000/user/${post.user_id}`,
+			{
+				method: 'GET',
+				headers: {
+					Authorization: 'Bearer ' + tokenData.token,
+				},
+			}
+		);
+		const userdata = await response.text();
+		const userName = JSON.parse(userdata).username;
+		post.username = userName;
+		return post;
+	};
+
+	const setInformationForDisplayingPosts = async () => {
+		const postsData = await getAllPosts();
+		const data = await Promise.all(
+			postsData.map((post) => getUserInfo(post))
+		);
+		setPostData(data);
+	};
 	useEffect(() => {
-		getAllPosts();
+		setInformationForDisplayingPosts();
 	}, []);
 	return (
 		<div>
@@ -58,29 +88,30 @@ const PostOutput = () => {
 							<div className='flexy'>
 								<img
 									className='post_user_logo'
-									src={post_args.user_avatar}
+									src='/Images/ava.jpg'
 									alt='post_author_avatar'
 								/>
 								<p className='post_username'>{post_args.username}</p>
-								<p className='post-genre'>{post_args.genre}</p>
+								<p className='post-genre'>{post_args.genre_id}</p>
 							</div>
 							<p className='post_title'>{post_args.title}</p>
 
-							<p className='post_text'>{post_args.news_text}</p>
+							<p className='post_text'>{post_args.text}</p>
 
 							<div className='out_carousel'>
 								<Carousel>
-									{post_args.news_pics.map((pic, index) => {
-										return (
-											<Carousel.Item key={pic.id}>
-												<img
-													className='post_carousel_img mx-auto d-block'
-													src={pic}
-													alt='Carousel slide'
-												/>
-											</Carousel.Item>
-										);
-									})}
+									{post_args.news_pics &&
+										post_args.photo_wall.map((pic, index) => {
+											return (
+												<Carousel.Item key={pic.id}>
+													<img
+														className='post_carousel_img mx-auto d-block'
+														src={pic}
+														alt='Carousel slide'
+													/>
+												</Carousel.Item>
+											);
+										})}
 								</Carousel>
 							</div>
 						</div>
