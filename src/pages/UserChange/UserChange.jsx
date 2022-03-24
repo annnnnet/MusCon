@@ -57,20 +57,15 @@ const vpassword = (value) => {
 
 const UserChange = () => {
 	const location = useLocation();
-	const user_old = new Object();
-	user_old = location.state.user_data;
+	var old_data = location.state.user;
 	const form = useRef();
 	const checkBtn = useRef();
 
-	const [username, setUsername] = useState('');
-	const [email, setEmail] = useState('');
-	const [password, setPassword] = useState('');
-	const [city, setCity] = useState('');
-	const [photo, setPhoto] = useState('');
-	const [successful, setSuccessful] = useState(false);
-
-	const { message } = useSelector((state) => state.message);
-	const dispatch = useDispatch();
+	const [username, setUsername] = useState(old_data.username);
+	const [email, setEmail] = useState(old_data.email);
+	const [password, setPassword] = useState(old_data.password);
+	const [city, setCity] = useState(old_data.city);
+	const [photo, setPhoto] = useState(old_data.photo);
 
 	const onChangePhoto = (e) => {
 		const photo = e.target.value;
@@ -97,28 +92,6 @@ const UserChange = () => {
 		setPassword(password);
 	};
 
-	const handleRegister = (e) => {
-		e.preventDefault();
-
-		setSuccessful(false);
-
-		form.current.validateAll();
-
-		if (checkBtn.current.context._errors.length === 0) {
-			dispatch(register(username, city, photo))
-				.then(() => {
-					setSuccessful(true);
-				})
-				.catch(() => {
-					setSuccessful(false);
-				});
-		}
-	};
-
-	const user_data = new FormData();
-	user_data.append('username', username);
-	user_data.append('city', city);
-
 	const onLinkClick = (e) => {
 		e.preventDefault();
 		const tokenData = JSON.parse(localStorage.getItem('user'));
@@ -128,7 +101,15 @@ const UserChange = () => {
 				'Content-Type': 'application/json',
 				Authorization: `Bearer ${tokenData.token}`,
 			},
-			body: user_data,
+			body: JSON.stringify({
+				data: {
+					username: username,
+					email: email,
+					city: city,
+					photo: photo,
+					password: password,
+				},
+			}),
 		}).then((response) => {
 			if (!response.ok) {
 				throw new Error(
@@ -154,12 +135,8 @@ const UserChange = () => {
 				<div className='reg_wavy_content'>
 					<div className='row '>
 						<div className='form-container col-sm-6 '>
-							<Form
-								className=' signup-form col-sm-12'
-								onSubmit={handleRegister}
-								ref={form}
-							>
-								{!successful && (
+							<Form className=' signup-form col-sm-12' ref={form}>
+								{
 									<div>
 										<h3 className='text-center title'>
 											<strong>Change account settings</strong>
@@ -173,7 +150,6 @@ const UserChange = () => {
 														className='rounded-circle'
 														alt='user_avatar'
 														value={photo}
-														onChange={onChangePhoto}
 													/>
 													<button className='col-sm-1 btn btn-circle add_photo btn-lg '>
 														<MdOutlineAddAPhoto />
@@ -197,7 +173,6 @@ const UserChange = () => {
 														onChange={onChangeUsername}
 														validations={[required, vusername]}
 														id='floatingInput'
-														placeholder='Input username'
 													/>
 												</div>
 
@@ -216,7 +191,6 @@ const UserChange = () => {
 														onChange={onChangeEmail}
 														validations={[required, validEmail]}
 														id='floatingInput'
-														placeholder='name@example.com'
 													/>{' '}
 												</div>
 												<div className='form-group col-sm-12'>
@@ -234,7 +208,6 @@ const UserChange = () => {
 														onChange={onChangeCity}
 														validations={[required]}
 														id='floatingInput'
-														placeholder='Input city and country'
 													/>
 												</div>
 												<div className='form-group col-sm-12'>
@@ -252,7 +225,6 @@ const UserChange = () => {
 														onChange={onChangePassword}
 														validations={[required, vpassword]}
 														id='floatingPassword'
-														placeholder='Input password'
 													/>
 												</div>
 											</div>
@@ -269,22 +241,8 @@ const UserChange = () => {
 											</div>
 										</main>
 									</div>
-								)}
+								}
 
-								{message && (
-									<div className='form-group'>
-										<div
-											className={
-												successful
-													? 'alert alert-success'
-													: 'alert alert-danger'
-											}
-											role='alert'
-										>
-											{message}
-										</div>
-									</div>
-								)}
 								<CheckButton
 									style={{ display: 'none' }}
 									ref={checkBtn}

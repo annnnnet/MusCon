@@ -1,6 +1,5 @@
-// import React from 'react';
 import React from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { ImLocation } from 'react-icons/im';
 import { ImPencil } from 'react-icons/im';
@@ -13,7 +12,6 @@ import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 const friends = [
 	{
@@ -77,12 +75,11 @@ const MyPage = () => {
 		return <Navigate replace to='/Login' />;
 	}
 	// eslint-disable-next-line react-hooks/rules-of-hooks
-	const [data, setData] = useState([]);
+	const [my_id, setId] = useState();
 	const user = JSON.parse(localStorage.getItem('user'));
 
-	// eslint-disable-next-line react-hooks/rules-of-hooks
-	useEffect(() => {
-		fetch(`http://127.0.0.1:5000/user`, {
+	const getUserId = () => {
+		return fetch(`http://127.0.0.1:5000/get_user_id`, {
 			method: 'GET',
 			headers: {
 				Authorization: 'Bearer ' + user.token,
@@ -94,28 +91,111 @@ const MyPage = () => {
 						`This is an HTTP error: The status is ${response.status}`
 					);
 				}
-				return response.json();
+				return response.text();
 			})
 			.then((actualData) => {
 				console.log(actualData);
-				setData(actualData);
+				return actualData;
 			})
 			.catch((error) => {
-				console.log(error);
-				setData(null);
+				console.log(error.message);
+				return null;
 			});
+	};
+
+	const getUserData = () => {
+		getUserId().then((my_id) => {
+			fetch(`http://127.0.0.1:5000/user/${my_id}`, {
+				method: 'GET',
+				headers: {
+					Authorization: 'Bearer ' + user.token,
+				},
+			})
+				.then((response) => {
+					if (!response.ok) {
+						throw new Error(
+							`This is an HTTP error: The status is ${response.status}`
+						);
+					}
+					return response.text();
+				})
+				.then((actualData) => {
+					console.log(actualData);
+					setMyData(JSON.parse(actualData));
+				})
+				.catch((error) => {
+					console.log(error.message);
+					setMyData(null);
+				});
+		});
+	};
+
+	const getUserGenre = () => {
+		getUserId().then((my_id) => {
+			fetch(`http://127.0.0.1:5000/get_user_genres/${my_id}`, {
+				method: 'GET',
+				headers: {
+					Authorization: 'Bearer ' + user.token,
+				},
+			})
+				.then((response) => {
+					if (!response.ok) {
+						throw new Error(
+							`This is an HTTP error: The status is ${response.status}`
+						);
+					}
+					return response.text();
+				})
+				.then((actualData) => {
+					console.log(actualData);
+					setMyGenres(JSON.parse(actualData));
+				})
+				.catch((error) => {
+					console.log(error.message);
+					setMyGenres(null);
+				});
+		});
+	};
+
+	// eslint-disable-next-line react-hooks/rules-of-hooks
+	useEffect(() => {
+		getUserData();
+		getUserGenre();
 	}, []);
+
+	// eslint-disable-next-line react-hooks/rules-of-hooks
+	const [my_genres, setMyGenres] = useState([]);
+	// eslint-disable-next-line react-hooks/rules-of-hooks
+	const [my_data, setMyData] = useState({});
+
+	// // eslint-disable-next-line react-hooks/rules-of-hooks
+	// const [my_friends_id, setMyFriendsId] = useState([]);
+	// // eslint-disable-next-line react-hooks/rules-of-hooks
+	// useEffect(() => {
+	// 	fetch(`http://127.0.0.1:5000/get_user/${my_id}`, {
+	// 		method: 'GET',
+	// 	})
+	// 		.then((response) => {
+	// 			if (!response.ok) {
+	// 				throw new Error(
+	// 					`This is an HTTP error: The status is ${response.status}`
+	// 				);
+	// 			}
+	// 			return response.text();
+	// 		})
+	// 		.then((actualData) => {
+	// 			console.log(actualData);
+	// 			setMyFriendsId(actualData);
+	// 		})
+	// 		.catch((error) => {
+	// 			console.log(error.message);
+	// 			setMyFriendsId(null);
+	// 		});
+	// }, []);
 
 	// const genres = { data.genre_id };
 	// const songs = data.track_id;
 	// const artists = data.artist_id;
-
-	const user_data = new Object();
-	user_data.username = 'Aneki';
-	user_data.email = 'email@gmail.com';
-	user_data.city = 'Aneki';
-	user_data.password = 'Aneki';
-	user_data.photo = null;
 
 	return (
 		<div className='background standart'>
@@ -131,17 +211,19 @@ const MyPage = () => {
 				/>
 				<div>
 					<div className='left violet_back body'>
-						{data ? (
-							<div className='col-sm-8 canva' key={data}>
+						{my_data ? (
+							<div className='col-sm-8 canva' key={my_data}>
 								<h4 className='col-sm-8  heading personal_data'>
-									{data.username}
+									{my_data.username}
 								</h4>
 
 								<div className='row location'>
 									<i className='col-1 fa-2x sign_loc'>
 										<ImLocation />
 									</i>
-									<h1 className='col-7 location_name'>{data.city}</h1>
+									<h1 className='col-7 location_name'>
+										{my_data.city}
+									</h1>
 								</div>
 								<div className=' col-sm-10 ava_reg canva'>
 									<img
@@ -151,7 +233,15 @@ const MyPage = () => {
 									/>
 									<Link
 										to='/UserChange'
-										state={{ user_data: user_data }}
+										state={{
+											user: {
+												username: my_data.username,
+												email: my_data.email,
+												password: my_data.password,
+												city: my_data.city,
+												photo: my_data.photo,
+											},
+										}}
 										className='on_page action_button col-sm-8 text-capitalize btn'
 									>
 										<ImPencil /> Edit profile{' '}
@@ -159,7 +249,7 @@ const MyPage = () => {
 								</div>
 							</div>
 						) : (
-							<div className='col-sm-8 canva' key={data}>
+							<div className='col-sm-8 canva'>
 								<h4 className='col-sm-8  heading personal_data'>
 									John
 								</h4>
@@ -363,35 +453,67 @@ const MyPage = () => {
 											role='tabpanel'
 											aria-labelledby='nav-genres-tab'
 										>
-											<div className='list-group-item list'>
-												{genres.map((item, index) => {
-													return (
-														<div
-															className='left col-sm-12 row'
-															key={index}
-														>
-															<h4
-																className='col-sm-10 element genre'
-																href='/{items}'
+											{my_genres ? (
+												<div className='list-group-item list'>
+													{my_genres.map((item, index) => {
+														return (
+															<div
+																className='left col-sm-12 row'
+																key={index}
 															>
-																{item}
-															</h4>
-															<button
-																type='button'
-																className=' col-sm-2 right delete_2 btn-close'
-																aria-label='Close'
-															></button>
-														</div>
-													);
-												})}
-												<a
-													href='/GenreChoose'
-													role='button'
-													className='change on_page col-sm-2  center btn text-capitalize btn'
-												>
-													<ImPencil /> Edit{' '}
-												</a>
-											</div>
+																<h4
+																	className='col-sm-10 element genre'
+																	href='/{items}'
+																>
+																	{item}
+																</h4>
+																<button
+																	type='button'
+																	className=' col-sm-2 right delete_2 btn-close'
+																	aria-label='Close'
+																></button>
+															</div>
+														);
+													})}
+													<a
+														href='/GenreChoose'
+														role='button'
+														className='change on_page col-sm-2  center btn text-capitalize btn'
+													>
+														<ImPencil /> Edit{' '}
+													</a>
+												</div>
+											) : (
+												<div className='list-group-item list'>
+													{genres.map((item, index) => {
+														return (
+															<div
+																className='left col-sm-12 row'
+																key={index}
+															>
+																<h4
+																	className='col-sm-10 element genre'
+																	href='/{items}'
+																>
+																	{item}
+																</h4>
+																<button
+																	type='button'
+																	className=' col-sm-2 right delete_2 btn-close'
+																	aria-label='Close'
+																></button>
+															</div>
+														);
+													})}
+													<a
+														href='/GenreChoose'
+														role='button'
+														className='change on_page col-sm-2  center btn text-capitalize btn'
+													>
+														<ImPencil /> Edit{' '}
+													</a>
+												</div>
+											)}
 										</div>
 										<div
 											className='col-sm-8  tab-pane fade'
