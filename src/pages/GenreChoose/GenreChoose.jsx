@@ -6,20 +6,6 @@ import Header from '../../components/Header/Header';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
-var genres = [
-	'Pop',
-	'Rock',
-	'Rap',
-	'Hip-hop',
-	'Punk',
-	'Classical',
-	'Jazz',
-	'K-pop',
-	'Metal',
-	'Techno',
-	'Country',
-	'Indi',
-];
 
 const Genrechoose = () => {
 	const [data, setData] = useState(null);
@@ -69,15 +55,14 @@ const Genrechoose = () => {
 
 	const onLinkClick = (e) => {
 		e.preventDefault();
-		const token = localStorage.getItem('token');
+		const tokenData = JSON.parse(localStorage.getItem('user'));
 		fetch(`http://127.0.0.1:5000/edit_genre`, {
 			method: 'PUT',
 			headers: {
-				Accept: 'application/json',
 				'Content-Type': 'application/json',
-				Authorization: 'Bearer ' + token,
+				Authorization: `Bearer ${tokenData.token}`,
 			},
-			body: JSON.stringify({ genre_id: ['pop', 'songwriter', 'soul'] }),
+			body: JSON.stringify({ genre_id: checked }),
 		})
 			.then((response) => {
 				if (!response.ok) {

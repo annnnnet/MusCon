@@ -10,10 +10,10 @@ import { Navigate } from 'react-router-dom';
 // import UserService from '../../services/user.service';
 
 const Main = () => {
-	const { isLoggedIn } = useSelector((state) => state.auth);
-	if (isLoggedIn) {
-		return <Navigate replace to='/MyPage' />;
-	}
+	// const { isLoggedIn } = useSelector((state) => state.auth);
+	// if (isLoggedIn) {
+	// 	return <Navigate replace to='/MyPage' />;
+	// }
 
 	return (
 		<div className='background standart'>
