@@ -14,6 +14,32 @@ import { useState, useEffect } from 'react';
 import { useLocation, Link, Navigate } from 'react-router-dom';
 import { ImPencil } from 'react-icons/im';
 
+class Toggle extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = { isToggleOn: true };
+		this.handleClick = this.handleClick.bind(this);
+	}
+
+	handleClick() {
+		this.setState((prevState) => ({
+			isToggleOn: !prevState.isToggleOn,
+		}));
+	}
+
+	render() {
+		return (
+			<a
+				role='button'
+				className='on_page  action_button col-sm-8 text-capitalize btn'
+				onClick={this.handleClick}
+			>
+				{this.state.isToggleOn ? 'Follow' : 'Followed!'}
+			</a>
+		);
+	}
+}
+
 const friends = [
 	{
 		image: (
@@ -74,6 +100,12 @@ const songs = [
 	'Рандеву - Артем Пивоваров',
 	'Mala Fama - Danna Paola',
 ];
+
+const Follow = () => {
+	const [title, setTitle] = useState(' Follow');
+	return <h1 onClick={() => setTitle('Following')}>{title}</h1>;
+};
+
 const artists = ['Artist1', 'Artist2', 'Artist3', 'Artist4', 'Artist5'];
 const UserPage = () => {
 	const current_user = JSON.parse(localStorage.getItem('user'));
@@ -237,13 +269,14 @@ const UserPage = () => {
 										className='col-sm-12 rounded-circle'
 										alt='user_avatar'
 									/>
-									<a
+									{/* <a
 										href='#'
 										role='button'
 										className='on_page  action_button col-sm-8 text-capitalize btn'
 									>
-										<RiUserFollowLine /> Follow back{' '}
-									</a>
+										<RiUserFollowLine /> Follow{' '}
+									</a> */}
+									<Toggle />
 									<a
 										href='#'
 										role='button'
@@ -277,7 +310,7 @@ const UserPage = () => {
 										role='button'
 										className='on_page  action_button col-sm-8 text-capitalize btn'
 									>
-										<RiUserFollowLine /> Follow back{' '}
+										<RiUserFollowLine /> Follow{' '}
 									</a>
 									<a
 										href='#'
