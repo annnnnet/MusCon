@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../Main/Main.css';
 import '../../basic.css';
 import NewsOutput from '../../components/PostOutput/PostOutput';
