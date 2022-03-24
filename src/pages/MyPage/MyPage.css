@@ -135,6 +135,7 @@ a[role="button"].change {
   margin: 8px;
   line-height: 0.5;
   border-style: solid;
+  border-radius: 50px;
   border-width: 2px;
   width: 100%;
   display: flex;
