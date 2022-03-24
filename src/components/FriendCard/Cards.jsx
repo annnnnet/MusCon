@@ -3,17 +3,12 @@ import React from 'react';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import './Cards.css';
+import image from '../../pics/sample.jpg';
 
 const Friends = () => {
 	const [data, setData] = useState(null);
-	let navigate = useNavigate();
-	const routeChange = () => {
-		let path = `/UserPage`;
-		navigate(path);
-	};
 
 	useEffect(() => {
 		const tokenData = JSON.parse(localStorage.getItem('user'));
@@ -70,22 +65,27 @@ const Friends = () => {
 											<div className='card text-center shadow'>
 												<div className='overflow'>
 													{/* <img
-														src={friends.image}
-														alt='example'
+														src={image}
+														alt='user_avatar'
 														className='card-img-top'
 													/> */}
+													<img
+														className='card-img-top'
+														src='/Images/ava.jpg'
+														alt='friend_avatar'
+													/>
 												</div>
 												<div className='card-body text-dark'>
 													<h4 className='card-title'>
 														{friends.username}
 													</h4>
-													<button
-														className='submit_button center'
-														onClick={routeChange}
-													>
+													<button className='submit_button center'>
 														<Link
 															to='/UserPage'
-															className='submit_button_text'
+															state={{
+																id: friends.id,
+															}}
+															className='submit_button_text '
 														>
 															View profile
 														</Link>

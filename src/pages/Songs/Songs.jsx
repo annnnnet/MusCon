@@ -11,7 +11,20 @@ const Songs = () => {
 			<div className='sticky-top '>
 				<Header />
 			</div>
+			<div className='sc_top'>
+				{/* <img
+					className='wavy'
+					src={require('../../pics/purple_bottom_wave_01.png')}
+					alt='wave'
+				/> */}
+				<div className='sc_top_content'>
+					<h1 id='sc_text'>Choose favourite genres:</h1>
+				</div>
+			</div>
 			<div className='yellow_top_wave'>
+				<div className='sc_top_content'>
+					<h1 id='sc_text'>Songs you may like:</h1>
+				</div>
 				<div className='songs'>
 					<Example1 />
 				</div>
