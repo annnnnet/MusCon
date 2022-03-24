@@ -1,0 +1,152 @@
+.yellow_top_wave{
+    background-color: #ffd043;
+    background-image: url("../../pics/white_top_wave_02.png");
+    background-position: top;
+    background-repeat: no-repeat;
+    padding-top: 100px;
+}
+
+.yellow_bottom_wave{
+    background-color: #ffd043;
+    margin-bottom: -5%;
+}
+
+.post_create_form{
+    background-color: white;
+    width:50%;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #b61984;
+    font-family: Comfortaa;
+    border-radius: 20px;
+}
+
+.post_user_logo{
+    width:7%;
+    border-radius: 50%;
+    border: 2px solid #b61984;
+    margin: 1%;
+}
+
+.post_username{
+    font-size: 20px;
+    margin: auto 10px;
+}
+
+.post_it{
+    background-color: white;
+    width:120px;
+    height: 100%;
+    padding: 2px;
+    margin-right:10px;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-radius: 50px;
+    border: 2px solid #b61984;
+    font-family: 'Comfortaa';
+    font-size: x-large;
+    font-weight: bold;
+    color:#b61984;
+}
+
+.post_it:hover{
+    background-color: #b61984;
+    color: white;
+}
+
+.post_create{
+    padding:1%;
+    margin-right:auto;
+    margin-left: auto;
+}
+
+.post_create label{
+    font-size: 22px;
+    color:#b61984;
+    margin-top: 10px;
+}
+
+.post_create input{
+    font-size: 17.5px;
+    width: 100%;
+    padding: 1%;
+    height: 40px;
+    border-radius: 50px;
+}
+
+.post_create_text{
+    min-height: 200px;
+    width: 100%;
+    padding: 1%;  
+    border-radius: 20px;
+}
+
+.genre-select{
+    height: 40px;
+    font-size: 20px;
+    min-width: 200px;
+    width: fit-content;
+    padding: 1%; 
+    border-radius: 20px;
+} 
+
+.dzu-inputLabel{
+    font-family: 'Comfortaa' !important;
+    color: #b61984 !important;
+    font-weight: 400;
+}
+
+.dzu-inputLabelWithFiles{
+    background-color: white;
+    width:120px;
+    height: 100%;
+    padding: 2px;
+    margin-right:10px;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-radius: 7px;
+    border: 2px solid #b61984;
+    font-size: large !important;
+    font-family: 'Comfortaa' ;
+    font-weight: 500;
+    color: #b61984 !important;
+}
+
+.dzu-inputLabelWithFiles:hover{
+    color:white !important;
+    background-color: #b61984;
+}
+
+.dzu-submitButton{
+    background-color: white;
+    width:120px;
+    height: 100%;
+    padding: 2px;
+    margin-right:10px;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-radius: 7px;
+    border: 2px solid #b61984;
+    font-size: large;
+    font-family: 'Comfortaa' ;
+    font-weight: 500;
+    color: #b61984 !important;
+}
+
+.dzu-submitButton:hover{
+    color:white !important;
+    background-color: #b61984;
+}
+
+.songs{
+    width: 50%;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    margin: auto; 
+}
+

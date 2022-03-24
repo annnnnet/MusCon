@@ -66,16 +66,22 @@ const friends = [
 	},
 ];
 const genres = ['Genre1', 'Genre2', 'Genre3', 'Genre4', 'Genre5'];
-const songs = ['Song1', 'Song2', 'Song3', 'Song4', 'Song5'];
+
 const artists = ['Artist1', 'Artist2', 'Artist3', 'Artist4', 'Artist5'];
 
 const MyPage = () => {
 	const { user: currentUser } = useSelector((state) => state.auth);
+	const [songs, setSongs] = useState([
+		'Гімн України - Тіна Кароль',
+		'Lucy - SEV',
+		'Мовчати - Скрябін',
+		'Рандеву - Артем Пивоваров',
+		'Mala Fama - Danna Paola',
+	]);
+
 	if (!currentUser) {
 		return <Navigate replace to='/Login' />;
 	}
-	// eslint-disable-next-line react-hooks/rules-of-hooks
-	const [my_id, setId] = useState();
 	const user = JSON.parse(localStorage.getItem('user'));
 
 	const getUserId = () => {
@@ -130,7 +136,7 @@ const MyPage = () => {
 		});
 	};
 
-	const getUserGenre = () => {
+	const getUserGenres = () => {
 		getUserId().then((my_id) => {
 			fetch(`http://127.0.0.1:5000/get_user_genres/${my_id}`, {
 				method: 'GET',
@@ -157,45 +163,88 @@ const MyPage = () => {
 		});
 	};
 
+	const getUserArtists = () => {
+		getUserId().then((my_id) => {
+			fetch(`http://127.0.0.1:5000/get_user_artists/${my_id}`, {
+				method: 'GET',
+				headers: {
+					Authorization: 'Bearer ' + user.token,
+				},
+			})
+				.then((response) => {
+					if (!response.ok) {
+						throw new Error(
+							`This is an HTTP error: The status is ${response.status}`
+						);
+					}
+					return response.text();
+				})
+				.then((actualData) => {
+					console.log(actualData);
+					setMyArtists(JSON.parse(actualData));
+				})
+				.catch((error) => {
+					console.log(error.message);
+					setMyArtists(null);
+				});
+		});
+	};
+
+	const getUserFriends = () => {
+		getUserId().then((my_id) => {
+			fetch(`http://127.0.0.1:5000//${my_id}/friends`, {
+				method: 'GET',
+				headers: {
+					Authorization: 'Bearer ' + user.token,
+				},
+			})
+				.then((response) => {
+					if (!response.ok) {
+						throw new Error(
+							`This is an HTTP error: The status is ${response.status}`
+						);
+					}
+					return response.text();
+				})
+				.then((actualData) => {
+					console.log(actualData);
+					setMyFriends(JSON.parse(actualData));
+				})
+				.catch((error) => {
+					console.log(error.message);
+					setMyFriends(null);
+				});
+		});
+	};
+
 	// eslint-disable-next-line react-hooks/rules-of-hooks
 	useEffect(() => {
 		getUserData();
-		getUserGenre();
+		getUserGenres();
+		getUserArtists();
+		getUserFriends();
+		// setSongs([
+		// 	'Гімн України - Тіна Кароль',
+		// 	'Lucy - SEV',
+		// 	'Мовчати - Скрябін',
+		// 	'Рандеву - Артем Пивоваров',
+		// 	'Mala Fama - Danna Paola',
+		// ]);
 	}, []);
 
 	// eslint-disable-next-line react-hooks/rules-of-hooks
 	const [my_genres, setMyGenres] = useState([]);
 	// eslint-disable-next-line react-hooks/rules-of-hooks
 	const [my_data, setMyData] = useState({});
+	// eslint-disable-next-line react-hooks/rules-of-hooks
+	const [my_artists, setMyArtists] = useState([]);
+	// eslint-disable-next-line react-hooks/rules-of-hooks
+	const [my_friends, setMyFriends] = useState([]);
 
-	// // eslint-disable-next-line react-hooks/rules-of-hooks
-	// const [my_friends_id, setMyFriendsId] = useState([]);
-	// // eslint-disable-next-line react-hooks/rules-of-hooks
-	// useEffect(() => {
-	// 	fetch(`http://127.0.0.1:5000/get_user/${my_id}`, {
-	// 		method: 'GET',
-	// 	})
-	// 		.then((response) => {
-	// 			if (!response.ok) {
-	// 				throw new Error(
-	// 					`This is an HTTP error: The status is ${response.status}`
-	// 				);
-	// 			}
-	// 			return response.text();
-	// 		})
-	// 		.then((actualData) => {
-	// 			console.log(actualData);
-	// 			setMyFriendsId(actualData);
-	// 		})
-	// 		.catch((error) => {
-	// 			console.log(error.message);
-	// 			setMyFriendsId(null);
-	// 		});
-	// }, []);
-
-	// const genres = { data.genre_id };
-	// const songs = data.track_id;
-	// const artists = data.artist_id;
+	const removeSong = (index) => {
+		songs.splice(index, 1);
+		setSongs(songs);
+	};
 
 	return (
 		<div className='background standart'>
@@ -327,40 +376,86 @@ const MyPage = () => {
 											role='tabpanel'
 											aria-labelledby='nav-friends-tab'
 										>
-											<div className=' list-group-item list'>
-												{friends
-													.slice(0, friends.length)
-													.map((item, index) => {
-														return (
-															<div
-																className='col-sm-12 row'
-																key={index}
-															>
-																<a
-																	href='/user/#}'
-																	className='col-sm-12  element '
+											{my_friends ? (
+												<div className=' list-group-item list'>
+													{my_friends
+														.slice(0, my_friends.length)
+														.map((friend, index) => {
+															return (
+																<div
+																	className='col-sm-12 row'
+																	key={index}
 																>
-																	{item.image}
-																	<h4 className='col-sm-10 username'>
-																		{item.name}
-																	</h4>
-																</a>
-																<button
-																	type='button'
-																	className=' col-sm-2 right delete_1 btn-close'
-																	aria-label='Close'
-																></button>
-															</div>
-														);
-													})}
-												<a
-													href='/Friends'
-													role='button'
-													className='change on_page col-sm-2  center btn text-capitalize btn'
-												>
-													<ImPencil /> Edit{' '}
-												</a>
-											</div>
+																	{' '}
+																	<Link
+																		to='/UserPage'
+																		state={{
+																			id: friend.id,
+																		}}
+																		className='col-sm-12  element '
+																	>
+																		{/* {friend.photo} */}
+																		<img
+																			className='col-md-2 ava rounded-circle'
+																			src='/Images/ava.jpg'
+																			alt='friend_avatar'
+																		/>
+																		<h4 className='col-sm-10 username'>
+																			{friend.username}
+																		</h4>
+																	</Link>
+																	<button
+																		type='button'
+																		className=' col-sm-2 right delete_1 btn-close'
+																		aria-label='Close'
+																	></button>
+																</div>
+															);
+														})}
+													<a
+														href='/Friends'
+														role='button'
+														className='change on_page col-sm-2  center btn text-capitalize btn'
+													>
+														<ImPencil /> Edit{' '}
+													</a>
+												</div>
+											) : (
+												<div className=' list-group-item list'>
+													{friends
+														.slice(0, friends.length)
+														.map((friend, index) => {
+															return (
+																<div
+																	className='col-sm-12 row'
+																	key={index}
+																>
+																	<a
+																		href='/UserPage'
+																		className='col-sm-12  element '
+																	>
+																		{friend.image}
+																		<h4 className='col-sm-10 username'>
+																			{friend.name}
+																		</h4>
+																	</a>
+																	<button
+																		type='button'
+																		className=' col-sm-2 right delete_1 btn-close'
+																		aria-label='Close'
+																	></button>
+																</div>
+															);
+														})}
+													<a
+														href='/Friends'
+														role='button'
+														className='change on_page col-sm-2  center btn text-capitalize btn'
+													>
+														<ImPencil /> Edit{' '}
+													</a>
+												</div>
+											)}
 										</div>
 										<div
 											className='col-sm-8  tab-pane fade show active'
@@ -385,6 +480,9 @@ const MyPage = () => {
 																type='button'
 																className=' col-sm-2 right delete_2 btn-close'
 																aria-label='Close'
+																onClick={() =>
+																	removeSong(index)
+																}
 															></button>
 														</div>
 													);
@@ -415,7 +513,7 @@ const MyPage = () => {
 								<h1 className='col-sm-8 heading pref'>
 									Music preferences
 								</h1>
-								<div className='col-sm-8 table_2 '>
+								<div className='col-sm-8  table_2 '>
 									<nav className='col-sm-12 '>
 										<div
 											className='nav title nav-tabs'
@@ -455,7 +553,7 @@ const MyPage = () => {
 										>
 											{my_genres ? (
 												<div className='list-group-item list'>
-													{my_genres.map((item, index) => {
+													{my_genres.map((genre, index) => {
 														return (
 															<div
 																className='left col-sm-12 row'
@@ -465,7 +563,7 @@ const MyPage = () => {
 																	className='col-sm-10 element genre'
 																	href='/{items}'
 																>
-																	{item}
+																	{genre}
 																</h4>
 																<button
 																	type='button'
@@ -485,7 +583,7 @@ const MyPage = () => {
 												</div>
 											) : (
 												<div className='list-group-item list'>
-													{genres.map((item, index) => {
+													{genres.map((genre, index) => {
 														return (
 															<div
 																className='left col-sm-12 row'
@@ -495,7 +593,7 @@ const MyPage = () => {
 																	className='col-sm-10 element genre'
 																	href='/{items}'
 																>
-																	{item}
+																	{genre}
 																</h4>
 																<button
 																	type='button'
@@ -521,35 +619,67 @@ const MyPage = () => {
 											role='tabpanel'
 											aria-labelledby='nav-artists-tab'
 										>
-											<div className='list-group-item list'>
-												{artists.map((item, index) => {
-													return (
-														<div
-															className='col-sm-12 row'
-															key={index}
-														>
-															<h4
-																className='col-sm-10 element song'
-																href='/{items}'
+											{my_artists ? (
+												<div className='list-group-item list'>
+													{my_artists.map((artist, index) => {
+														return (
+															<div
+																className='col-sm-12 row'
+																key={index}
 															>
-																{item}
-															</h4>
-															<button
-																type='button'
-																className=' col-sm-2 right delete_2 btn-close'
-																aria-label='Close'
-															></button>
-														</div>
-													);
-												})}
-												<a
-													href='/SingerChoose'
-													role='button'
-													className='change on_page col-sm-2  center btn text-capitalize btn'
-												>
-													<ImPencil /> Edit{' '}
-												</a>
-											</div>
+																<h4
+																	className='col-sm-10 element song'
+																	href='/{items}'
+																>
+																	{artist}
+																</h4>
+																<button
+																	type='button'
+																	className=' col-sm-2 right delete_2 btn-close'
+																	aria-label='Close'
+																></button>
+															</div>
+														);
+													})}
+													<a
+														href='/SingerChoose'
+														role='button'
+														className='change on_page col-sm-2  center btn text-capitalize btn'
+													>
+														<ImPencil /> Edit{' '}
+													</a>
+												</div>
+											) : (
+												<div className='list-group-item list'>
+													{artists.map((artist, index) => {
+														return (
+															<div
+																className='col-sm-12 row'
+																key={index}
+															>
+																<h4
+																	className='col-sm-10 element song'
+																	href='/{items}'
+																>
+																	{artist}
+																</h4>
+																<button
+																	type='button'
+																	className=' col-sm-2 right delete_2 btn-close'
+																	aria-label='Close'
+																></button>
+															</div>
+														);
+													})}
+													<a
+														href='/SingerChoose'
+														role='button'
+														className='change on_page col-sm-2  center btn text-capitalize btn'
+													>
+														<ImPencil /> Edit{' '}
+													</a>
+												</div>
+											)}
 										</div>
 									</div>
 								</div>
