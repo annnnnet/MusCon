@@ -18,7 +18,7 @@ const Songs = () => {
 					alt='wave'
 				/> */}
 				<div className='sc_top_content'>
-					<h1 id='sc_text'>Choose favourite genres:</h1>
+					<h1 id='sc_text'>Choose favourite songs:</h1>
 				</div>
 			</div>
 			<div className='yellow_top_wave'>

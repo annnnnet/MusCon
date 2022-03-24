@@ -55,6 +55,9 @@ const Header = () => {
 						<li>
 							<a href='/PostDemostrate'>News</a>
 						</li>
+						<li>
+							<a href='/Ex'>SongChoose</a>
+						</li>
 					</ul>
 					<div className='group standart col-sm-4'>
 						<a
