@@ -81,38 +81,6 @@ export const login = (username, password) => (dispatch) => {
 	);
 };
 
-// export const get_user = (jwt) => (dispatch) => {
-// 	return UserService.get_user().then(
-// 		(data) => {
-// 			dispatch({
-// 				type: GET_USER_SUCCESS,
-// 				payload: { user: data },
-// 			});
-
-// 			return Promise.resolve();
-// 		},
-// 		(error) => {
-// 			const message =
-// 				(error.response &&
-// 					error.response.data &&
-// 					error.response.data.message) ||
-// 				error.message ||
-// 				error.toString();
-
-// 			dispatch({
-// 				type: GET_USER_FAIL,
-// 			});
-
-// 			dispatch({
-// 				type: SET_MESSAGE,
-// 				payload: message,
-// 			});
-
-// 			return Promise.reject();
-// 		}
-// 	);
-// };
-
 export const logout = () => (dispatch) => {
 	AuthService.logout();
 

@@ -28,6 +28,7 @@ export default function (state = initialState, action) {
 				isLoggedIn: false,
 			};
 		case LOGIN_SUCCESS:
+			console.log('----', payload);
 			return {
 				...state,
 				isLoggedIn: true,

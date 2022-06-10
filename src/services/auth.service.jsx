@@ -15,13 +15,20 @@ const register = (username, email, password, city, photo) => {
 
 const login = (username, password) => {
 	return axios
-		.get(API_URL + 'login', {
-			auth: {
+		.post(
+			API_URL + 'login',
+			{
 				username,
 				password,
 			},
-		})
+			{
+				headers: {
+					'Content-Type': 'application/json',
+				},
+			}
+		)
 		.then((response) => {
+			console.log(response);
 			if (response.data.token) {
 				localStorage.setItem('user', JSON.stringify(response.data));
 			}

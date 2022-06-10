@@ -97,7 +97,7 @@ const Login = (props) => {
 						<div className='form-container col-sm-6 '>
 							<Form
 								className=' signup-form col-sm-12'
-								onSubmit={handleLogin}
+								// onSubmit={handleLogin}
 								ref={form}
 							>
 								<h3 className='text-center title'>
@@ -148,6 +148,7 @@ const Login = (props) => {
 											<button
 												className='btn'
 												type='submit'
+												onClick={handleLogin}
 												disabled={loading}
 											>
 												<Link to='/Genrechoose'>Log In</Link>
